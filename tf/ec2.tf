@@ -124,11 +124,19 @@ resource "aws_instance" "bigdata_ec2" {
 #! /bin/bash
 yum install -y python37 git telnet
 yum install -y postgresql
-yum install java-1.8.0-openjdk-devel
-sudo -u ec2-user wget -P /home/ec2-user https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
-sudo -u ec2-user wget -P /home/ec2-user https://archive.apache.org/dist/kafka/2.6.1/kafka_2.13-2.6.1.tgz
-sudo -u ec2-user tar xvfz /home/ec2-user/hadoop-3.2.1.tar.gz
-sudo -u ec2-user tar xvfz /home/ec2-user/kafka_2.13-2.6.1.tgz
+yum install -y java-1.8.0-openjdk-devel
+sudo -u ec2-user curl -o /home/ec2-user/hadoop-3.2.1.tar.gz https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+sudo -u ec2-user curl -o /home/ec2-user/kafka_2.13-2.6.1.tgz https://archive.apache.org/dist/kafka/2.6.1/kafka_2.13-2.6.1.tgz
+export JAVA_HOME=/usr/lib/jvm/java
+export HADOOP_HOME=/home/ec2-user/hadoop-3.2.1
+export KAFKA_HOME=/home/ec2-user/kafka_2.13-2.6.1
+sudo -u ec2-user echo "export JAVA_HOME=/usr/lib/jvm/java" >> /home/ec2-user/.bash_profile 
+sudo -u ec2-user echo "export HADOOP_HOME=/home/ec2-user/hadoop-3.2.1" >> /home/ec2-user/.bash_profile 
+sudo -u ec2-user echo "export KAFKA_HOME=/home/ec2-user/kafka_2.13-2.6.1" >> /home/ec2-user/.bash_profile 
+sudo -u ec2-user echo "export PATH=$PATH:$HADOOP_HOME/bin:$KAFKA_HOME/bin" >> /home/ec2-user/.bash_profile 
+sudo -u ec2-user tar xvfz /home/ec2-user/hadoop-3.2.1.tar.gz -C /home/ec2-user
+sudo -u ec2-user tar xvfz /home/ec2-user/kafka_2.13-2.6.1.tgz -C /home/ec2-user
+sudo -u ec2-user echo "`date` ... done" > /home/ec2-user/done
 _DATA
 
     tags = {
@@ -137,5 +145,5 @@ _DATA
 }
 
 output "ec2_public_ip" {
-    value = aws_instance.bigdata_ec2.public_ip
+    value = aws_instance.bigdata_ec2.public_dns
 }
