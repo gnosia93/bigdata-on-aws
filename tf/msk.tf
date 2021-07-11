@@ -1,12 +1,57 @@
-resource "aws_security_group" "priv_sg" {
+resource "aws_security_group" "bigdata_msk_sg" {
+    name        = "bigdata_msk_sg"
+    description = "bigdata_msk_sg"
     vpc_id = aws_vpc.bigdata.id
+
+    ingress = [ 
+        {
+            cidr_blocks = [ var.your_ip_addr, var.vpc_cidr_block ] 
+            description = "msk ingress"
+            from_port = 9092
+            to_port = 9092
+            protocol = "tcp"
+            ipv6_cidr_blocks = [ ]
+            prefix_list_ids = [ ]
+            security_groups = [ ]
+            self = false
+        },
+        {
+            cidr_blocks = [ var.your_ip_addr, var.vpc_cidr_block ] 
+            description = "msk ingress"
+            from_port = 2181
+            to_port = 2181
+            protocol = "tcp"
+            ipv6_cidr_blocks = [ ]
+            prefix_list_ids = [ ]
+            security_groups = [ ]
+            self = false
+        }
+    ]
+
+    egress = [ 
+        {
+            cidr_blocks = [ "0.0.0.0/0" ]
+            description = "msk egress"
+            from_port = 0
+            to_port = 0
+            protocol = "-1"
+            ipv6_cidr_blocks = [ ]
+            prefix_list_ids = [ ]
+            security_groups = [ ]
+            self = false
+        }
+    ]   
+    
+    tags = {
+        Name = "bigdata_msk_sg"
+    }   
 }
 
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster
 resource "aws_cloudwatch_log_group" "bigdata_msk_log" {
     name = "msk_broker_logs"
 }
 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster
 resource "aws_msk_cluster" "bigdata_msk" {
     cluster_name = "bigdata-msk"
     kafka_version = "2.6.1"
@@ -20,7 +65,7 @@ resource "aws_msk_cluster" "bigdata_msk" {
             aws_subnet.bigdata_priv_subnet2.id,
             aws_subnet.bigdata_priv_subnet3.id
         ]
-        security_groups = [aws_security_group.priv_sg.id]
+        security_groups = [aws_security_group.bigdata_msk_sg.id]
     }
 
     encryption_info {
