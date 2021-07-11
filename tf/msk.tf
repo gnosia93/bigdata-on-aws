@@ -89,9 +89,11 @@ resource "aws_msk_cluster" "bigdata_msk" {
     }
 }
 
+/*
 output "msk_zookeepers" {
     value = aws_msk_cluster.bigdata_msk.zookeeper_connect_string
 }
+*/
 
 output "msk_brokers" {
     value = aws_msk_cluster.bigdata_msk.bootstrap_brokers

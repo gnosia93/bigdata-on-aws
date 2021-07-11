@@ -124,6 +124,11 @@ resource "aws_instance" "bigdata_ec2" {
 #! /bin/bash
 yum install -y python37 git telnet
 yum install -y postgresql
+yum install java-1.8.0-openjdk-devel
+sudo -u ec2-user wget -P /home/ec2-user https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+sudo -u ec2-user wget -P /home/ec2-user https://archive.apache.org/dist/kafka/2.6.1/kafka_2.13-2.6.1.tgz
+sudo -u ec2-user tar xvfz /home/ec2-user/hadoop-3.2.1.tar.gz
+sudo -u ec2-user tar xvfz /home/ec2-user/kafka_2.13-2.6.1.tgz
 _DATA
 
     tags = {
