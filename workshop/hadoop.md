@@ -1,6 +1,6 @@
 ### 1. 하둡 클라이언트 설정 ###
 
-테라폼 output 명령어를 이ㅛㅇ하여 ec2 인스턴스와 emr 마스터 노드의 DNS 주소를 아래와 같이 조회합니다. 
+테라폼 output 명령어를 이용하여 ec2 인스턴스와 emr 마스터 노드의 DNS 주소를 아래와 같이 조회합니다. 
 ```
 $ terraform output
 ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
