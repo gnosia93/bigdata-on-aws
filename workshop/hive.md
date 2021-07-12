@@ -60,5 +60,5 @@ https://aws.amazon.com/amazon-linux-2/
 ## 참고자료 ##
 
 * [PostgreSQL 메타스토어 사용하기](https://aws.amazon.com/ko/premiumsupport/knowledge-center/postgresql-hive-metastore-emr/)
-
+* https://mkkim85.github.io/hadoop-hive-merge/
 
