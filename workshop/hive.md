@@ -47,4 +47,17 @@ https://aws.amazon.com/amazon-linux-2/
 
 
 ### 3. HIVE 메타 스토어 설정 ###
+
 * https://aws.amazon.com/ko/premiumsupport/knowledge-center/postgresql-hive-metastore-emr/
+
+* emr 마스터 노드의 DNS 명칭을 조회합니다. 
+```
+$ terraform output | grep emr
+emr_master_public_dns = ec2-13-125-200-36.ap-northeast-2.compute.amazonaws.com
+```
+
+* emr 마스터 노드로 로그인 하여, 아래와 같이 메타 스토어를 설정합니다. 
+```
+
+```
+
