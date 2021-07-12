@@ -84,3 +84,14 @@ b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 ```
 
 * 컨슈머
+```
+[ec2-user@ip-10-1-1-31 ~]$ kafka-console-consumer.sh --topic test --from-beginning \
+--bootstrap-server b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
+b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
+b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+2
+1
+3
+4
+5
+```
