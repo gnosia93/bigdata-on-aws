@@ -1,7 +1,18 @@
 ### 1. 하둡 클라이언트 설정 ###
 
-ec2 인스턴스로 로그인 하여 하둡 설정 파일이 있는 경로로 이동한 다음 core-site.xml 파일의 내용을 아래와 같이 설정합니다. 이때
-hdfs 주소는 테라폼 Output 값중 
+테라폼 output 명령어를 이ㅛㅇ하여 ec2 인스턴스와 emr 마스터 노드의 DNS 주소를 아래와 같이 조회합니다. 
+```
+$ terraform output
+ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+emr_master_public_dns = ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com
+msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
+```
+
+
+
+ec2 인스턴스로 아래와 같이 로그인 한 후, 하둡 설정 디렉토리로 이동하여 core-site.xml 파일의 내용을 아래와 같이 수정합니다. 이때
+hdfs 주소는 테라폼 Output 값 중 emr_master_public_dns 의 값으로 입력해야 하고, hdfs 포트는 8020 로 설정합니다.   
 
 ```
 $ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
@@ -21,13 +32,14 @@ https://aws.amazon.com/amazon-linux-2/
                 <value>hdfs://ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com:8020</value>
         </property>
 </configuration>
+```
 
+core-site.xml 설정을 완료한 후 hadoop 명령어를 이용하여 hdfs 의 내용을 아래와 같이 조회합니다.
+```
 [ec2-user@ip-10-1-1-31 ~]$ hadoop fs -ls /
 Found 4 items
 drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /apps
 drwxrwxrwt   - hdfs hdfsadmingroup          0 2021-07-12 02:08 /tmp
 drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /user
 drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /var
-
-
 ```
