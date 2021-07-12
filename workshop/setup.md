@@ -10,6 +10,11 @@ AWS EC2 콘솔로 이동 후, ssh 로그인용 키페어를 아래와 같이 생
 
 ![keypair-3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/keypair-3.png)
 
+아래 명령어를 이용하여 생성한 키페어를 home 디렉토리로 이동 시킵니다.
+
+```
+$ mv ~/Downloads/tf_key_bigdata.pem ~
+```
 
 #### 4. 워크샵 리소스 생성 ####
 
