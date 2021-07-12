@@ -34,7 +34,7 @@ https://aws.amazon.com/amazon-linux-2/
 </configuration>
 ```
 
-core-site.xml 설정을 완료한 후 hadoop 명령어를 이용하여 hdfs 의 내용을 아래와 같이 조회합니다.
+core-site.xml 설정을 완료한 후 hadoop 명령어를 이용하여 hdfs 의 내용을 조회합니다. 오류없이 설정한 경우 아래와 같은 정보가 출력될 것입니다. 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ hadoop fs -ls /
 Found 4 items
