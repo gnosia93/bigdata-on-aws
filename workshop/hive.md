@@ -38,7 +38,7 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
 ```
 
-### 2. hadoop 디렉톨 생성 ###
+### 2. hadoop 디렉토리 생성 ###
 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir /raw
