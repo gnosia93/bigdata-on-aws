@@ -1,6 +1,7 @@
 ### 1. 하둡 클라이언트 설정 ###
 
-ec2 인스턴스로 로그인 하여 core-site.xml 파일의 내용을 아래와 같이 설정합니다. 이때  
+ec2 인스턴스로 로그인 하여 하둡 설정 파일이 있는 경로로 이동한 다음 core-site.xml 파일의 내용을 아래와 같이 설정합니다. 이때
+hdfs 주소는 테라폼 Output 값중 
 
 ```
 $ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
