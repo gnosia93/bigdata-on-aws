@@ -12,4 +12,4 @@
 
 [1. 인프라 생성](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/setup.md)
 
-[2. 하둡 & 카프카 클라이언트 테스트](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hadoop-kafka.md)
+[2. 하둡 및 카프카 테스트](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hadoop-kafka.md)
