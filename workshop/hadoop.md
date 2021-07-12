@@ -46,8 +46,7 @@ drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /var
 
 ### 2. 카프카 클라이언트 설정 ###
 
-* 토픽생성
-아래 명령어를 이용하여 test 토픽을 생성합니다. 
+* 토픽생성 (test 토픽)
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --create --replication-factor 3 --partitions 3 --topic test \
 --bootstrap-server b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
@@ -57,7 +56,6 @@ Created topic test.
 ```
 
 * 토픽조회
-생성된 토픽을 확인합니다.
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --list \
 --bootstrap-server b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
