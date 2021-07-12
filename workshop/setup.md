@@ -6,11 +6,11 @@
 
 #### 3. 키페어 생성 ####
 
-AWS EC2 콘솔로 이동 후, ssh 로그인용 키페어를 아래와 같이 생성합니다. 생성된 키페어 파일의 로컬 PC의 다운로드 디렉토리에서 확인하실 수 있습니다.(파일명-tf_key_bigdata.pem)
+AWS EC2 콘솔로 이동 후, ssh 로그인용 키페어를 아래와 같이 생성합니다. 생성된 키페어 파일은 로컬 PC의 [다운로드] 라는 디렉토리에서 확인하실 수 있습니다.(파일명-tf_key_bigdata.pem)
 
 ![keypair-3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/keypair-3.png)
 
-아래 명령어를 이용하여 생성한 키페어를 home 디렉토리로 이동 시킵니다.
+아래 명령어를 이용하여 생성한 키페어를 홈 디렉토리로 이동 시킵니다.
 
 ```
 $ mv ~/Downloads/tf_key_bigdata.pem ~
