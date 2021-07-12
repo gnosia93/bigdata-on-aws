@@ -45,6 +45,13 @@ https://aws.amazon.com/amazon-linux-2/
 
 ```
 
+### 3. hive 테이블 선언 (external) ###
+
+
+### 4. 데이터 조회하기 ###
+
+
+
 
 
 ## 참고자료 ##
