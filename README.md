@@ -9,4 +9,4 @@
 
 [1. 인프라 생성](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/setup.md)
 
-[2. 하둡]
+[2. 하둡](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hadoop.md)
