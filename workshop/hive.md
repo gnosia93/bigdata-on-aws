@@ -1,4 +1,7 @@
 
+![hive-samle](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/hive-sample-data1.png)
+
+
 ### 1. 실습 데이터 다운로드 ###
 
 ec2 인스턴스로 로그인 한 후 실습 데이터를 다운로드 합니다.
