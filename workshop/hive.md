@@ -29,5 +29,12 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374926 -O 2003.csv.bz2
 [ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374927 -O 2002.csv.bz2
 [ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374928 -O 2001.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 *
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2008.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2007.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2006.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2005.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2004.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2003.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2002.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
 ```
