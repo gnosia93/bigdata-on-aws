@@ -38,9 +38,13 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
 ```
 
-### 2. hadoop 디렉토리 생성 ###
+### 2. hadoop 파일 생성 ###
 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /raw/airline
 
 ```
+
+
+### 3. HIVE 메타 스토어 설정 ###
+
