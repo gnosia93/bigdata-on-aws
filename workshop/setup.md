@@ -6,8 +6,9 @@
 
 #### 3. 키페어 생성 ####
 
-AWS EC2 콘솔로 이동 후, ssh 로그인용 키페어를 아래와 같이 생성합니다. 
+AWS EC2 콘솔로 이동 후, ssh 로그인용 키페어를 아래와 같이 생성합니다.  
 
+![keypair-3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/keypair-3.png)
 
 
 #### 4. 워크샵 리소스 생성 ####
