@@ -9,7 +9,7 @@ $ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.a
 <configuration>
         <property>
                 <name>fs.defaultFS</name>
-                <value>hdfs://ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com:8200</value>
+                <value>hdfs://ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com:8020</value>
         </property>
 </configuration>
 
