@@ -46,4 +46,8 @@ drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /var
 
 ### 2. 카프카 클라이언트 설정 ###
 
-
+```
+[ec2-user@ip-10-1-1-31 bin]$ kafka-topics.sh --create --replication-factor 3 --partitions 3 --topic test \
+--bootstrap-server b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+Created topic test.
+```
