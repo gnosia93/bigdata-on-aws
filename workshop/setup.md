@@ -68,12 +68,13 @@ $
 AWS 콘솔로 로그인해서 아래 그림과 같이 ec2, emr, msk 및 rds 가 제대로 생성되어 있는지 확인합니다.  
 
 * ec2
-
+![ec2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/ec2.png)
 
 * emr
-
+![emr](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/emr.png)
 
 * msk
-
+![msk](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/msk.png)
 
 * rds
+![rds](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/rds.png)
