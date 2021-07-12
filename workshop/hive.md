@@ -1,7 +1,6 @@
 
 ### 1. 실습 데이터 다운로드 ###
 
-
 ec2 인스턴스로 로그인해서 실습 데이터를 다운로드 합니다.
 
 ```
@@ -37,4 +36,11 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2003.csv.bz2
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2002.csv.bz2
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
+```
+
+### 2. hadoop 디렉톨 생성 ###
+
+```
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir /raw
+
 ```
