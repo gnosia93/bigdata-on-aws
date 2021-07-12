@@ -22,5 +22,6 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 data]$ mkdir hive
 [ec2-user@ip-10-1-1-31 data]$ cd hive
 [ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374918 -O 2007.csv.bz2
+[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374917 -O 2008.csv.bz2
 
 ```
