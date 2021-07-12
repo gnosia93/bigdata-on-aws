@@ -1,6 +1,8 @@
+테라폼에 의해 생성된 ec2 인스턴스는 하둡 및 카프카용 클라이언트로 사용될 예정이므로, 아래와 같은 설정이 필요합니다. 
+
 ### 1. 하둡 클라이언트 설정 ###
 
-테라폼 output 명령어를 이용하여 ec2 인스턴스와 emr 마스터 노드의 DNS 주소를 아래와 같이 조회합니다. 
+테라폼을 이용하여 ec2 인스턴스와 emr 마스터 노드의 DNS 주소를 조회합니다. 
 ```
 $ terraform output
 ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
@@ -8,8 +10,6 @@ emr_master_public_dns = ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com
 msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
 ```
-
-
 
 ec2 인스턴스로 로그인 한 후, 하둡 설정 디렉토리로 이동하여 core-site.xml 파일의 내용을 아래와 같이 수정합니다. 이때
 hdfs 주소는 테라폼 Output 값 중 emr_master_public_dns 의 값으로 입력해야 하고, 포트값은 8020 로 설정합니다.   
