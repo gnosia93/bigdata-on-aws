@@ -4,14 +4,21 @@
 #### 2. AWS CLI 설정 ####
 
 
-
 #### 3. 키페어 생성 ####
-
 
 
 #### 4. 리소스 생성 ####
 
+테라폼을 이용하여 워크샵용 리소스를 생성합니다.
 
+
+
+```
+$ cd 
+$ git clone https://github.com/gnosia93/bigdata-on-aws.git
+$ terraform init
+$ terraform apply -auto-approve
+```
 
 #### 5. 생성 리소스 확인 ####
 
