@@ -69,7 +69,18 @@ test
 ```
 
 
-* 프로튜서
-
+* 프로듀서
+```
+[ec2-user@ip-10-1-1-31 ~]$ kafka-console-producer.sh --topic test \
+--bootstrap-server b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
+b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
+b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+>1
+>2
+>3
+>4
+>5
+>
+```
 
 * 컨슈머
