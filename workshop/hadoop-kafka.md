@@ -86,7 +86,7 @@ b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 
 * 컨슈머
 
-별도의 창을 만들어 ec2 인스턴스로 로그인 한 후, 콘솔 컨슈머를 이용하여 test 토픽으로 부터 메시지를 받아옵니다. 
+별도의 콘솔을 띄워 ec2 인스턴스로 로그인 한 후, 콘솔 컨슈머를 이용하여 test 토픽으로 부터 메시지를 받아옵니다. 
 ```
 $ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
 Last login: Mon Jul 12 02:47:04 2021 from 218.238.107.63
