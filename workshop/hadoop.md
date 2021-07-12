@@ -43,3 +43,7 @@ drwxrwxrwt   - hdfs hdfsadmingroup          0 2021-07-12 02:08 /tmp
 drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /user
 drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /var
 ```
+
+### 2. 카프카 클라이언트 설정 ###
+
+
