@@ -37,9 +37,30 @@ variable "key_pair" {
     type = string
     default = "tf_key_bigdata"         ## 콘솔에서 생성한 키페어 명칭으로 변경.
 }
+```
 
+
+IP 주소와 키페어 값을 변경한 다음 테라폼을 이용하여 워크샵용 리소스를 다음과 같이 생성합니다. 리소스가 정상적으로 생성된 경우 아래에 보이는 바와 같이 Outputs: 항목에서 생성된 리소스들의 접속 정보를 확인할 수 있습니다. 리소스 생성이 완료되기 까지 약 30분의 시간이 소요됩니다. 
+
+```
 $ terraform init
 $ terraform apply -auto-approve
+
+...
+aws_msk_cluster.bigdata_msk: Still creating... [25m50s elapsed]
+aws_msk_cluster.bigdata_msk: Still creating... [26m0s elapsed]
+aws_msk_cluster.bigdata_msk: Creation complete after 26m5s [id=arn:aws:kafka:ap-northeast-2:509076023497:cluster/bigdata-msk/47592988-64da-4312-bb3b-80f98d034f19-2]
+
+Apply complete! Resources: 28 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+emr_master_public_dns = ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com
+msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
+
+$ 
 ```
 
 #### 5. 생성 리소스 확인 ####
