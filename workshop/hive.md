@@ -38,7 +38,7 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
 ```
 
-### 2. hadoop 파일 생성 ###
+### 2. hdfs 에 파일 업로드 ###
 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /raw/airline
@@ -47,4 +47,4 @@ https://aws.amazon.com/amazon-linux-2/
 
 
 ### 3. HIVE 메타 스토어 설정 ###
-
+* https://aws.amazon.com/ko/premiumsupport/knowledge-center/postgresql-hive-metastore-emr/
