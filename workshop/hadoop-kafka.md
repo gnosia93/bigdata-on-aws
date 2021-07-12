@@ -68,7 +68,7 @@ __consumer_offsets
 test
 ```
 
-* 프로듀서
+* 프로듀서  
 아래와 같이 콘솔 프로듀서를 이용하여 test 토픽에 메시지를 전송합니다. 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-console-producer.sh --topic test \
@@ -83,7 +83,7 @@ b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 >
 ```
 
-* 컨슈머
+* 컨슈머   
 아래와 같이 콘솔 컨슈머를 이용하여 test 토픽으로 부터 메시지를 받아옵니다. 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-console-consumer.sh --topic test --from-beginning \
@@ -95,4 +95,12 @@ b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 3
 4
 5
+```
+
+* 토픽삭제
+```
+[ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --delete --topic test \
+--bootstrap-server b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
+b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
+b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 ```
