@@ -11,6 +11,8 @@
 
 인프라를 생성하기 위해 아래와 같이 git 레포지토리 부터 소스 코드를 로컬 PC 로 다운로드 받은 후, var.tf 파일의 your_ip_addr 와 key_pair 의 값을
 여러분들의 환경에 맞게 수정합니다.
+![my-ip](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/my-ip.png)
+
 ```
 $ cd 
 $ git clone https://github.com/gnosia93/bigdata-on-aws.git
