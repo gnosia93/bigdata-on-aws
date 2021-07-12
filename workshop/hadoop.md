@@ -12,7 +12,7 @@ rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:54
 
 
 ec2 인스턴스로 로그인 한 후, 하둡 설정 디렉토리로 이동하여 core-site.xml 파일의 내용을 아래와 같이 수정합니다. 이때
-hdfs 주소는 테라폼 Output 값 중 emr_master_public_dns 의 값으로 입력해야 하고, hdfs 포트는 8020 로 설정합니다.   
+hdfs 주소는 테라폼 Output 값 중 emr_master_public_dns 의 값으로 입력해야 하고, 포트값은 8020 로 설정합니다.   
 
 ```
 $ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
