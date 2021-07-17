@@ -94,8 +94,38 @@ Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarr
 
 ### 5. hive external 테이블 생성  ###
 
-hive CLI 로 로그인하여 아래와 같이 external 테이블을 생성한다. 
+emr 마스터 노드로 로그인 해서 hive CLI 를 이용하여 외부 테이블을 생성한다. 
+````
+$ ssh -i ~/.ssh/tf_key hadoop@ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com
+The authenticity of host 'ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com (52.79.231.111)' can't be established.
+ECDSA key fingerprint is SHA256:Q0WmbNlE+Jomh5FAPgmuaKw2ci2efDQXF4o0XeMyRrM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com,52.79.231.111' (ECDSA) to the list of known hosts.
+Last login: Sat Jul 17 01:37:54 2021
 
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+62 package(s) needed for security, out of 103 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+```
 
 
 
