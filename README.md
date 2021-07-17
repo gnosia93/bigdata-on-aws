@@ -15,3 +15,9 @@
 [2. 하둡 및 카프카 테스트](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hadoop-kafka.md)
 
 [3. 하이브 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hive.md)
+
+
+
+## 참고자료 ##
+
+* [아파치 Tez](https://kr.cloudera.com/products/open-source/apache-hadoop/apache-tez.html)
