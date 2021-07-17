@@ -20,7 +20,7 @@
 
 [5. 스파크 스트리밍 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/spark.md) 
 
-[6. SQOOP 실습]()
+[6. Sqoop 실습]()
 
 
 
