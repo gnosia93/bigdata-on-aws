@@ -71,9 +71,29 @@ EOF
 [ec2-user@ip-10-1-1-31 ~]$ 
 ```
 
-### 3. telegraf 실행하기 ###
+### 3. 카프카 토픽 생성하기 ###
 
-systemctl 을 이용하여 telegraf를 실행한 후, 정상적으로 동작하는 지 status 옵션을 이용하여 확인합니다. 
+아래와 같이 cpu-metric 이라는 새로운 카프카 토픽을 생성합니다. 
+```
+[ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --create --topic cpu-metric --bootstrap-server \
+b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+
+[ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --list --bootstrap-server \
+b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+__amazon_msk_canary
+__amazon_msk_canary_state
+__consumer_offsets
+cpu-metric
+```
+
+
+### 4. telegraf 실행하기 ###
+
+telegraf 를 아래와 같이 실행하고, status 옵션을 이용하여 정상 동작여부를 관찰합니다. 
 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ suso systemctl start telegraf
@@ -100,32 +120,13 @@ systemctl 을 이용하여 telegraf를 실행한 후, 정상적으로 동작하�
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
-### 4. 카프카 토픽 생성하기 ###
-
-```
-[ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --create --topic cpu-metric --bootstrap-server \
-b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
-b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
-b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
-
-[ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --list --bootstrap-server \
-b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
-b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
-b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
-__amazon_msk_canary
-__amazon_msk_canary_state
-__consumer_offsets
-cpu-metric
-```
 
 ### 5. 카프라 메시지 확인 ###
 
-먼저 telegraf를 재시작 하고, 카프카 콘솔 컨슈머 어플리케이션을 이용하여 카프카로 전송 되는 메시지를 확인하도록 합니다. 
-아래와 같이 3초에 한번씩 새로운 메시지가 토픽을 통해 전달되는 것을 확인 할 수 있습니다. 
+카프카 콘솔 컨슈머 어플리케이션을 이용하여 카프카로 전송 되는 메시지를 확인하도록 합니다. 
+정상적인 경우, 아래와 같이 3초에 한번씩 새로운 메시지가 토픽을 통해 전달되는 것을 확인 할 수 있습니다. 
 
 ```
-[ec2-user@ip-10-1-1-31 ~]$ sudo systemctl restart telegraf
-
 [ec2-user@ip-10-1-1-31 ~]$ kafka-console-consumer.sh --topic cpu-metric --bootstrap-server \
 b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
 b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
