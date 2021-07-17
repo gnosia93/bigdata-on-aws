@@ -46,7 +46,7 @@ $ terraform output | grep msk
 msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 ```
 
-아래 스크립트를 이용하여 telegraf 용 설정 파일을 생성합니다. 이때 [[outputs.kafka]] 부분의 brokers 의 주소는 여러분들의 브로커 주소로 대체해야 합니다. 
+ec2 인스턴스에 아래의 스크립트를 이용하여 telegraf 설정 파일을 생성합니다. 이때 [[outputs.kafka]] 부분의 brokers 의 주소는 여러분들의 브로커 주소로 대체해야 합니다. 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ sudo mv /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.old
 
