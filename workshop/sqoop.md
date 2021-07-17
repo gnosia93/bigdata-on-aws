@@ -36,7 +36,7 @@ sed 를 이용하여 csv 파일의 헤더와 각 필드의 쌍따옴표를 제�
 [ec2-user@ip-10-1-1-31 hive]$ sed -i 's/"//g' carriers_new.csv
 ```
 
-### 3. PostgreSQL 데이터 로딩 ###
+### 3. PostgreSQL 오브젝트 생성 ###
 
 테라폼 또는 AWS RDS 콘솔에서 PostgreSQL RDS 의 엔드포인트를 확인한다. 
 ```
@@ -44,8 +44,7 @@ $ terraform output | grep rds
 rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
 ```
 
-psql 을 이용하여 사용자, 데이터베이스, 테이블을 생성하고 copy 명령어를 이용하여 데이터를 로딩한다. 
-postgres 유저의 패스워드는 postgres 이다. 
+psql 을 이용하여 RDS 로 로그인 한 후, 사용자 및 데이터베이스를 생성한다. DB 로그인 시 postgres 유저의 패스워드는 postgres 이다. 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ psql -h bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -U postgres
 Password for user postgres:
@@ -104,6 +103,13 @@ postgres=> \l
 (6 rows)
 ```
 
+
+### 4. 테이블 생성 및 데이터 로딩 ###
+
+```
+postgres=> 
+
+```
 
 ## 참고자료 ##
 
