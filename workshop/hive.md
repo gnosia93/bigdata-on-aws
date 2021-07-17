@@ -41,10 +41,28 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
 ```
 
-### 2. hdfs 에 파일 업로드 ###
+### 2. 데이터 전처리 하기 ###
+
+csv 파일의 헤더를 sed 를 이용하여 제거합니다. 
 
 ```
-[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /raw/airline
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2001.csv > 2001_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2002.csv > 2002_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2003.csv > 2003_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2004.csv > 2004_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2005.csv > 2005_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2006.csv > 2006_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2007.csv > 2007_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2008.csv > 2008_new.csv
+```
+
+### 3. hdfs 디렉토리 생성 ###
+```
+$
+
+
+
+
 
 ```
 
