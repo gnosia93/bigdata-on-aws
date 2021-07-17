@@ -73,8 +73,31 @@ EOF
 
 ### 3. telegraf 실행하기 ###
 
+systemctl 을 이용하여 telegraf를 실행한 후, 정상적으로 동작하는 지 status 옵션을 이용하여 확인합니다. 
+
 ```
-[ec2-user@ip-10-1-1-31 ~]$ systemctl restart telegraf
+[ec2-user@ip-10-1-1-31 ~]$ suso systemctl start telegraf
+
+[ec2-user@ip-10-1-1-31 ~]$ sudo systemctl status telegraf
+● telegraf.service - The plugin-driven server agent for reporting metrics into InfluxDB
+   Loaded: loaded (/usr/lib/systemd/system/telegraf.service; enabled; vendor preset: disabled)
+   Active: active (running) since 토 2021-07-17 08:00:18 UTC; 3s ago
+     Docs: https://github.com/influxdata/telegraf
+ Main PID: 8042 (telegraf)
+   CGroup: /system.slice/telegraf.service
+           └─8042 /usr/bin/telegraf -config /etc/telegraf/telegraf.conf -config-directory /etc/telegraf/telegraf.d
+
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal systemd[1]: Started The plugin-driven server agent for reporting metrics into InfluxDB.
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: time="2021-07-17T08:00:18Z" level=error msg="failed to create cache directory. /etc/telegraf/.cache/snowflake, err: mkd...log.go:120"
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: time="2021-07-17T08:00:18Z" level=error msg="failed to open. Ignored. open /etc/telegraf/.cache/snowflake/ocsp_response...log.go:120"
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: 2021-07-17T08:00:18Z I! Starting Telegraf 1.19.1
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: 2021-07-17T08:00:18Z I! Loaded inputs: cpu
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: 2021-07-17T08:00:18Z I! Loaded aggregators:
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: 2021-07-17T08:00:18Z I! Loaded processors:
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: 2021-07-17T08:00:18Z I! Loaded outputs: kafka
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: 2021-07-17T08:00:18Z I! Tags enabled: host=ip-10-1-1-31.ap-northeast-2.compute.internal
+ 7월 17 08:00:18 ip-10-1-1-31.ap-northeast-2.compute.internal telegraf[8042]: 2021-07-17T08:00:18Z I! [agent] Config: Interval:3s, Quiet:false, Hostname:"ip-10-1-1-31.ap-northeast-2.compute.interna...Interval:3s
+Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
-
+### 4. 카프카 토픽 확인 하기 ###
