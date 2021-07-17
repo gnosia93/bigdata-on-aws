@@ -264,6 +264,9 @@ Time taken: 9.234 seconds, Fetched: 5 row(s)
 
 ### 7. 하이브 트랜잭션 ###
 
+update 와 delete 를 지원하지 않는 hdfs 와는 달리 하이브의 경우 트래잭션 및 테이블에 대한 update 및 delete 오퍼레이션을 지원합니다. 
+default 설정은 non transaction 모드 이므로, 트랜잭션 지원이 필요한 테이블에 대해서는 명시적으로 트랜잭션 속성을 선언하고, 저장 타입 역시 orc 와 같은 트랜잭션을 지원하는 파일 포맷으로 변경해야 합니다.  
+
 ```
 hive> set hive.txn.manager=org.apache.hadoop.hive.ql.lockmgr.DbTxnManager;
 hive> set hive.support.concurrency=true;
@@ -344,7 +347,7 @@ drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/ware
 -rw-r--r--   1 hadoop hdfsadmingroup        707 2021-07-17 03:33 /user/hive/warehouse/student/delta_0000004_0000004_0000/bucket_00000
 ```
 
-이번에는 delte 를 이용하여 id 값이 2인 레코드를 삭제한 후, hdfs 상의 변경내역을 조회합니다. 
+이번에는 id 값이 2인 레코드를 삭제한 후, hdfs 상의 변경 내역을 관찰합니다. 
 ```
 hive> delete from student where id = 2;
 Query ID = hadoop_20210717033717_1ee9f593-4d97-4048-8dca-b12b734ce9a6
