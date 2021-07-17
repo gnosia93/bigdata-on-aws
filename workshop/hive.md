@@ -179,7 +179,7 @@ hive> CREATE EXTERNAL TABLE workshop.airline_delay (
   STORED AS TEXTFILE
   LOCATION '/tmp/workshop/airline_delay';   
 
-hive> create table workshop.airport (
+hive> create table workshop.airports (
   Iata      String,
   Airport   String,
   City      String,
