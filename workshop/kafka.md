@@ -50,7 +50,7 @@ msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,
 ```
 [ec2-user@ip-10-1-1-31 ~]$ sudo mv /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.old
 
-[ec2-user@ip-10-1-1-31 ~]$ cat <<EOF | sudo tee /etc/telegraf/telegraf.conf
+[ec2-user@ip-10-1-1-31 ~]$ sudo cat <<EOF | sudo tee /etc/telegraf/telegraf.conf
 [agent]
   interval = "3s"
   flush_interval = "3s"
