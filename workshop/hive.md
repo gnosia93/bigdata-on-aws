@@ -393,6 +393,28 @@ drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/ware
 -rw-r--r--   1 hadoop hdfsadmingroup        707 2021-07-17 03:33 /user/hive/warehouse/student/delta_0000004_0000004_0000/bucket_00000
 ```
 
+### 8. 하이브 인덱스 ###
+
+```
+hive> show databases;
+OK
+default
+workshop
+Time taken: 0.021 seconds, Fetched: 2 row(s)
+
+hive> use workshop;
+OK
+Time taken: 0.026 seconds
+
+hive> show tables;
+OK
+airline_delay
+Time taken: 0.021 seconds, Fetched: 1 row(s)
+
+hive>
+
+```
+
 
 ## 참고자료 ##
 
