@@ -345,6 +345,34 @@ drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/ware
 -rw-r--r--   1 hadoop hdfsadmingroup        707 2021-07-17 03:33 /user/hive/warehouse/student/delta_0000004_0000004_0000/bucket_00000
 ```
 
+```
+hive> delete from student where id = 2;
+Query ID = hadoop_20210717033717_1ee9f593-4d97-4048-8dca-b12b734ce9a6
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1626484111706_0014)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Reducer 2 ...... container     SUCCEEDED      2          2        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 5.00 s
+----------------------------------------------------------------------------------------------
+Loading data to table default.student
+OK
+Time taken: 5.784 seconds
+hive> select * from student;
+OK
+1	aaa
+3	ccc2
+Time taken: 0.092 seconds, Fetched: 2 row(s)
+```
+
+```
+
+```
 
 
 ## 참고자료 ##
