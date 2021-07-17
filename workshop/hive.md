@@ -265,6 +265,7 @@ Time taken: 9.234 seconds, Fetched: 5 row(s)
 
 ## 참고자료 ##
 
+* [hive 잡 KILL하기](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/yarn.md)
 * [PostgreSQL 메타스토어 사용하기](https://aws.amazon.com/ko/premiumsupport/knowledge-center/postgresql-hive-metastore-emr/)
 * https://mkkim85.github.io/hadoop-hive-merge/
 
