@@ -166,16 +166,98 @@ hive> CREATE EXTERNAL TABLE workshop.airline_delay (
   FIELDS TERMINATED BY ',' 
   LINES TERMINATED BY '\n' 
   STORED AS TEXTFILE
-  LOCATION '/tmp/workshop/airline_delay';
-   
+  LOCATION '/tmp/workshop/airline_delay';   
 ```
-
-
-
 
 ### 6. 데이터 조회하기 ###
 
-hive 테이블로 부터 데이터를 조회한다. 
+```
+hive> select count(1) from workshop.airline_delay;
+Query ID = hadoop_20210717020638_e71d6403-5216-4f5b-840c-fb397fbec789
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1626484111706_0004)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      4          4        0        0       0       0
+Reducer 2 ...... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 7.55 s
+----------------------------------------------------------------------------------------------
+OK
+9842432
+Time taken: 8.333 seconds, Fetched: 1 row(s)
+
+hive> describe workshop.airline_delay;
+OK
+year                	int
+month               	int
+dayofmont           	int
+dayofweek           	int
+deptime             	int
+crsdeptime          	int
+arrtime             	int
+crsarrtime          	int
+uniquecarrier       	string
+flightnum           	int
+tainum              	string
+actualelapsedtime   	int
+crselapsedtime      	int
+airtime             	int
+arrdelay            	int
+depdelay            	int
+origin              	string
+dest                	string
+distance            	int
+taxiin              	int
+taxiout             	int
+cancelled           	int
+cancellationcode    	string              	A=carrier, B=weather, C=NAS, D=security
+diverted            	int                 	1=yes, 0=no
+carrierdelay        	string
+weatherdelay        	string
+nasdelay            	string
+securitydelay       	string
+lateaircraftdelay   	string
+Time taken: 0.045 seconds, Fetched: 29 row(s)
+
+
+hive> set hive.cli.print.header=true;
+hive> select cancellationcode as code, 
+(case
+   when cancellationcode = 'A' then 'carrier'
+   when cancellationcode = 'B' then 'weather' 
+   when cancellationcode = 'C' then 'NAS'
+   when cancellationcode = 'D' then 'security'
+end) as cause, 
+count(1) as cnt 
+from workshop.airline_delay 
+group by cancellationcode;
+
+Query ID = hadoop_20210717021836_805c4d35-3976-4146-8c53-37b149a36375
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1626484111706_0004)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      4          4        0        0       0       0
+Reducer 2 ...... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 8.48 s
+----------------------------------------------------------------------------------------------
+OK
+code	cause	cnt
+	NULL	9617241
+A	carrier	92854
+B	weather	87680
+C	NAS	44612
+D	security	45
+Time taken: 9.234 seconds, Fetched: 5 row(s)
+```
 
 
 
