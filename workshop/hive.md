@@ -59,7 +59,6 @@ sed 를 이용하여 csv 파일의 헤더와 각 필드의 쌍따옴표를 제�
 [ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2007.csv > 2007_new.csv
 [ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2008.csv > 2008_new.csv
 
-
 [ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' airports.csv > airports_new.csv
 [ec2-user@ip-10-1-1-31 hive]$ sed -i 's/"//g' airports_new.csv
 ```
@@ -69,9 +68,11 @@ sed 를 이용하여 csv 파일의 헤더와 각 필드의 쌍따옴표를 제�
 airline_delay 디렉토리를 아래와 같이 생성합니다. 실행 유저가 hadoop 이 아닌 ec2-user 이므로 airline_delay 디렉토리는 쓰기가 가능 한 /tmp 디렉토리에 생성합니다. 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /tmp/workshop/airline_delay
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /tmp/workshop/airport
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls /tmp/workshop
-Found 1 items
-drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:27 /tmp/workshop/airline_delay
+Found 2 items
+drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 02:05 /tmp/workshop/airline_delay
+drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 05:16 /tmp/workshop/airport
 ```
 
 ### 4. hdfs 파일 복사 ###
@@ -81,13 +82,16 @@ drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:27 /tmp/workshop
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put -f 2007_new.csv /tmp/workshop/airline_delay/2007.csv
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put -f 2008_new.csv /tmp/workshop/airline_delay/2008.csv
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put -f airports_new.csv /tmp/workshop/airport/airports.csv
 
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls -R /tmp/workshop
-drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:33 /tmp/workshop/airline_delay
--rw-r--r--   3 ec2-user hdfsadmingroup  702878193 2021-07-17 01:32 /tmp/workshop/airline_delay/2007.csv
--rw-r--r--   3 ec2-user hdfsadmingroup  234052199 2021-07-17 01:33 /tmp/workshop/airline_delay/2008.csv
+drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 02:05 /tmp/workshop/airline_delay
+-rw-r--r--   3 ec2-user hdfsadmingroup  702877893 2021-07-17 02:04 /tmp/workshop/airline_delay/2007.csv
+-rw-r--r--   3 ec2-user hdfsadmingroup  234051899 2021-07-17 02:05 /tmp/workshop/airline_delay/2008.csv
+drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 05:17 /tmp/workshop/airport
+-rw-r--r--   3 ec2-user hdfsadmingroup     244438 2021-07-17 05:17 /tmp/workshop/airport/airports.csv
 
-[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -head /tmp/workshop/airline_delay/2008.csv
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -head /tmp/workshop/airport/airports.csv
 Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarrier,FlightNum,TailNum,ActualElapsedTime,CRSElapsedTime,AirTime,ArrDelay,DepDelay,Origin,Dest,Distance,TaxiIn,TaxiOut,Cancelled,CancellationCode,Diverted,CarrierDelay,WeatherDelay,NASDelay,SecurityDelay,LateAircraftDelay
 2008,1,3,4,1343,1325,1451,1435,WN,588,N240WN,68,70,55,16,18,HOU,LIT,393,4,9,0,,0,16,0,0,0,0
 2008,1,3,4,1125,1120,1247,1245,WN,1343,N523SW,82,85,71,2,5,HOU,MAF,441,3,8,0,,0,NA,NA,NA,NA,NA
@@ -175,6 +179,9 @@ hive> CREATE EXTERNAL TABLE workshop.airline_delay (
   LINES TERMINATED BY '\n' 
   STORED AS TEXTFILE
   LOCATION '/tmp/workshop/airline_delay';   
+  
+  
+  
 ```
 
 ### 6. 데이터 조회하기 ###
