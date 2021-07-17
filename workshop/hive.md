@@ -299,6 +299,32 @@ drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:30 /user/hive/ware
 -rw-r--r--   1 hadoop hdfsadmingroup        691 2021-07-17 03:30 /user/hive/warehouse/student/delta_0000003_0000003_0000/bucket_00000
 ```
 
+```
+hive> update student set name = 'ccc2' where id = 3;
+Query ID = hadoop_20210717033319_b1066d78-4062-4623-83e7-547efd4f6c4a
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1626484111706_0014)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Reducer 2 ...... container     SUCCEEDED      2          2        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 3.71 s
+----------------------------------------------------------------------------------------------
+Loading data to table default.student
+OK
+Time taken: 4.672 seconds
+
+hive> select * from student;
+OK
+1	aaa
+2	bbb
+3	ccc2
+Time taken: 0.101 seconds, Fetched: 3 row(s)
+```
 
 
 
