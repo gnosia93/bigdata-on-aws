@@ -58,7 +58,7 @@ csv 파일의 헤더를 sed 를 이용하여 제거합니다.
 
 ### 3. hdfs 디렉토리 생성 ###
 ```
-$ hadoop fs mkdir
+$ hadoop fs -mkdir -p /data/airline_delay
 
 
 
