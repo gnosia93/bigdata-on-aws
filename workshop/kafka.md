@@ -58,7 +58,7 @@ msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,
 [[outputs.kafka]]
    brokers = [ "b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092", 
                "b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092", 
-               "b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092" ]            ## 이 라인을 수정해야 합니다. 
+               "b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092" ]   ## 브로커 주소를 수정해야 합니다. 
    topic = "cpu-metric"
 
 [[inputs.cpu]]
