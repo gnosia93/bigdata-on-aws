@@ -330,7 +330,8 @@ Time taken: 0.101 seconds, Fetched: 3 row(s)
 
 ## 참고자료 ##
 
-* [hive 잡 KILL하기](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/yarn.md)
+* [하이브 트랜잭션](https://118k.tistory.com/688)
+* [하이브 JOB KILL하기](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/yarn.md)
 * [PostgreSQL 메타스토어 사용하기](https://aws.amazon.com/ko/premiumsupport/knowledge-center/postgresql-hive-metastore-emr/)
 * https://mkkim85.github.io/hadoop-hive-merge/
 
