@@ -21,26 +21,8 @@ Last login: Mon Jul 12 02:47:04 2021 from 218.238.107.63
 
 https://aws.amazon.com/amazon-linux-2/
 
-[ec2-user@ip-10-1-1-31 ~]$ mkdir data
-[ec2-user@ip-10-1-1-31 ~]$ cd data
-[ec2-user@ip-10-1-1-31 data]$ mkdir hive
-[ec2-user@ip-10-1-1-31 data]$ cd hive
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374917 -O 2008.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374918 -O 2007.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374922 -O 2006.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374923 -O 2005.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374925 -O 2004.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374926 -O 2003.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374927 -O 2002.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374928 -O 2001.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2008.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2007.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2006.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2005.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2004.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2003.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2002.csv.bz2
-[ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
+[ec2-user@ip-10-1-1-31 ~]$ mkdir -p data/sqoop
+[ec2-user@ip-10-1-1-31 ~]$ cd data/sqoop/
 
 [ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374930 -O airports.csv
 ```
