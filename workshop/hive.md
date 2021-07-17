@@ -65,12 +65,31 @@ airline_delay 디렉토리를 hadoop 명령어를 이용하여 /tmp 디렉토리
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls /tmp/workshop
 Found 1 items
 drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:27 /tmp/workshop/airline_delay
+```
 
-
-
-
+### 4. 데이터 로딩 ###
 
 ```
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put 2007.csv /tmp/workshop/airline_delay
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put 2008.csv /tmp/workshop/airline_delay
+
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls -R /tmp/workshop
+drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:33 /tmp/workshop/airline_delay
+-rw-r--r--   3 ec2-user hdfsadmingroup  702878193 2021-07-17 01:32 /tmp/workshop/airline_delay/2007.csv
+-rw-r--r--   3 ec2-user hdfsadmingroup  234052199 2021-07-17 01:33 /tmp/workshop/airline_delay/2008.csv
+
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -head /tmp/workshop/airline_delay/2008.csv
+Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarrier,FlightNum,TailNum,ActualElapsedTime,CRSElapsedTime,AirTime,ArrDelay,DepDelay,Origin,Dest,Distance,TaxiIn,TaxiOut,Cancelled,CancellationCode,Diverted,CarrierDelay,WeatherDelay,NASDelay,SecurityDelay,LateAircraftDelay
+2008,1,3,4,1343,1325,1451,1435,WN,588,N240WN,68,70,55,16,18,HOU,LIT,393,4,9,0,,0,16,0,0,0,0
+2008,1,3,4,1125,1120,1247,1245,WN,1343,N523SW,82,85,71,2,5,HOU,MAF,441,3,8,0,,0,NA,NA,NA,NA,NA
+2008,1,3,4,2009,2015,2136,2140,WN,3841,N280WN,87,85,71,-4,-6,HOU,MAF,441,2,14,0,,0,NA,NA,NA,NA,NA
+2008,1,3,4,903,855,1203,1205,WN,3,N308SA,120,130,108,-2,8,HOU,MCO,848,5,7,0,,0,NA,NA,NA,NA,NA
+2008,1,3,4,1423,1400,1726,1710,WN,25,N462WN,123,130,107,16,23,HOU,MCO,848,6,10,0,,0,16,0,0,0,0
+2008,1,3,4,2024,2020,2325,2325,WN,51,N483WN,121,125,101,0,4,HOU,MCO,848,13,7,0,,0,NA,NA,NA,NA,NA
+2008,1,3,4,1753,1745,2053,2050,WN,940,N493WN,120,125,107,3,8,HOU,MCO,848,6,7,0,,0,NA,NA,NA,NA,NA
+2008,1,3,4,622,620,935,930,WN,2621,N266WN,133,130,107,5,[ec2-user@ip-10-1-1-31 hive]$
+```
+
 
 ### 3. hive 테이블 생성 (external) ###
 
