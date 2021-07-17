@@ -10,17 +10,17 @@
 
 ## 실습 ###
 
-    [1. 리소스 생성](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/setup.md)
+* [1. 리소스 생성](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/setup.md)
 
-    [2. 하둡 및 카프카 테스트](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hadoop-kafka.md)
+* [2. 하둡 및 카프카 테스트](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hadoop-kafka.md)
 
-    [3. 하이브 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hive.md)
+* [3. 하이브 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hive.md)
 
-    [4. 카프카 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/kafka.md)
+* [4. 카프카 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/kafka.md)
 
-    [5. 스파크 스트리밍 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/spark.md) 
+* [5. 스파크 스트리밍 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/spark.md) 
 
-    [6. Sqoop 실습]()
+* [6. Sqoop 실습]()
 
 
 
