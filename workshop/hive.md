@@ -264,7 +264,7 @@ Time taken: 9.234 seconds, Fetched: 5 row(s)
 
 ### 7. 하이브 트랜잭션 ###
 
-update 와 delete 를 지원하지 않는 hdfs 와는 달리 하이브의 경우 트래잭션 및 테이블에 대한 update 및 delete 오퍼레이션을 지원합니다. 
+update 와 delete 를 지원하지 않는 hdfs 와는 달리 하이브의 경우 테이블에 대한 update 및 delete 오퍼레이션을 지원합니다. 
 default 설정은 non transaction 모드 이므로, 트랜잭션 지원이 필요한 테이블에 대해서는 명시적으로 트랜잭션 속성을 선언하고, 저장 타입 역시 orc 와 같은 트랜잭션을 지원하는 파일 포맷으로 변경해야 합니다.  
 
 ```
