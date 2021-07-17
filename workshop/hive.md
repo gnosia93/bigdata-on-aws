@@ -197,8 +197,9 @@ location '/tmp/workshop/airport';
 
 ### 6. 데이터 조회하기 ###
 
-하이브는 ANSI SQL 과 거의 흡사한 하이브 QL 이라고 하는 쿼리 언어를 지원합니다. 아래의 예제를 통해서 테이블 건수 카운트, CASE-WHEN GROUP BY 조회 및 테이블을 조인하는 방법을 학습하실 수 있습니다. 
+하이브는 ANSI SQL 과 거의 흡사한 하이브 QL 이라고 하는 쿼리 언어를 지원합니다. 아래의 예제를 통해서 테이블 카운트, CASE-WHEN GROUP BY 조회 및 테이블을 조인하는 방법을 학습하실 수 있습니다. 
 ```
+hive> -- table count
 hive> select count(1) from workshop.airline_delay;
 Query ID = hadoop_20210717020638_e71d6403-5216-4f5b-840c-fb397fbec789
 Total jobs = 1
@@ -250,6 +251,8 @@ securitydelay       	string
 lateaircraftdelay   	string
 Time taken: 0.045 seconds, Fetched: 29 row(s)
 
+
+hive> -- case~when query
 hive> set hive.cli.print.header=true;
 hive> select cancellationcode as code, 
 (case
@@ -284,6 +287,8 @@ C	NAS	44612
 D	security	45
 Time taken: 9.234 seconds, Fetched: 5 row(s)
 
+
+hive> -- table join
 hive> select a.year, b.airport, a.dest, c.airport, count(*)
 from airline_delay a
 join airports b on (a.origin = b.iata)
