@@ -266,12 +266,37 @@ Time taken: 9.234 seconds, Fetched: 5 row(s)
 
 ```
 hive> create table student 
-( id int, 
+( 
+  id int, 
   name string, 
   primary key(id) disable novalidate 
 ) 
 stored as orc 
 tblproperties ( "transactional" = "true" );
+
+hive> insert into student values (1, 'aaa');
+hive> insert into student values (2, 'bbb');
+hive> insert into student values (3, 'ccc');
+
+hive> select * from student;
+OK
+1	aaa
+2	bbb
+3	ccc
+Time taken: 0.106 seconds, Fetched: 3 row(s)
+```
+
+```
+[hadoop@ip-10-1-1-136 ~]$ hadoop fs -ls -R /user/hive/warehouse/student
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        694 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000/bucket_00000
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000002_0000002_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000002_0000002_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        695 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000002_0000002_0000/bucket_00000
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:30 /user/hive/warehouse/student/delta_0000003_0000003_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:30 /user/hive/warehouse/student/delta_0000003_0000003_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        691 2021-07-17 03:30 /user/hive/warehouse/student/delta_0000003_0000003_0000/bucket_00000
 ```
 
 
