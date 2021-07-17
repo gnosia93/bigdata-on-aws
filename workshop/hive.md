@@ -250,7 +250,6 @@ securitydelay       	string
 lateaircraftdelay   	string
 Time taken: 0.045 seconds, Fetched: 29 row(s)
 
-
 hive> set hive.cli.print.header=true;
 hive> select cancellationcode as code, 
 (case
@@ -284,6 +283,42 @@ B	weather	87680
 C	NAS	44612
 D	security	45
 Time taken: 9.234 seconds, Fetched: 5 row(s)
+
+hive> select a.year, b.airport, a.dest, c.airport, count(*)
+from airline_delay a
+join airports b on (a.origin = b.iata)
+join airports c on (a.dest = c.iata)
+where a.arrdelay > 0
+group by a.year, a.origin, b.airport, a.dest, c.airport
+order by 5 desc
+limit 5;
+
+No Stats for workshop@airline_delay, Columns: arrdelay, year, origin, dest
+No Stats for workshop@airports, Columns: iata, airport
+No Stats for workshop@airports, Columns: iata, airport
+Query ID = hadoop_20210717053403_8d0d021f-51c5-4d50-96b5-45f5768eaf85
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1626484111706_0025)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 4 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 5 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 1 .......... container     SUCCEEDED      4          4        0        0       0       0
+Reducer 2 ...... container     SUCCEEDED      2          2        0        0       0       0
+Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 05/05  [==========================>>] 100%  ELAPSED TIME: 12.44 s
+----------------------------------------------------------------------------------------------
+OK
+2007	Los Angeles International	LAS	McCarran International	7083
+2007	McCarran International	LAX	Los Angeles International	6714
+2007	Chicago O'Hare International	LGA	LaGuardia	6214
+2007	LaGuardia	ORD	Chicago O'Hare International	6035
+2007	William B Hartsfield-Atlanta Intl	LGA	LaGuardia	5916
+Time taken: 13.941 seconds, Fetched: 5 row(s)
 ```
 
 ### 7. 하이브 트랜잭션 ###
