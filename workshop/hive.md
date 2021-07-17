@@ -94,9 +94,7 @@ Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarr
 
 ### 5. hive 테이블 생성  ###
 
-emr 마스터 노드로 로그인 해서 hive CLI 를 이용하여 workshop 데이터베이스 및 airline_delay 외부 테이블을 생성합니다.
-
-참고로, 외부 테이블의 경우 hive 에서 테이블을 삭제하더라도, hdfs 경로상에 존재하는 파일은 삭제되지 않습니다. 
+emr 마스터 노드로 가서 hive 클라이언트를 이용하여 workshop 데이터베이스 및 airline_delay 외부 테이블을 생성합니다. 외부 테이블의 경우 hive 에서 테이블을 삭제하더라도 하이브의 메타 데이터만 삭제될 뿐, hdfs 에 존재하는 파일은 삭제되지 않습니다. 
 
 ```
 $ ssh -i ~/.ssh/tf_key hadoop@ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com
