@@ -136,9 +136,18 @@ airline_db=> select count(1) from carriers;
 airline_db=> \q
 ```
 
-### 4. sqoop export to hdfs ###
+### 4. sqoop import to hdfs ###
 
-
+-m 파라미터는 매퍼의 갯수로 여기서는 1 로 설정한다. 
+```
+$ sqoop import \
+   --connect jdbc:postgresql://localhost:5432/airline_db \
+   --username airline \
+   --password airline \
+   --table airline_delay \
+   --target-dir hdfs://localhost:9000/airline/airline_delay \ 
+   -m 1
+```
 
 ## 참고자료 ##
 
