@@ -38,6 +38,29 @@ drwxr-xr-x 87 root root 8192  7월 12 01:59 ..
 [ec2-user@ip-10-1-1-31 ~]$ sudo yum install -y telegraf
 ```
 
+### 2. telegraf 설정하기 ###
+```
+[ec2-user@ip-10-1-1-31 ~]$ sudo mv /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.old
+
+[ec2-user@ip-10-1-1-31 ~]$ cat <<EOF | sudo tee /etc/telegraf/telegraf.conf
+[agent]
+  interval = "3s"
+  flush_interval = "3s"
+  
+[[outputs.kafka]]
+   brokers = ["localhost:9092"]
+   topic = "cpu-metric"
+
+[[inputs.cpu]]
+percpu = false
+totalcpu = true
+#collect_cpu_time = false
+report_active = false
+EOF
+
+[ec2-user@ip-10-1-1-31 ~]$ 
+```
+
 ### 3. telegraf 실행하기 ###
 
 ```
