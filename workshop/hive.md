@@ -262,6 +262,17 @@ D	security	45
 Time taken: 9.234 seconds, Fetched: 5 row(s)
 ```
 
+### 7. 하이브 트랜잭션 ###
+
+```
+hive> create table student 
+( id int, 
+  name string, 
+  primary key(id) disable novalidate 
+) 
+stored as orc 
+tblproperties ( "transactional" = "true" );
+```
 
 
 
