@@ -100,7 +100,7 @@ systemctl 을 이용하여 telegraf를 실행한 후, 정상적으로 동작하�
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
-### 4. 카프카 토픽 확인 하기 ###
+### 4. 카프카 토픽 생성 및 메시지 확인하기 ###
 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --create --topic cpu-metric --bootstrap-server \
@@ -116,4 +116,10 @@ __amazon_msk_canary
 __amazon_msk_canary_state
 __consumer_offsets
 cpu-metric
+
+[ec2-user@ip-10-1-1-31 ~]$ kafka-console-consumer.sh --topic cpu-metric --bootstrap-server \
+b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+
 ```
