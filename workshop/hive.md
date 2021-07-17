@@ -92,7 +92,7 @@ Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarr
 2008,1,3,4,622,620,935,930,WN,2621,N266WN,133,130,107,5,[ec2-user@ip-10-1-1-31 hive]$
 ```
 
-### 4. hive external 테이블 생성  ###
+### 5. hive external 테이블 생성  ###
 
 hive CLI 로 로그인하여 아래와 같이 external 테이블을 생성한다. 
 
@@ -100,7 +100,7 @@ hive CLI 로 로그인하여 아래와 같이 external 테이블을 생성한다
 
 
 
-### 5. 데이터 조회하기 ###
+### 6. 데이터 조회하기 ###
 
 hive 테이블로 부터 데이터를 조회한다. 
 
