@@ -100,7 +100,7 @@ systemctl 을 이용하여 telegraf를 실행한 후, 정상적으로 동작하�
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
-### 4. 카프카 토픽 생성 및 메시지 확인하기 ###
+### 4. 카프카 토픽 생성하기 ###
 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --create --topic cpu-metric --bootstrap-server \
@@ -116,10 +116,23 @@ __amazon_msk_canary
 __amazon_msk_canary_state
 __consumer_offsets
 cpu-metric
+```
+
+### 5. 카프라 메시지 확인 ###
+
+먼저 telegraf를 재시작 하고, 카프카 콘솔 컨슈머 어플리케이션을 이용하여 카프카로 전송 되는 메시지를 확인하도록 합니다. 
+아래와 같이 3초에 한번씩 새로운 메시지가 토픽을 통해 전달되는 것을 확인 할 수 있습니다. 
+
+```
+[ec2-user@ip-10-1-1-31 ~]$ sudo systemctl restart telegraf
 
 [ec2-user@ip-10-1-1-31 ~]$ kafka-console-consumer.sh --topic cpu-metric --bootstrap-server \
 b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
 b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
 b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_guest=0,usage_system=0,usage_nice=0,usage_softirq=0,usage_irq=0,usage_steal=0,usage_guest_nice=0,usage_user=0.7506255212831479,usage_idle=99.24937447995991,usage_iowait=0 1626509499000000000
 
+cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_user=0.24999999999977263,usage_iowait=0,usage_irq=0,usage_guest=0,usage_guest_nice=0,usage_system=0.08333333333337596,usage_idle=99.66666666635622,usage_nice=0,usage_softirq=0,usage_steal=0 1626509502000000000
+
+cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_system=0,usage_idle=99.75020815963434,usage_nice=0,usage_guest=0,usage_steal=0,usage_guest_nice=0,usage_user=0.24979184013280142,usage_iowait=0,usage_irq=0,usage_softirq=0 1626509505000000000
 ```
