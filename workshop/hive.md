@@ -326,6 +326,25 @@ OK
 Time taken: 0.101 seconds, Fetched: 3 row(s)
 ```
 
+```
+[hadoop@ip-10-1-1-136 ~]$ hadoop fs -ls -R /user/hive/warehouse/student
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        694 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000/bucket_00000
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        694 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000/bucket_00000
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000002_0000002_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000002_0000002_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        695 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000002_0000002_0000/bucket_00000
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:30 /user/hive/warehouse/student/delta_0000003_0000003_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:30 /user/hive/warehouse/student/delta_0000003_0000003_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        691 2021-07-17 03:30 /user/hive/warehouse/student/delta_0000003_0000003_0000/bucket_00000
+drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/warehouse/student/delta_0000004_0000004_0000
+-rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:33 /user/hive/warehouse/student/delta_0000004_0000004_0000/_orc_acid_version
+-rw-r--r--   1 hadoop hdfsadmingroup        707 2021-07-17 03:33 /user/hive/warehouse/student/delta_0000004_0000004_0000/bucket_00000
+```
+
 
 
 ## 참고자료 ##
