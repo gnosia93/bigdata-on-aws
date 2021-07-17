@@ -142,7 +142,7 @@ airline_db=> \q
 $ terraform output | grep rds
 rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
 ```
-
+sqoop import 명령어를 이용하여 RDS 테이블 데이터를 hdfs 로 import 한다. 
 -m 파라미터는 매퍼의 갯수로 여기서는 1 로 설정한다. 
 ```
 $ sqoop import \
