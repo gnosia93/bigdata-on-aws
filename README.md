@@ -20,7 +20,7 @@
 
 [5. 스파크 스트리밍 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/spark.md) 
 
-
+[6. DB 연동하기]
 
 ## 참고자료 ##
 
