@@ -138,14 +138,19 @@ airline_db=> \q
 
 ### 4. sqoop import to hdfs ###
 
+```
+$ terraform output | grep rds
+rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
+```
+
 -m 파라미터는 매퍼의 갯수로 여기서는 1 로 설정한다. 
 ```
 $ sqoop import \
-   --connect jdbc:postgresql://localhost:5432/airline_db \
+   --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
    --username airline \
    --password airline \
-   --table airline_delay \
-   --target-dir hdfs://localhost:9000/airline/airline_delay \ 
+   --table carriers \
+   --target-dir hdfs://localhost:9000/tmp/workshop/carrriers \ 
    -m 1
 ```
 
