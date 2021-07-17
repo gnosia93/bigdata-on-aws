@@ -37,3 +37,11 @@ drwxr-xr-x 87 root root 8192  7월 12 01:59 ..
 
 [ec2-user@ip-10-1-1-31 ~]$ sudo yum install -y telegraf
 ```
+
+### 3. telegraf 실행하기 ###
+
+```
+[ec2-user@ip-10-1-1-31 ~]$ systemctl restart telegraf
+```
+
+
