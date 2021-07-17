@@ -107,8 +107,23 @@ postgres=> \l
 ### 4. 테이블 생성 및 데이터 로딩 ###
 
 ```
-postgres=> 
+postgres=> create table carriers
+(
+    code varchar(30) not null,
+    description varchar(100) not null,
+    primary key(code)
+);
+CREATE TABLE
 
+postgres=> alter table carriers owner to airline;
+ALTER TABLE
+
+postgres=> \d+
+                      List of relations
+ Schema |   Name   | Type  |  Owner  |  Size   | Description
+--------+----------+-------+---------+---------+-------------
+ public | carriers | table | airline | 0 bytes |
+(1 row)
 ```
 
 ## 참고자료 ##
