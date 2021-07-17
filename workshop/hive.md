@@ -132,7 +132,17 @@ Hive Session ID = 31dea7d2-4353-419a-8321-5c442833865f
 Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: false
 Hive Session ID = c2605b66-b002-4992-a187-169596f9a319
 hive>
-hive> CREATE TABLE airline_delay (
+hive> create database if not exists workshop;
+OK
+Time taken: 0.053 seconds
+
+hive> show databases;
+OK
+default
+workshop
+Time taken: 0.021 seconds, Fetched: 2 row(s)
+
+hive> CREATE EXTERNAL TABLE workshop.airline_delay (
   Year INT, Month INT, 
   DayofMont INT, DayOfWeek INT, 
   DepTime INT, CRSDepTime INT, 
