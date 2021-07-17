@@ -24,7 +24,7 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 ~]$ mkdir -p data/sqoop
 [ec2-user@ip-10-1-1-31 ~]$ cd data/sqoop/
 
-[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/1374930 -O airports.csv
+[ec2-user@ip-10-1-1-31 sqoop]$ wget https://dataverse.harvard.edu/api/access/datafile/1374931 -O carriers.csv
 ```
 
 ### 2. 데이터 전처리 하기 ###
