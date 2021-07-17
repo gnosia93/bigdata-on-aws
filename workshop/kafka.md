@@ -2,3 +2,19 @@
 
 ### 1. 텔레그래프 설치 ###
 
+ec2 인스턴스로 로그인하여 telegraf 를 설치합니다. 
+```
+$ terraform output | grep ec2_pub
+ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+
+$ ssh -i ~/.ssh/tf_key ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+Last login: Sat Jul 17 00:45:23 2021 from 218.238.107.63
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+19 package(s) needed for security, out of 21 available
+Run "sudo yum update" to apply all updates.
+```
