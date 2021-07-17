@@ -67,11 +67,13 @@ Found 1 items
 drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:27 /tmp/workshop/airline_delay
 ```
 
-### 4. 데이터 로딩 ###
+### 4. hdfs 파일 복사 ###
+
+아래 예제에서 처럼 csv 파일들을 hdfs 로 복사한 후, -head 명령어를 이용하여 복사된 파일의 내용을 확인한다.  
 
 ```
-[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put 2007.csv /tmp/workshop/airline_delay
-[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put 2008.csv /tmp/workshop/airline_delay
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put -f 2007_new.csv /tmp/workshop/airline_delay/2007.csv
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put -f 2008_new.csv /tmp/workshop/airline_delay/2008.csv
 
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls -R /tmp/workshop
 drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:33 /tmp/workshop/airline_delay
@@ -90,11 +92,17 @@ Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarr
 2008,1,3,4,622,620,935,930,WN,2621,N266WN,133,130,107,5,[ec2-user@ip-10-1-1-31 hive]$
 ```
 
+### 4. hive external 테이블 생성  ###
 
-### 3. hive 테이블 생성 (external) ###
+hive CLI 로 로그인하여 아래와 같이 external 테이블을 생성한다. 
 
 
-### 4. 데이터 조회하기 ###
+
+
+
+### 5. 데이터 조회하기 ###
+
+hive 테이블로 부터 데이터를 조회한다. 
 
 
 
