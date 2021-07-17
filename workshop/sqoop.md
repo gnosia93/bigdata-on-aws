@@ -134,7 +134,7 @@ airline_db=> \d+
  public | carriers | table | airline | 0 bytes |
 (1 row)
 
-airline_db=> \copy carriers from '/home/ec2-user/data/sqoop/carriers.csv' delimiter ',' null as 'NA';
+airline_db=> \copy carriers from '/home/ec2-user/data/sqoop/carriers.csv' delimiter ',' null as 'NA' csv;
 COPY 5076925
 ```
 
