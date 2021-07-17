@@ -59,7 +59,7 @@ csv 파일의 헤더를 sed 를 이용하여 제거합니다.
 
 ### 3. hdfs 디렉토리 생성 ###
 
-airline_delay 디렉토리를 아래와 같이 생성합니다. 실행 유저가 hadoop 이 아닌 ec2-user 이므로 airline_delay 디렉토리는 읽기 및 쓰기 권한이 있는 /tmp 디렉토리에 생성합니다.  
+airline_delay 디렉토리를 아래와 같이 생성합니다. 실행 유저가 hadoop 이 아닌 ec2-user 이므로 airline_delay 디렉토리는 쓰기가 가능 한 /tmp 디렉토리에 생성합니다.  
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /tmp/workshop/airline_delay
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls /tmp/workshop
