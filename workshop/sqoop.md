@@ -135,7 +135,14 @@ airline_db=> \d+
 (1 row)
 
 airline_db=> \copy carriers from '/home/ec2-user/data/sqoop/carriers.csv' delimiter ',' null as 'NA' csv;
-COPY 5076925
+
+airline_db=> select count(1) from carriers;
+ count
+-------
+  1492
+(1 row)
+
+airline_db=> \q
 ```
 
 ## 참고자료 ##
