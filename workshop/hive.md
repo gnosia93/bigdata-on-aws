@@ -58,8 +58,7 @@ csv 파일의 헤더를 sed 를 이용하여 제거합니다.
 
 ### 3. hdfs 디렉토리 생성 ###
 
-airline_delay 디렉토리를 hadoop 명령어를 이용하여 /tmp 디렉토리 밑에 생성한다. hdfs 의 /tmp 디렉토리의 경우 모든 유저들이 읽기 및 쓰기가 가능한 영역이다.
-만약 /tmp 가 아닌 다른 디렉토리를 설정하는 경우 쓰기 권한이 없이 때문에 오류가 발생한다. 
+airline_delay 디렉토리를 아래와 같이 생성합니다. 실행 유저가 hadoop 이 아닌 ec2-user 이므로 airline_delay 디렉토리는 읽기 및 쓰기 권한이 있는 /tmp 디렉토리에 생성합니다.  
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /tmp/workshop/airline_delay
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls /tmp/workshop
@@ -69,7 +68,7 @@ drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:27 /tmp/workshop
 
 ### 4. hdfs 파일 복사 ###
 
-아래 예제에서 처럼 csv 파일들을 hdfs 로 복사한 후, -head 명령어를 이용하여 복사된 파일의 내용을 확인한다.  
+아래 예제에서 처럼 csv 파일들을 hdfs 로 복사한 후, -head 명령어를 이용하여 복사된 파일의 내용을 확인합니다. 
 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put -f 2007_new.csv /tmp/workshop/airline_delay/2007.csv
@@ -94,7 +93,10 @@ Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarr
 
 ### 5. hive 테이블 생성  ###
 
-emr 마스터 노드로 로그인 해서 hive CLI 를 이용하여 외부 테이블을 생성한다. 
+emr 마스터 노드로 로그인 해서 hive CLI 를 이용하여 workshop 데이터베이스 및 airline_delay 외부 테이블을 생성합니다.
+
+참고로, 외부 테이블의 경우 hive 에서 테이블을 삭제하더라도, hdfs 경로상에 존재하는 파일은 삭제되지 않습니다. 
+
 ```
 $ ssh -i ~/.ssh/tf_key hadoop@ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com
 The authenticity of host 'ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com (52.79.231.111)' can't be established.
@@ -131,7 +133,7 @@ Hive Session ID = 31dea7d2-4353-419a-8321-5c442833865f
 
 Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: false
 Hive Session ID = c2605b66-b002-4992-a187-169596f9a319
-hive>
+
 hive> create database if not exists workshop;
 OK
 Time taken: 0.053 seconds
@@ -171,6 +173,7 @@ hive> CREATE EXTERNAL TABLE workshop.airline_delay (
 
 ### 6. 데이터 조회하기 ###
 
+생성된 airline_delay 테이블에 대한 카운트 및 select 문장을 아래와 같이 실행합니다. hive QL 은 일반 SQL 문장과 비슷한 쿼리  지원합니다. 
 ```
 hive> select count(1) from workshop.airline_delay;
 Query ID = hadoop_20210717020638_e71d6403-5216-4f5b-840c-fb397fbec789
