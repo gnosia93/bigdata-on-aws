@@ -161,7 +161,7 @@ hive> CREATE EXTERNAL TABLE workshop.airline_delay (
   NASDelay STRING, 
   SecurityDelay STRING, 
   LateAircraftDelay STRING) 
---  PARTITIONED BY (delayYear INT) 
+-- PARTITIONED BY (delayYear INT) 
   ROW FORMAT DELIMITED 
   FIELDS TERMINATED BY ',' 
   LINES TERMINATED BY '\n' 
