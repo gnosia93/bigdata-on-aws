@@ -197,7 +197,7 @@ location '/tmp/workshop/airport';
 
 ### 6. 데이터 조회하기 ###
 
-생성된 airline_delay 테이블에 대한 카운트 및 select 문장을 아래와 같이 실행합니다. hive QL 은 일반 SQL 문장과 비슷한 쿼리  지원합니다. 
+하이브는 ANSI SQL 과 거의 흡사한 하이브 QL 이라고 하는 쿼리 언어를 지원합니다. 아래의 예제를 통해서 테이블 건수 카운트, CASE-WHEN GROUP BY 조회 및 테이블을 조인하는 방법을 학습하실 수 있습니다. 
 ```
 hive> select count(1) from workshop.airline_delay;
 Query ID = hadoop_20210717020638_e71d6403-5216-4f5b-840c-fb397fbec789
