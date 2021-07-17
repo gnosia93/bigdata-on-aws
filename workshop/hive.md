@@ -92,10 +92,10 @@ Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarr
 2008,1,3,4,622,620,935,930,WN,2621,N266WN,133,130,107,5,[ec2-user@ip-10-1-1-31 hive]$
 ```
 
-### 5. hive external 테이블 생성  ###
+### 5. hive 테이블 생성  ###
 
 emr 마스터 노드로 로그인 해서 hive CLI 를 이용하여 외부 테이블을 생성한다. 
-````
+```
 $ ssh -i ~/.ssh/tf_key hadoop@ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com
 The authenticity of host 'ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com (52.79.231.111)' can't be established.
 ECDSA key fingerprint is SHA256:Q0WmbNlE+Jomh5FAPgmuaKw2ci2efDQXF4o0XeMyRrM.
@@ -125,6 +125,39 @@ EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
 E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
 EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
 
+
+[hadoop@ip-10-1-1-136 ~]$ hive
+Hive Session ID = 31dea7d2-4353-419a-8321-5c442833865f
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: false
+Hive Session ID = c2605b66-b002-4992-a187-169596f9a319
+hive>
+hive> CREATE TABLE airline_delay (
+  Year INT, Month INT, 
+  DayofMont INT, DayOfWeek INT, 
+  DepTime INT, CRSDepTime INT, 
+  ArrTime INT, CRSArrTime INT, 
+  UniqueCarrier STRING, FlightNum INT, 
+  TaiNum STRING, ActualElapsedTime INT, 
+  CRSElapsedTime INT, AirTime INT, 
+  ArrDelay INT, DepDelay INT, 
+  Origin STRING, Dest STRING, 
+  Distance INT, TaxiIn INT, 
+  TaxiOut INT, Cancelled INT, 
+  CancellationCode STRING COMMENT 'A=carrier, B=weather, C=NAS, D=security', 
+  Diverted INT COMMENT '1=yes, 0=no', 
+  CarrierDelay STRING, 
+  WeatherDelay STRING, 
+  NASDelay STRING, 
+  SecurityDelay STRING, 
+  LateAircraftDelay STRING) 
+--  PARTITIONED BY (delayYear INT) 
+  ROW FORMAT DELIMITED 
+  FIELDS TERMINATED BY ',' 
+  LINES TERMINATED BY '\n' 
+  STORED AS TEXTFILE
+  LOCATION '/tmp/workshop/airline_delay';
+   
 ```
 
 
