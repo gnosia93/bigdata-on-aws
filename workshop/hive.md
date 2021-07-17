@@ -461,8 +461,4 @@ drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/ware
 
 ## 참고자료 ##
 
-* [하이브 트랜잭션](https://118k.tistory.com/688)
 * [하이브 JOB KILL하기](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/yarn.md)
-* [PostgreSQL 메타스토어 사용하기](https://aws.amazon.com/ko/premiumsupport/knowledge-center/postgresql-hive-metastore-emr/)
-* https://mkkim85.github.io/hadoop-hive-merge/
-* https://sites.google.com/site/hadoopbigdataoverview/hive-errors-1/failed-semanticexception-error-10294-attempt-to-do-update-or-delete-using-transaction-manager-that-does-not-support-these-operations
