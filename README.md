@@ -16,7 +16,7 @@
 
 [3. 하이브 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/hive.md)
 
-[4. 카프카 실습]()
+[4. 카프카 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/kafka.md)
 
 
 ## 참고자료 ##
