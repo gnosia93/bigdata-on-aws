@@ -265,6 +265,8 @@ Time taken: 9.234 seconds, Fetched: 5 row(s)
 ### 7. 하이브 트랜잭션 ###
 
 ```
+hive> set hive.txn.manager=org.apache.hadoop.hive.ql.lockmgr.DbTxnManager;
+hive> set hive.support.concurrency=true;
 hive> create table student 
 ( 
   id int, 
