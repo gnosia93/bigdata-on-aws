@@ -17,4 +17,13 @@ Last login: Sat Jul 17 00:45:23 2021 from 218.238.107.63
 https://aws.amazon.com/amazon-linux-2/
 19 package(s) needed for security, out of 21 available
 Run "sudo yum update" to apply all updates.
+
+[ec2-user@ip-10-1-1-31 ~]$ cat <<EOF | sudo tee /etc/yum.repos.d/influxdb.repo
+[influxdb]
+name = InfluxDB Repository - RHEL 7
+baseurl = https://repos.influxdata.com/rhel/7/\$basearch/stable
+enabled = 1
+gpgcheck = 1
+gpgkey = https://repos.influxdata.com/influxdb.key
+EOF
 ```
