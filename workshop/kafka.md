@@ -26,4 +26,15 @@ enabled = 1
 gpgcheck = 1
 gpgkey = https://repos.influxdata.com/influxdb.key
 EOF
+
+[ec2-user@ip-10-1-1-31 ~]$ ls -la  /etc/yum.repos.d
+합계 24
+drwxr-xr-x  2 root root   75  7월 17 07:36 .
+drwxr-xr-x 87 root root 8192  7월 12 01:59 ..
+-rw-r--r--  1 root root 1003 12월  8  2020 amzn2-core.repo
+-rw-r--r--  1 root root 1105  7월  6 17:26 amzn2-extras.repo
+-rw-r--r--  1 root root  186  7월 17 07:36 influxdb.repo
+
+
+
 ```
