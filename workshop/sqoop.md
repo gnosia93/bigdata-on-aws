@@ -27,16 +27,7 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 sqoop]$ wget https://dataverse.harvard.edu/api/access/datafile/1374931 -O carriers.csv
 ```
 
-### 2. 데이터 전처리 하기 ###
-
-sed 를 이용하여 csv 파일의 헤더와 각 필드의 쌍따옴표를 제거합니다. 
-
-```
-[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' carriers.csv > carriers_new.csv
-[ec2-user@ip-10-1-1-31 hive]$ sed -i 's/"//g' carriers_new.csv
-```
-
-### 3. PostgreSQL 오브젝트 생성 ###
+### 2. PostgreSQL 오브젝트 생성 ###
 
 테라폼 또는 AWS RDS 콘솔에서 PostgreSQL RDS 의 엔드포인트를 확인한다. 
 ```
@@ -104,9 +95,9 @@ postgres=> \l
 ```
 
 
-### 4. 테이블 생성 및 데이터 로딩 ###
+### 3. 테이블 생성 및 데이터 로딩 ###
 
-airline 의 패스워드는 airline 이다.
+airline_db 연결시 airline 유저의 패스워드는 airline 이다. 테이블 생성 후, \copy 명령어를 이용하여 CSV 파일을 업로드 한다. 
 ```
 postgres=> \c airline_db airline
 Password for user airline:
@@ -139,7 +130,7 @@ airline_db=> \copy carriers from '/home/ec2-user/data/sqoop/carriers.csv' delimi
 airline_db=> select count(1) from carriers;
  count
 -------
-  1492
+  1491
 (1 row)
 
 airline_db=> \q
