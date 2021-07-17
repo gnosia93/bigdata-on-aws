@@ -59,7 +59,7 @@ csv 파일의 헤더를 sed 를 이용하여 제거합니다.
 
 ### 3. hdfs 디렉토리 생성 ###
 
-airline_delay 디렉토리를 아래와 같이 생성합니다. 실행 유저가 hadoop 이 아닌 ec2-user 이므로 airline_delay 디렉토리는 쓰기가 가능 한 /tmp 디렉토리에 생성합니다.  
+airline_delay 디렉토리를 아래와 같이 생성합니다. 실행 유저가 hadoop 이 아닌 ec2-user 이므로 airline_delay 디렉토리는 쓰기가 가능 한 /tmp 디렉토리에 생성합니다. 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /tmp/workshop/airline_delay
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls /tmp/workshop
@@ -69,7 +69,7 @@ drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:27 /tmp/workshop
 
 ### 4. hdfs 파일 복사 ###
 
-아래 예제에서 처럼 csv 파일들을 hdfs 로 복사한 후, -head 명령어를 이용하여 복사된 파일의 내용을 확인합니다. 
+아래 예제에서 처럼 csv 파일들을 hdfs 로 복사한 후, -head 명령어를 이용하여 복사된 파일의 내용을 확인합니다. 가급적 모든 파일을 hdfs 로 업로드 하는 것을 권장합니다. 
 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ hadoop fs -put -f 2007_new.csv /tmp/workshop/airline_delay/2007.csv
