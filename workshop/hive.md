@@ -41,6 +41,8 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2003.csv.bz2
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2002.csv.bz2
 [ec2-user@ip-10-1-1-31 hive]$ bunzip2 2001.csv.bz2
+
+[ec2-user@ip-10-1-1-31 hive]$ wget https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/HG7NV7/XTPZZY -O airports.csv
 ```
 
 ### 2. 데이터 전처리 하기 ###
