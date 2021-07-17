@@ -57,8 +57,14 @@ csv 파일의 헤더를 sed 를 이용하여 제거합니다.
 ```
 
 ### 3. hdfs 디렉토리 생성 ###
+
+airline_delay 디렉토리를 hadoop 명령어를 이용하여 /tmp 디렉토리 밑에 생성한다. hdfs 의 /tmp 디렉토리의 경우 모든 유저들이 읽기 및 쓰기가 가능한 영역이다.
+만약 /tmp 가 아닌 다른 디렉토리를 설정하는 경우 쓰기 권한이 없이 때문에 오류가 발생한다. 
 ```
-$ hadoop fs -mkdir -p /data/airline_delay
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -mkdir -p /tmp/workshop/airline_delay
+[ec2-user@ip-10-1-1-31 hive]$ hadoop fs -ls /tmp/workshop
+Found 1 items
+drwxr-xr-x   - ec2-user hdfsadmingroup          0 2021-07-17 01:27 /tmp/workshop/airline_delay
 
 
 
