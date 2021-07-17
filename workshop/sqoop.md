@@ -106,8 +106,17 @@ postgres=> \l
 
 ### 4. 테이블 생성 및 데이터 로딩 ###
 
+airline 의 패스워드는 airline 이다.
 ```
-postgres=> create table carriers
+postgres=> \c airline_db airline
+Password for user airline:
+psql (9.2.24, server 13.3)
+WARNING: psql version 9.2, server version 13.0.
+         Some psql features might not work.
+SSL connection (cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256)
+You are now connected to database "airline_db" as user "airline".
+
+airline_db=> create table carriers
 (
     code varchar(30) not null,
     description varchar(100) not null,
@@ -115,10 +124,10 @@ postgres=> create table carriers
 );
 CREATE TABLE
 
-postgres=> alter table carriers owner to airline;
+airline_db=> alter table carriers owner to airline;
 ALTER TABLE
 
-postgres=> \d+
+airline_db=> \d+
                       List of relations
  Schema |   Name   | Type  |  Owner  |  Size   | Description
 --------+----------+-------+---------+---------+-------------
