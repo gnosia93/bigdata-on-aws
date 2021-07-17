@@ -179,7 +179,7 @@ hive> CREATE EXTERNAL TABLE workshop.airline_delay (
   STORED AS TEXTFILE
   LOCATION '/tmp/workshop/airline_delay';   
 
-hive> create table workshop.airports (
+hive> create external table workshop.airports (
   Iata      String,
   Airport   String,
   City      String,
@@ -191,7 +191,8 @@ hive> create table workshop.airports (
 row format delimited
 fields terminated by ','
 lines terminated by '\n'
-stored as textfile;
+stored as textfile
+location '/tmp/workshop/airport';   
 ```
 
 ### 6. 데이터 조회하기 ###
