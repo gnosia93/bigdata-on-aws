@@ -136,6 +136,10 @@ airline_db=> select count(1) from carriers;
 airline_db=> \q
 ```
 
+### 4. sqoop export to hdfs ###
+
+
+
 ## 참고자료 ##
 
 * https://stackoverflow.com/questions/26684643/error-must-be-member-of-role-when-creating-schema-in-postgresql
