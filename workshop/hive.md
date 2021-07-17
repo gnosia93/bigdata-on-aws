@@ -47,7 +47,7 @@ https://aws.amazon.com/amazon-linux-2/
 
 ### 2. 데이터 전처리 하기 ###
 
-csv 파일의 헤더를 sed 를 이용하여 제거합니다. 
+sed 를 이용하여 csv 파일의 헤더와 각 필드의 쌍따옴표를 제거합니다. 
 
 ```
 [ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2001.csv > 2001_new.csv
@@ -58,6 +58,10 @@ csv 파일의 헤더를 sed 를 이용하여 제거합니다.
 [ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2006.csv > 2006_new.csv
 [ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2007.csv > 2007_new.csv
 [ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' 2008.csv > 2008_new.csv
+
+
+[ec2-user@ip-10-1-1-31 hive]$ sed -e '1d' airports.csv > airports_new.csv
+[ec2-user@ip-10-1-1-31 hive]$ sed -i 's/"//g' airports_new.csv
 ```
 
 ### 3. hdfs 디렉토리 생성 ###
