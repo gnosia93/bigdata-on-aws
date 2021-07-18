@@ -1,0 +1,418 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "// 2015_summary 뷰 생성\nval df = spark.read.format(\"json\")\n    .load(\"hdfs://localhost:9000/tmp/spark/2015-summary.json\")\n    .createOrReplaceTempView(\"2015_summary\")\n    \n    \n// 쿼리 실행    \nspark.sql(\"\"\"\n    select dest_country_name, sum(count)\n    from 2015_summary\n    where dest_country_name like 'S%'\n    group by dest_country_name\n\"\"\").show(5)\n\n\n// 뷰 삭제\nspark.catalog.dropTempView(\"2015_summary\")\n\n\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-18T19:30:19+0900",
+      "progress": 98,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+----------+\n|dest_country_name|sum(count)|\n+-----------------+----------+\n|          Senegal|        40|\n|           Sweden|       118|\n|        Singapore|         3|\n|         Suriname|         1|\n|            Spain|       420|\n+-----------------+----------+\nonly showing top 5 rows\n\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m = ()\n\u001b[1m\u001b[34mres132\u001b[0m: \u001b[1m\u001b[32mBoolean\u001b[0m = true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=492",
+              "$$hashKey": "object:5608"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=493",
+              "$$hashKey": "object:5609"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=494",
+              "$$hashKey": "object:5610"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=495",
+              "$$hashKey": "object:5611"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=496",
+              "$$hashKey": "object:5612"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=497",
+              "$$hashKey": "object:5613"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626603347746_175707801",
+      "id": "paragraph_1626603347746_175707801",
+      "dateCreated": "2021-07-18T19:15:47+0900",
+      "dateStarted": "2021-07-18T19:30:19+0900",
+      "dateFinished": "2021-07-18T19:30:20+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2814"
+    },
+    {
+      "text": "%spark\n\n// 2015_summary 뷰 생성\nval df = spark.read.format(\"json\")\n    .load(\"hdfs://localhost:9000/tmp/spark/2015-summary.json\")\n    .createOrReplaceTempView(\"2015_summary\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-18T19:29:20+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m = ()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=485",
+              "$$hashKey": "object:3751"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626603389642_1053741367",
+      "id": "paragraph_1626603389642_1053741367",
+      "dateCreated": "2021-07-18T19:16:29+0900",
+      "dateStarted": "2021-07-18T19:29:20+0900",
+      "dateFinished": "2021-07-18T19:29:20+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:2815"
+    },
+    {
+      "text": "%spark.sql\n\nselect dest_country_name, sum(count)\n    from 2015_summary\n    where dest_country_name like 'S%'\n    group by dest_country_name",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-18T19:30:05+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "dest_country_name": "string",
+                      "sum(count)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "DEST_COUNTRY_NAME",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "ORIGIN_COUNTRY_NAME",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=487",
+              "$$hashKey": "object:5417"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=488",
+              "$$hashKey": "object:5418"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=489",
+              "$$hashKey": "object:5419"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=490",
+              "$$hashKey": "object:5420"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=491",
+              "$$hashKey": "object:5421"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626604165761_1195386715",
+      "id": "paragraph_1626604165761_1195386715",
+      "dateCreated": "2021-07-18T19:29:25+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3756",
+      "dateFinished": "2021-07-18T19:30:05+0900",
+      "dateStarted": "2021-07-18T19:30:05+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "dest_country_name\tsum(count)\nSenegal\t40\nSweden\t118\nSingapore\t3\nSuriname\t1\nSpain\t420\nSaint Barthelemy\t39\nSaint Kitts and Nevis\t139\nSouth Korea\t1048\nSaint Vincent and the Grenadines\t1\nSint Maarten\t325\nSaudi Arabia\t83\nSwitzerland\t294\nSaint Lucia\t123\nSamoa\t25\nSouth Africa\t36\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\n\nval df1 = spark.createDataFrame(Seq((1, \"andy\", 20, \"USA\"), (2, \"jeff\", 23, \"China\"), (3, \"james\", 18, \"USA\"))).toDF(\"id\", \"name\", \"age\", \"country\")\nval df2 = df1.groupBy(\"country\").count()\nz.show(df2)\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-18T19:28:17+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "country": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=480",
+              "$$hashKey": "object:3686"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=481",
+              "$$hashKey": "object:3687"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=482",
+              "$$hashKey": "object:3688"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=483",
+              "$$hashKey": "object:3689"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=484",
+              "$$hashKey": "object:3690"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626603925391_1690880200",
+      "id": "paragraph_1626603925391_1690880200",
+      "dateCreated": "2021-07-18T19:25:25+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:2816",
+      "dateFinished": "2021-07-18T19:28:16+0900",
+      "dateStarted": "2021-07-18T19:28:16+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "country\tcount\nChina\t1\nUSA\t2\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdf1\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id: int, name: string ... 2 more fields]\n\u001b[1m\u001b[34mdf2\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [country: string, count: bigint]\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-18T19:28:06+0900",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626604086117_621135491",
+      "id": "paragraph_1626604086117_621135491",
+      "dateCreated": "2021-07-18T19:28:06+0900",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:3092"
+    }
+  ],
+  "name": "spark-sql",
+  "id": "2GAAHFFCE",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/spark-sql"
+}
