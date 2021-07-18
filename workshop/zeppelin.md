@@ -361,4 +361,5 @@ res132: Boolean = true
 
 ## 참고 ##
 
-* [제플린 데이터 프레임 노트북](* https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-df.zpln)
+* [데이터 프레임 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-df.zpln)
+* [스파크SQL 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-sql.zpln)
