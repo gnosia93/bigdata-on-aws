@@ -22,7 +22,7 @@
 
 * [6. 스쿠프 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/sqoop.md)
 
-* [7. 제플린 노트북 실행하기](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/zeppelin.md)
+* [7. 제플린 노트북 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/zeppelin.md)
 
 * [8. 잡 스케줄링](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/job-schedule.md)
 
