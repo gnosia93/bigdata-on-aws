@@ -186,7 +186,8 @@ sqoop import 명령어를 이용하여 RDS 테이블 데이터를 hdfs 로 impor
    --username airline \
    --password airline \
    --table carriers \
-   --target-dir /tmp/workshop/carrriers/default.csv -m 1
+   --target-dir /tmp/workshop/carrriers -m 1
+   -Dmapreduce.output.basename=default.csv
 ```
 
 ## 참고자료 ##
