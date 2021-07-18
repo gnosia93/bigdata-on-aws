@@ -253,7 +253,7 @@ only showing top 5 rows
 val df = spark.read.format("csv")
     .option("header", "true")
     .option("inferSchema", "true")    // 스키마 추론
-    .load("hdfs://localhost:9000/tmp/spark/online-retail-dataset.csv")          // hdfs URL을 emr 마스터 주소로 바꾸세요.
+    .load("hdfs://ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com:8020/tmp/spark/online-retail-dataset.csv")          // hdfs URL을 emr 마스터 주소로 바꾸세요.
 
 df.show()    
 println("rows: " + df.count())
@@ -359,7 +359,7 @@ df: org.apache.spark.sql.DataFrame = [InvoiceNo: string, StockCode: string ... 6
 ```
 // 2015_summary 뷰 생성
 val df = spark.read.format("json")
-    .load("hdfs://localhost:9000/tmp/spark/2015-summary.json")               // hdfs URL을 emr 마스터 주소로 바꾸세요.
+    .load("hdfs://ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com:8020/tmp/spark/2015-summary.json")               // hdfs URL을 emr 마스터 주소로 바꾸세요.
     .createOrReplaceTempView("2015_summary")
     
 // 쿼리 실행    
