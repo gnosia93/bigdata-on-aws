@@ -397,3 +397,4 @@ res132: Boolean = true
 * [데이터 프레임 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-df.zpln)
 * [스파크 SQL 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-sql.zpln)
 * [스파크 스트리밍 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-streaming.zpln)
+* [Getting Started with Apache Zeppelin on Amazon EMR](https://garystafford.medium.com/getting-started-with-apache-zeppelin-on-amazon-emr-using-aws-glue-rds-and-s3-d5a7f3f8eeaa)
