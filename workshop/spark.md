@@ -11,6 +11,8 @@ emr 에서 yarn 설정 파일은 마스터 노드의 /etc/hadoop/conf 디렉토�
 
 ```
 
+* [YARN memory and CPU configuration](https://www.programmersought.com/article/546941958/)
+
 
 ### 1. 스파크 쉘 실행하기 ###
 
