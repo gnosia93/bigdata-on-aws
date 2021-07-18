@@ -129,7 +129,11 @@ Type :help for more information.
 
 scala>
 ```
-* https://mvnrepository.com/artifact/org.apache.spark/spark-sql-kafka-0-10_2.12/3.1.1
+
+* [MVN dependancy](https://mvnrepository.com/artifact/org.apache.spark/spark-sql-kafka-0-10_2.12/3.1.1)
+
+* [익스큐터 메모리 설정](https://stackoverflow.com/questions/22972358/change-executor-memory-and-other-configs-for-spark-shell)
+
 
 ### 2. 배치처리 ###
 
