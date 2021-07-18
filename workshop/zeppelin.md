@@ -38,6 +38,8 @@ https://aws.amazon.com/amazon-linux-2/
 
 AWS emr 콘솔에서 제플린 주소 확인 후, 브라우저로 제플린 노트북 연결한 하여 아래의 그림 처럼 새로운 노트북을 생성합니다. 
 
+******* emr 제플린 주소 화면 덤프 *******
+
 ![note1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-create-note1.png)
 
 ![note2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-create-note2.png)
