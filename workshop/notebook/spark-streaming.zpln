@@ -1,0 +1,246 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "var kdf = spark.read.format(\"kafka\") \n                     .option(\"kafka.bootstrap.servers\", \"localhost:9092\")     \n                     .option(\"subscribe\", \"cpu-metric\") \n                     .option(\"startingOffsets\", \"earliest\") \n                     .load()  // kdf 는 카프카 데이터 프레임입니다. ",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-19T01:24:57+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mkdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [key: binary, value: binary ... 5 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626590297766_1901885948",
+      "id": "paragraph_1626590297766_1901885948",
+      "dateCreated": "2021-07-18T15:38:17+0900",
+      "dateStarted": "2021-07-19T01:24:57+0900",
+      "dateFinished": "2021-07-19T01:24:57+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:665"
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.udf\n\nval tostr = udf(\n    (payload: Array[Byte]) => new String(payload)\n)\n    \nval getMessage = udf (\n    (payload: String, name: String) => {\n        val token = payload.split(\" \")(1)\n        val list = token.split(\",\").toList\n        val map = list.map(text => text.split(\"=\")).map(a => a(0) -> a(1)).toMap\n        map.get(name)\n    }\n)    ",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-19T01:24:57+0900",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626591005625_2051737742",
+      "id": "paragraph_1626591005625_2051737742",
+      "dateCreated": "2021-07-18T15:50:05+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:667",
+      "dateFinished": "2021-07-19T01:24:57+0900",
+      "dateStarted": "2021-07-19T01:24:57+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions.udf\n\u001b[1m\u001b[34mtostr\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.expressions.UserDefinedFunction\u001b[0m = SparkUserDefinedFunction($Lambda$3767/2128707193@3ba1d425,StringType,List(Some(class[value[0]: binary])),Some(class[value[0]: string]),None,true,true)\n\u001b[1m\u001b[34mgetMessage\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.expressions.UserDefinedFunction\u001b[0m = SparkUserDefinedFunction($Lambda$3768/756328790@406688f8,StringType,List(Some(class[value[0]: string]), Some(class[value[0]: string])),Some(class[value[0]: string]),None,true,true)\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=67",
+              "$$hashKey": "object:5522"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626622301100_1175823547",
+      "id": "paragraph_1626622301100_1175823547",
+      "dateCreated": "2021-07-19T00:31:41+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1354",
+      "text": "kdf = kdf.withColumn(\"value\", tostr(kdf(\"value\")))\nkdf = kdf.withColumn(\"idle\", getMessage(kdf(\"value\"), lit(\"usage_idle\") ))\nkdf = kdf.withColumn(\"iowait\", getMessage(kdf(\"value\"), lit(\"usage_iowait\") ))\nkdf = kdf.withColumn(\"user\", getMessage(kdf(\"value\"), lit(\"usage_user\") ))\nkdf = kdf.withColumn(\"sys\", getMessage(kdf(\"value\"), lit(\"usage_system\") ))\n\nkdf.show(5)",
+      "dateUpdated": "2021-07-19T01:24:57+0900",
+      "dateFinished": "2021-07-19T01:24:58+0900",
+      "dateStarted": "2021-07-19T01:24:57+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+--------------------+----------+---------+------+-------------------+-------------+-----------------+------+------------------+------------------+\n| key|               value|     topic|partition|offset|          timestamp|timestampType|             idle|iowait|              user|               sys|\n+----+--------------------+----------+---------+------+-------------------+-------------+-----------------+------+------------------+------------------+\n|null|cpu,cpu=cpu-total...|cpu-metric|        0|     0|2021-07-19 00:28:09|            0| 93.4301958307014|     0| 4.674668351231917|1.8951358180669522|\n|null|cpu,cpu=cpu-total...|cpu-metric|        0|     1|2021-07-19 00:28:12|            0|94.45139758030898|     0|  3.98414685022942|1.5644555694618403|\n|null|cpu,cpu=cpu-total...|cpu-metric|        0|     2|2021-07-19 00:28:15|            0|95.68839825036332|     0| 2.770256196625723|1.5413455530097724|\n|null|cpu,cpu=cpu-total...|cpu-metric|        0|     3|2021-07-19 00:28:18|            0|95.76730608840747|     0|2.7731442869056537|1.4595496246872421|\n|null|cpu,cpu=cpu-total...|cpu-metric|        0|     4|2021-07-19 00:28:21|            0|91.41845448864846|     0| 6.665278067069425|1.9162674442824656|\n+----+--------------------+----------+---------+------+-------------------+-------------+-----------------+------+------------------+------------------+\nonly showing top 5 rows\n\nkdf: org.apache.spark.sql.DataFrame = [key: binary, value: string ... 9 more fields]\nkdf: org.apache.spark.sql.DataFrame = [key: binary, value: string ... 9 more fields]\nkdf: org.apache.spark.sql.DataFrame = [key: binary, value: string ... 9 more fields]\nkdf: org.apache.spark.sql.DataFrame = [key: binary, value: string ... 9 more fields]\nkdf: org.apache.spark.sql.DataFrame = [key: binary, value: string ... 9 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=72",
+              "$$hashKey": "object:5777"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626622519247_264403165",
+      "id": "paragraph_1626622519247_264403165",
+      "dateCreated": "2021-07-19T00:35:19+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1805",
+      "dateUpdated": "2021-07-19T01:38:39+0900",
+      "dateFinished": "2021-07-19T01:38:40+0900",
+      "dateStarted": "2021-07-19T01:38:39+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+------------------+--------------+-----------+------------------+\n|              window|              user|max(partition)|max(offset)|max(timestampType)|\n+--------------------+------------------+--------------+-----------+------------------+\n|{2021-07-19 00:25...|6.0278528372478535|             0|          7|                 0|\n|{2021-07-19 00:25...| 1.104166666666568|             0|         46|                 0|\n|{2021-07-19 00:30...|2.1943573667710483|             0|         77|                 0|\n|{2021-07-19 00:25...| 8.541666666666714|             0|        102|                 0|\n|{2021-07-19 00:30...|  5.59948706988639|             0|        221|                 0|\n+--------------------+------------------+--------------+-----------+------------------+\nonly showing top 5 rows\n\n\u001b[1m\u001b[34mwindowedCounts\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m = ()\n"
+          }
+        ]
+      },
+      "text": "val windowedCounts = kdf.groupBy(\n  window($\"timestamp\", \"10 minutes\", \"5 minutes\"),\n  $\"user\"\n).max().show(5)"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626626214469_388130299",
+      "id": "paragraph_1626626214469_388130299",
+      "dateCreated": "2021-07-19T01:36:54+0900",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:5527"
+    }
+  ],
+  "name": "zeppelin-test",
+  "id": "2GDJ9US7Q",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/zeppelin-test"
+}
