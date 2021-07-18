@@ -230,7 +230,27 @@ OK
 06Q	Master Top Linhas Aereas Ltd.
 07Q	Flair Airlines Ltd.
 Time taken: 0.125 seconds, Fetched: 5 row(s)
+
+hive> select count(1) from workshop.carriers;
+Query ID = hadoop_20210718042408_1b421d3f-7465-4a4d-a22b-c13e29dc8e46
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1626574200222_0014)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Reducer 2 ...... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 4.46 s
+----------------------------------------------------------------------------------------------
+OK
+1491
+Time taken: 6.669 seconds, Fetched: 1 row(s)
 ```
+
+참고로 하이브에서는 테이블에 select 조회시 MR 작업을 수행하지 않고, 바로 데이터를 읽어오는 것을 확인할 수 있다. 
 
 ## 참고자료 ##
 
