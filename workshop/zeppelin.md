@@ -5,6 +5,7 @@ emr 제플린에 아래와 같이 접속합니다.
 
 ### 2. hdfs에 데이터 로딩하기 ###
 
+* https://github.com/databricks/Spark-The-Definitive-Guide
 ```
 $ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/flight-data/json/2015-summary.json
 $ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/retail-data/all/online-retail-dataset.csv
