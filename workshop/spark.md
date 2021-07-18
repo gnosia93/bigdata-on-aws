@@ -70,16 +70,21 @@ Type :help for more information.
 scala>
 ```
 
-### 배치처리 ###
- 
-카프카로 부터 한꺼번에 데이터를 읽어온다. multi line 코딩을 위해서는 스파크쉘 내장명령어인 :paste 사용였고, 소스 코드 편집이 paste 완료된 경우 Ctrl+D 를 누르면 된다.    
+### 2. 배치처리 ###
+
+배치처리는 처리 대상 데이터의 시작과 끝이 있는 데이터를 대상으로 어떠한 연산을 수행하는 것을 의미합니다. 이번 실습에서는 카프카에 저장된 데이터를 첫번째 옵셋 부터
+마지막 옵셋까지 한꺼번에 읽어 콘솔상에 출력해 보도록 하겠습니다. 마지막 옵셋은 스파크의 데이터프레임 API 를 호출하는 시점을 의미하고, 호출 이후에 쌓이는 데이터에 대해서는 출력되지 않습니다.
+지속적으로 데이터를 출력하고자 하는 경우 스트리밍 API 를 이용해야 합니다.  
+
+스파크 쉘에서 multi line 을 코딩하기 위해서는 내장명령어인 :paste 사용해야 합니다. :paste 실행 후, 아래 소스 코드를 붙여넣고 Ctrl+D 를 입력하도록 합니다.
+아래 option 함수의 파리미터 중 kafka.bootstrap.servers 의 값은 여러분들의 카프카 브로커 주소로 변경해야 합니다. 
 ```
 scala> :paste
 scala> val kdf = spark.read.format("kafka") 
-                     .option("kafka.bootstrap.servers", "localhost:9092") 
+                     .option("kafka.bootstrap.servers", "localhost:9092")     // 브로커를 여려분들의 카프카 브로커 주소로 변경하세요.
                      .option("subscribe", "cpu-metric") 
                      .option("startingOffsets", "earliest") 
-                     .load()  // kdf is kafka data frame
+                     .load()  // kdf 는 카프카 데이터 프레임입니다. 
 
 scala> kdf
 res18: org.apache.spark.sql.DataFrame = [key: binary, value: binary ... 5 more fields]
@@ -94,10 +99,10 @@ root
  |-- timestamp: timestamp (nullable = true)
  |-- timestampType: integer (nullable = true)
 
-scala> kdf.count()
+scala> kdf.count()			// 스파크 액션으로, 데이터 프레임의 레코드 수를 카운트 합니다. 
 res1: Long = 2356
 
-scala> kdf.sort(desc("timestamp")).show()        // print by timestamp desc
+scala> kdf.sort(desc("timestamp")).show()       // 레코드를 timestamp 의 역순으로 출력합니다. show() 함수의 기본 레코드 건수는 20건 입니다.
 +----+--------------------+----------+---------+------+-------------------+-------------+
 | key|               value|     topic|partition|offset|          timestamp|timestampType|
 +----+--------------------+----------+---------+------+-------------------+-------------+
