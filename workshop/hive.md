@@ -1,11 +1,13 @@
 ![hive](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/hive.png)
 
-이번 실습에서는 하버드 데이터버스에서 제공하는 미 항공 데이터 샘플을 이용하여 hive 를 실습하도록 하겠습니다. 
+아파치 하이브(Apache Hive)는 하둡에서 동작하는 데이터 웨어하우스(Data Warehouse) 인프라 스트럭처로서 데이터 요약, 질의 및 분석 기능을 제공합니다. 페이스북에서 개발되었으며, 
+HDFS이나 HBase와 같은 데이터 저장 시스템에 저장되어 있는 대용량 데이터 집합의 분석을 가능하게 합니다. HiveQL 이라고 불리는 SQL같은 언어를 제공하며 맵리듀스의 모든 기능을 지원합니다.
 
-* https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HG7NV7
+기본적으로 하이브는 메타데이터를 내장된 아파치 더비(Derby) 데이터 베이스에 저장하지만, MySQL, PostgreSQL과 같은 외부 데이터 베이스에 저장하도록 설정할 수 있으며, 현재 TEXTFILE, SEQUENCEFILE, ORC 및 파케이와 같은 파일 포맷을 지원합니다.
 
 ### 1. 실습 데이터 다운로드 ###
 
+이번 실습에서는 하버드 데이터버스에서 제공하는 미 항공 데이터 샘플을 이용하도록 하겠습니다. (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HG7NV7)
 ec2 인스턴스로 로그인 한 후 실습 데이터를 다운로드 합니다.
 
 ```
