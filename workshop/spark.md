@@ -237,12 +237,57 @@ Batch: 3
 ```
 
 ### 메시지 파싱하기 ###
-	
-  
+
+```
+scala> import org.apache.spark.sql.functions.udf
+
+scala> :paste
+var kdf = spark.readStream.format("kafka")
+	       .option("kafka.bootstrap.servers", "b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092") 
+               .option("subscribe", "cpu-metric") 
+               .option("startingOffsets", "earliest") 
+               .load()  // kdf is kafka data frame
+
+scala> val tostr = udf((payload: Array[Byte]) => new String(payload))
+
+scala> :paste 
+val getMessage = udf (
+    (payload: String, name: String) => {
+        val token = payload.split(" ")(1)
+        val list = token.split(",").toList
+        val map = list.map(text => text.split("=")).map(a => a(0) -> a(1)).toMap
+        map.get(name)
+    }
+)    
+
+kdf = kdf.withColumn("value", tostr(kdf("value")))
+kdf = kdf.withColumn("idle", getMessage(kdf("value"), lit("usage_idle") ))
+kdf = kdf.withColumn("iowait", getMessage(kdf("value"), lit("usage_iowait") ))
+kdf = kdf.withColumn("user", getMessage(kdf("value"), lit("usage_user") ))
+kdf = kdf.withColumn("sys", getMessage(kdf("value"), lit("usage_system") ))
+
+scala> :paste
+val stream = kdf.writeStream
+	        .outputMode("append")
+		.format("console")
+		.start()
+		.awaitTermination()
+
++----+--------------------+----------+---------+------+-------------------+-------------+-----------------+------+------------------+------------------+
+| key|               value|     topic|partition|offset|          timestamp|timestampType|             idle|iowait|              user|               sys|
++----+--------------------+----------+---------+------+-------------------+-------------+-----------------+------+------------------+------------------+
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     0|2021-07-19 00:28:09|            0| 93.4301958307014|     0| 4.674668351231917|1.8951358180669522|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     1|2021-07-19 00:28:12|            0|94.45139758030898|     0|  3.98414685022942|1.5644555694618403|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     2|2021-07-19 00:28:15|            0|95.68839825036332|     0| 2.770256196625723|1.5413455530097724|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     3|2021-07-19 00:28:18|            0|95.76730608840747|     0|2.7731442869056537|1.4595496246872421|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     4|2021-07-19 00:28:21|            0|91.41845448864846|     0| 6.665278067069425|1.9162674442824656|
++----+--------------------+----------+---------+------+-------------------+-------------+-----------------+------+------------------+------------------+
+only showing top 5 rows
+```
+
 ### windowing 함수 태우기 ###
 
 
 
-## 참고자료 ##
 
 
