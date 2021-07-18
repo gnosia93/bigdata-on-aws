@@ -1,5 +1,7 @@
 # bigdata-on-aws #
 
+![bigdata](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/bigdat-on-aws.png)
+
 본 워크샵은 로컬 PC를 맥(mac) 로 가정하고 작성되었습니다. 
 
 
