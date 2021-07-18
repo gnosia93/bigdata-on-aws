@@ -1,0 +1,302 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "// 하둡에서 json 파일을읽어 데이터프레임으로 변환\nval df = spark.read.format(\"json\")\n    .load(\"hdfs://localhost:9000/tmp/spark/2015-summary.json\")\n\nprintln(\"rows :\" + df.count())    \ndf.show(10)    \n\n// 스키마 출력\ndf.printSchema()\n\n// 데이터 출력\ndf.select(\"ORIGIN_COUNTRY_NAME\").show(3)\ndf.select(\"DEST_COUNTRY_NAME\", \"ORIGIN_COUNTRY_NAME\").show(1)\n\n// 다양한 칼럼 참조 방법\ndf.select(\n    df.col(\"ORIGIN_COUNTRY_NAME\"),\n    col(\"ORIGIN_COUNTRY_NAME\"),  \n    column(\"ORIGIN_COUNTRY_NAME\"),\n    'ORIGIN_COUNTRY_NAME,\n    $\"ORIGIN_COUNTRY_NAME\",\n    expr(\"ORIGIN_COUNTRY_NAME\")\n).show(2)\n\n// 칼럼명 변경 및 drop 하기 \ndf.withColumn(\"destination\", $\"DEST_COUNTRY_NAME\")\n    .withColumn(\"origin\", $\"ORIGIN_COUNTRY_NAME\") \n    .withColumnRenamed(\"count\", \"cnt\")\n    .drop(\"DEST_COUNTRY_NAME\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-18T19:05:17+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 90.1278,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=391",
+              "$$hashKey": "object:15732"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=392",
+              "$$hashKey": "object:15733"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=393",
+              "$$hashKey": "object:15734"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=394",
+              "$$hashKey": "object:15735"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=395",
+              "$$hashKey": "object:15736"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=396",
+              "$$hashKey": "object:15737"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=397",
+              "$$hashKey": "object:15738"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626592973402_1692708333",
+      "id": "paragraph_1626592973402_1692708333",
+      "dateCreated": "2021-07-18T16:22:53+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:4185",
+      "dateFinished": "2021-07-18T19:05:18+0900",
+      "dateStarted": "2021-07-18T19:05:17+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rows :256\n+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Romania|   15|\n|    United States|            Croatia|    1|\n|    United States|            Ireland|  344|\n|            Egypt|      United States|   15|\n|    United States|              India|   62|\n|    United States|          Singapore|    1|\n|    United States|            Grenada|   62|\n|       Costa Rica|      United States|  588|\n|          Senegal|      United States|   40|\n|          Moldova|      United States|    1|\n+-----------------+-------------------+-----+\nonly showing top 10 rows\n\nroot\n |-- DEST_COUNTRY_NAME: string (nullable = true)\n |-- ORIGIN_COUNTRY_NAME: string (nullable = true)\n |-- count: long (nullable = true)\n\n+-------------------+\n|ORIGIN_COUNTRY_NAME|\n+-------------------+\n|            Romania|\n|            Croatia|\n|            Ireland|\n+-------------------+\nonly showing top 3 rows\n\n+-----------------+-------------------+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|\n+-----------------+-------------------+\n|    United States|            Romania|\n+-----------------+-------------------+\nonly showing top 1 row\n\n+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+\n|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|\n+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+\n|            Romania|            Romania|            Romania|            Romania|            Romania|            Romania|\n|            Croatia|            Croatia|            Croatia|            Croatia|            Croatia|            Croatia|\n+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+\nonly showing top 2 rows\n\n+-------------------+---+--------------------+----------------+\n|ORIGIN_COUNTRY_NAME|cnt|         destination|          origin|\n+-------------------+---+--------------------+----------------+\n|            Romania| 15|       United States|         Romania|\n|            Croatia|  1|       United States|         Croatia|\n|            Ireland|344|       United States|         Ireland|\n|      United States| 15|               Egypt|   United States|\n|              India| 62|       United States|           India|\n|          Singapore|  1|       United States|       Singapore|\n|            Grenada| 62|       United States|         Grenada|\n|      United States|588|          Costa Rica|   United States|\n|      United States| 40|             Senegal|   United States|\n|      United States|  1|             Moldova|   United States|\n|       Sint Maarten|325|       United States|    Sint Maarten|\n|   Marshall Islands| 39|       United States|Marshall Islands|\n|      United States| 64|              Guyana|   United States|\n|      United States|  1|               Malta|   United States|\n|      United States| 41|            Anguilla|   United States|\n|      United States| 30|             Bolivia|   United States|\n|           Paraguay|  6|       United States|        Paraguay|\n|      United States|  4|             Algeria|   United States|\n|      United States|230|Turks and Caicos ...|   United States|\n|          Gibraltar|  1|       United States|       Gibraltar|\n+-------------------+---+--------------------+----------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "focus": true
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=398",
+              "$$hashKey": "object:15968"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=399",
+              "$$hashKey": "object:15969"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=400",
+              "$$hashKey": "object:15970"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=401",
+              "$$hashKey": "object:15971"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=402",
+              "$$hashKey": "object:15972"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=403",
+              "$$hashKey": "object:15973"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=404",
+              "$$hashKey": "object:15974"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626595518528_189787997",
+      "id": "paragraph_1626595518528_189787997",
+      "dateCreated": "2021-07-18T17:05:18+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4372",
+      "dateUpdated": "2021-07-18T19:05:18+0900",
+      "dateFinished": "2021-07-18T19:05:20+0900",
+      "dateStarted": "2021-07-18T19:05:18+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Croatia|    1|\n|    United States|          Singapore|    1|\n|          Moldova|      United States|    1|\n+-----------------+-------------------+-----+\nonly showing top 3 rows\n\n+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|          Liberia|      United States|    2|\n|          Hungary|      United States|    2|\n|    United States|            Vietnam|    2|\n+-----------------+-------------------+-----+\nonly showing top 3 rows\n\n+--------------------+-------------------+-----+\n|   DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+--------------------+-------------------+-----+\n|               Malta|      United States|    1|\n|Saint Vincent and...|      United States|    1|\n|       United States|            Croatia|    1|\n|       United States|          Gibraltar|    1|\n|       United States|          Singapore|    1|\n+--------------------+-------------------+-----+\nonly showing top 5 rows\n\n+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|     Burkina Faso|      United States|    1|\n|    Cote d'Ivoire|      United States|    1|\n|           Cyprus|      United States|    1|\n|         Djibouti|      United States|    1|\n|        Indonesia|      United States|    1|\n+-----------------+-------------------+-----+\nonly showing top 5 rows\n\n+-----------------+-------------------+------+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME| count|\n+-----------------+-------------------+------+\n|    United States|      United States|370002|\n|    United States|             Canada|  8483|\n|           Canada|      United States|  8399|\n|    United States|             Mexico|  7187|\n|           Mexico|      United States|  7140|\n+-----------------+-------------------+------+\nonly showing top 5 rows\n\n+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Romania|   15|\n|    United States|            Croatia|    1|\n|    United States|            Ireland|  344|\n+-----------------+-------------------+-----+\n\n"
+          }
+        ]
+      },
+      "text": "// 필터링 하기\ndf.filter($\"count\" < 2).show(3)\ndf.where(\"count = 2\").show(3)\n\n// distinct 계산하기\ndf.select(\"DEST_COUNTRY_NAME\", \"ORIGIN_COUNTRY_NAME\").distinct().count()\n\n// 정렬하기\ndf.sort(\"count\").show(5)\ndf.orderBy(\"count\", \"DEST_COUNTRY_NAME\").show(5)\ndf.orderBy(desc(\"count\"), asc(\"DEST_COUNTRY_NAME\")).show(5)\n\n// 로우 제한하기\ndf.limit(3).show()"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=405",
+              "$$hashKey": "object:16210"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=406",
+              "$$hashKey": "object:16211"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=407",
+              "$$hashKey": "object:16212"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=408",
+              "$$hashKey": "object:16213"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=409",
+              "$$hashKey": "object:16214"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=410",
+              "$$hashKey": "object:16215"
+            },
+            {
+              "jobUrl": "http://192.168.29.175:4040/jobs/job?id=411",
+              "$$hashKey": "object:16216"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626597715046_1215318513",
+      "id": "paragraph_1626597715046_1215318513",
+      "dateCreated": "2021-07-18T17:41:55+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10659",
+      "text": "val df = spark.read.format(\"csv\")\n    .option(\"header\", \"true\")\n    .option(\"inferSchema\", \"true\")    // 스키마 추론\n    .load(\"hdfs://localhost:9000/tmp/spark/online-retail-dataset.csv\")\n\ndf.show()    \nprintln(\"rows: \" + df.count())\ndf.printSchema()\n\n// unique 한 StockCode 갯수 계산\ndf.select(countDistinct(\"StockCode\")).show()\n\n// min / max / sum / avg\ndf.select(min(\"Quantity\"), max(\"Quantity\"), sum(\"Quantity\"), avg(\"Quantity\")).show()\n\n// 그룹핑\ndf.groupBy(\"InvoiceNo\")\n  .agg(count(\"Quantity\").alias(\"quan\"), expr(\"count(Quantity)\")).show()\n  \n    \n    ",
+      "dateUpdated": "2021-07-18T19:05:20+0900",
+      "dateFinished": "2021-07-18T19:05:22+0900",
+      "dateStarted": "2021-07-18T19:05:20+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+---------+--------------------+--------+--------------+---------+----------+--------------+\n|InvoiceNo|StockCode|         Description|Quantity|   InvoiceDate|UnitPrice|CustomerID|       Country|\n+---------+---------+--------------------+--------+--------------+---------+----------+--------------+\n|   536365|   85123A|WHITE HANGING HEA...|       6|12/1/2010 8:26|     2.55|     17850|United Kingdom|\n|   536365|    71053| WHITE METAL LANTERN|       6|12/1/2010 8:26|     3.39|     17850|United Kingdom|\n|   536365|   84406B|CREAM CUPID HEART...|       8|12/1/2010 8:26|     2.75|     17850|United Kingdom|\n|   536365|   84029G|KNITTED UNION FLA...|       6|12/1/2010 8:26|     3.39|     17850|United Kingdom|\n|   536365|   84029E|RED WOOLLY HOTTIE...|       6|12/1/2010 8:26|     3.39|     17850|United Kingdom|\n|   536365|    22752|SET 7 BABUSHKA NE...|       2|12/1/2010 8:26|     7.65|     17850|United Kingdom|\n|   536365|    21730|GLASS STAR FROSTE...|       6|12/1/2010 8:26|     4.25|     17850|United Kingdom|\n|   536366|    22633|HAND WARMER UNION...|       6|12/1/2010 8:28|     1.85|     17850|United Kingdom|\n|   536366|    22632|HAND WARMER RED P...|       6|12/1/2010 8:28|     1.85|     17850|United Kingdom|\n|   536367|    84879|ASSORTED COLOUR B...|      32|12/1/2010 8:34|     1.69|     13047|United Kingdom|\n|   536367|    22745|POPPY'S PLAYHOUSE...|       6|12/1/2010 8:34|      2.1|     13047|United Kingdom|\n|   536367|    22748|POPPY'S PLAYHOUSE...|       6|12/1/2010 8:34|      2.1|     13047|United Kingdom|\n|   536367|    22749|FELTCRAFT PRINCES...|       8|12/1/2010 8:34|     3.75|     13047|United Kingdom|\n|   536367|    22310|IVORY KNITTED MUG...|       6|12/1/2010 8:34|     1.65|     13047|United Kingdom|\n|   536367|    84969|BOX OF 6 ASSORTED...|       6|12/1/2010 8:34|     4.25|     13047|United Kingdom|\n|   536367|    22623|BOX OF VINTAGE JI...|       3|12/1/2010 8:34|     4.95|     13047|United Kingdom|\n|   536367|    22622|BOX OF VINTAGE AL...|       2|12/1/2010 8:34|     9.95|     13047|United Kingdom|\n|   536367|    21754|HOME BUILDING BLO...|       3|12/1/2010 8:34|     5.95|     13047|United Kingdom|\n|   536367|    21755|LOVE BUILDING BLO...|       3|12/1/2010 8:34|     5.95|     13047|United Kingdom|\n|   536367|    21777|RECIPE BOX WITH M...|       4|12/1/2010 8:34|     7.95|     13047|United Kingdom|\n+---------+---------+--------------------+--------+--------------+---------+----------+--------------+\nonly showing top 20 rows\n\nrows: 541909\nroot\n |-- InvoiceNo: string (nullable = true)\n |-- StockCode: string (nullable = true)\n |-- Description: string (nullable = true)\n |-- Quantity: integer (nullable = true)\n |-- InvoiceDate: string (nullable = true)\n |-- UnitPrice: double (nullable = true)\n |-- CustomerID: integer (nullable = true)\n |-- Country: string (nullable = true)\n\n+-------------------------+\n|count(DISTINCT StockCode)|\n+-------------------------+\n|                     4070|\n+-------------------------+\n\n+-------------+-------------+-------------+----------------+\n|min(Quantity)|max(Quantity)|sum(Quantity)|   avg(Quantity)|\n+-------------+-------------+-------------+----------------+\n|       -80995|        80995|      5176450|9.55224954743324|\n+-------------+-------------+-------------+----------------+\n\n+---------+----+---------------+\n|InvoiceNo|quan|count(Quantity)|\n+---------+----+---------------+\n|   578292|  72|             72|\n|   578459|   8|              8|\n|   578941|  64|             64|\n|   580490|  10|             10|\n|   580739|   2|              2|\n|   580906|   4|              4|\n|   581138|   4|              4|\n|   536596|   6|              6|\n|   536938|  14|             14|\n|   537252|   1|              1|\n|   537691|  20|             20|\n|   538041|   1|              1|\n|   538184|  26|             26|\n|   538517|  53|             53|\n|   538879|  19|             19|\n|   539275|   6|              6|\n|   539630|  12|             12|\n|   540499|  24|             24|\n|   540540|  22|             22|\n|  C540850|   1|              1|\n+---------+----+---------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [InvoiceNo: string, StockCode: string ... 6 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626598875737_1794411801",
+      "id": "paragraph_1626598875737_1794411801",
+      "dateCreated": "2021-07-18T18:01:15+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:11924",
+      "dateUpdated": "2021-07-18T19:05:22+0900"
+    }
+  ],
+  "name": "spark-df",
+  "id": "2GBQHWVR5",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {
+    "isRunning": false
+  },
+  "path": "/spark-df"
+}
