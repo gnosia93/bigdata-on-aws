@@ -291,5 +291,8 @@ only showing top 5 rows
 
 
 
+## 참고자료 ##
+
+* [트리거, 윈도우, 슬라이딩 ](https://eyeballs.tistory.com/83)
 
 
