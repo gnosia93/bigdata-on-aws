@@ -26,7 +26,6 @@
 
 * [8. 잡 스케줄링](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/job-schedule.md)
 
-https://stackoverflow.com/questions/30375571/running-scheduled-spark-job
 
 ## 참고자료 ##
 
