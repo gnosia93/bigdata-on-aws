@@ -181,13 +181,16 @@ EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
 sqoop import 명령어를 이용하여 RDS 테이블 데이터를 hdfs 로 import 한다. 
 -m 파라미터는 매퍼의 갯수로 여기서는 1 로 설정한다. 
 ```
-[hadoop@ip-10-1-1-99 ~]$ sqoop import \
+[hadoop@ip-10-1-1-99 ~]$ sqoop import -D mapreduce.output.basename=carrier-`date +%Y-%m-%d` \
    --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
    --username airline \
    --password airline \
    --table carriers \
-   --target-dir /tmp/workshop/carrriers -m 1 \
-   -Dmapreduce.output.basename=default.csv
+   --target-dir /tmp/workshop/carriers -m 1 
+
+[hadoop@ip-10-1-1-99 ~]$ hadoop fs -ls -R /tmp/workshop/carriers
+-rw-r--r--   1 hadoop hdfsadmingroup          0 2021-07-18 04:15 /tmp/workshop/carriers/_SUCCESS
+-rw-r--r--   1 hadoop hdfsadmingroup      36285 2021-07-18 04:15 /tmp/workshop/carriers/carrier-2021-07-18-m-00000
 ```
 
 ## 참고자료 ##
