@@ -2,13 +2,25 @@
 
 * https://github.com/databricks/Spark-The-Definitive-Guide
 ```
-$ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/flight-data/json/2015-summary.json
-$ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/retail-data/all/online-retail-dataset.csv
+$ terraform output | grep ec2_public
+ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
 
-$ hadoop fs -put 2015-summary.json /tmp/spark
-$ hadoop fs -put online-retail-dataset.csv /tmp/spark
+$ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+Last login: Mon Jul 12 02:47:04 2021 from 218.238.107.63
 
-$ hadoop fs -ls -R /tmp/spark
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+
+[ec2-user@ip-10-1-1-31 ~]$ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/flight-data/json/2015-summary.json
+[ec2-user@ip-10-1-1-31 ~]$ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/retail-data/all/online-retail-dataset.csv
+
+[ec2-user@ip-10-1-1-31 ~]$ hadoop fs -put 2015-summary.json /tmp/spark
+[ec2-user@ip-10-1-1-31 ~]$ hadoop fs -put online-retail-dataset.csv /tmp/spark
+
+[ec2-user@ip-10-1-1-31 ~]$ hadoop fs -ls -R /tmp/spark
 -rw-r--r--   1 soonbeom supergroup      21368 2021-07-18 17:00 /tmp/spark/2015-summary.json
 -rw-r--r--   1 soonbeom supergroup   45038760 2021-07-18 17:58 /tmp/spark/online-retail-dataset.csv
 ```
