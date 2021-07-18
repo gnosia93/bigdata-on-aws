@@ -8,6 +8,11 @@
 * executed every 10 min.
 
 ------------
+### airflow ###
+
+-- connection 
+* https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html
+* https://xnuinside.medium.com/short-guide-how-to-use-postgresoperator-in-apache-airflow-ca78d35fb435
 
 ### PostgreSQL ###
 
