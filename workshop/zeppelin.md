@@ -333,6 +333,8 @@ df: org.apache.spark.sql.DataFrame = [InvoiceNo: string, StockCode: string ... 6
 
 ### 6. 스파크 SQL ###
 
+스파크 SQL 을 이용하면 데이터 프레임의 함수를 직접 핸들링 하는 것보다 쉽게 데이터에 대한 분석 작업을 진행할 수 있습니다. spark.sql 함수를 이용하여 쿼리를 수행하기 이전에 아래의 예제처럼 createOrReplaceTempView 함수를 이용하여 뷰를 먼저 생성해야 합니다.  
+
 [샘플 코드]
 ```
 // 2015_summary 뷰 생성
