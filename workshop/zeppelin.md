@@ -322,7 +322,41 @@ df: org.apache.spark.sql.DataFrame = [InvoiceNo: string, StockCode: string ... 6
 
 ### 6. 스파크 SQL ###
 
+[코드]
+```
+// 2015_summary 뷰 생성
+val df = spark.read.format("json")
+    .load("hdfs://localhost:9000/tmp/spark/2015-summary.json")
+    .createOrReplaceTempView("2015_summary")
+    
+// 쿼리 실행    
+spark.sql("""
+    select dest_country_name, sum(count)
+    from 2015_summary
+    where dest_country_name like 'S%'
+    group by dest_country_name
+""").show(5)
 
+// 뷰 삭제
+spark.catalog.dropTempView("2015_summary")
+```
+
+[결과]
+```
++-----------------+----------+
+|dest_country_name|sum(count)|
++-----------------+----------+
+|          Senegal|        40|
+|           Sweden|       118|
+|        Singapore|         3|
+|         Suriname|         1|
+|            Spain|       420|
++-----------------+----------+
+only showing top 5 rows
+
+df: Unit = ()
+res132: Boolean = true
+```
 
 
 ## 참고 ##
