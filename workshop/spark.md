@@ -120,7 +120,7 @@ scala> val kdf = spark.read.format("kafka")
                      .load()  // kdf 는 카프카 데이터 프레임입니다. 
 
 scala> kdf
-res18: org.apache.spark.sql.DataFrame = [key: binary, value: binary ... 5 more fields]
+res0: org.apache.spark.sql.DataFrame = [key: binary, value: binary ... 5 more fields]
 
 scala> kdf.printSchema()
 root
@@ -133,34 +133,19 @@ root
  |-- timestampType: integer (nullable = true)
 
 scala> kdf.count()			// 스파크 액션으로, 데이터 프레임의 레코드 수를 카운트 합니다. 
-res1: Long = 2356
+res2: Long = 23112
 
-scala> kdf.sort(desc("timestamp")).show()       // 레코드를 timestamp 의 역순으로 출력합니다. show() 함수의 기본 레코드 건수는 20건 입니다.
+scala> kdf.sort(desc("timestamp")).show(5)       // timestamp 의 역순으로 메시지를 출력합니다. show()로 호출하는 경우 20건 표시됩니다.  
 +----+--------------------+----------+---------+------+-------------------+-------------+
 | key|               value|     topic|partition|offset|          timestamp|timestampType|
 +----+--------------------+----------+---------+------+-------------------+-------------+
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   874|2021-07-17 19:26:48|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   873|2021-07-17 19:26:45|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   872|2021-07-17 19:26:42|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   871|2021-07-17 19:26:39|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   870|2021-07-17 19:26:36|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   869|2021-07-17 19:26:33|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   868|2021-07-17 19:26:30|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   867|2021-07-17 19:26:27|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   866|2021-07-17 19:26:24|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   865|2021-07-17 19:26:21|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   864|2021-07-17 19:26:18|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   863|2021-07-17 19:26:15|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   862|2021-07-17 19:26:12|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   861|2021-07-17 19:26:09|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   860|2021-07-17 19:26:06|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   859|2021-07-17 19:26:03|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   858|2021-07-17 19:26:00|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   857|2021-07-17 19:25:57|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   856|2021-07-17 19:25:54|            0|
-|null|[63 70 75 2C 63 7...|cpu-metric|        0|   855|2021-07-17 19:25:51|            0|
+|null|[63 70 75 2C 63 7...|cpu-metric|        0| 23149|2021-07-18 03:17:57|            0|
+|null|[63 70 75 2C 63 7...|cpu-metric|        0| 23148|2021-07-18 03:17:54|            0|
+|null|[63 70 75 2C 63 7...|cpu-metric|        0| 23147|2021-07-18 03:17:51|            0|
+|null|[63 70 75 2C 63 7...|cpu-metric|        0| 23146|2021-07-18 03:17:48|            0|
+|null|[63 70 75 2C 63 7...|cpu-metric|        0| 23145|2021-07-18 03:17:45|            0|
 +----+--------------------+----------+---------+------+-------------------+-------------+
-only showing top 20 rows
+only showing top 5 rows
 ```
 
 ### 스트리밍 처리 ###
