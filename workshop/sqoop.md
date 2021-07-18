@@ -250,7 +250,7 @@ OK
 Time taken: 6.669 seconds, Fetched: 1 row(s)
 ```
 
-참고로 하이브에서는 테이블에 select 조회시 MR 작업을 수행하지 않고, 바로 데이터를 읽어오는 것을 확인할 수 있다. (select * from workshop.carriers limit 5;)
+참고로 하이브에서는 테이블 조회시 MR 작업을 수행하지 않고, 바로 데이터를 읽어오는 것을 확인할 수 있다. (select * from workshop.carriers limit 5;)
 
 ## 참고자료 ##
 
