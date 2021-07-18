@@ -195,6 +195,7 @@ sqoop import 명령어를 이용하여 RDS 테이블 데이터를 hdfs 로 impor
 
 ### 5. 하이브 테이블 생성 ###
 
+```
 [hadoop@ip-10-1-1-136 ~]$ hive
 Hive Session ID = 31dea7d2-4353-419a-8321-5c442833865f
 
