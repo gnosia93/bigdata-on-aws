@@ -1,3 +1,5 @@
+* https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-df.zpln
+
 ### 1. 제플린 접속하기 ###
 
 emr 제플린에 아래와 같이 접속합니다. 
