@@ -154,7 +154,6 @@ only showing top 5 rows
 kafka 메시지 칼럼 중, string 타입의 value 칼럼은 byte array로 메시지가 출력되는데, udf 함수를 이용하여 byte array 를 string 으로 변환한다. 
 
 ```
-scala> // import org.apache.spark.sql.streaming.Trigger
 scala> import org.apache.spark.sql.functions.udf
 
 scala> :paste
@@ -168,7 +167,7 @@ scala> val tostr = udf((payload: Array[Byte]) => new String(payload))
 scala> kdf = kdf.withColumn("value", tostr(kdf("value")))
 
 scala> :paste
-val stream = kdf.writeStream    // .trigger(Trigger.ProcessingTime("1 seconds"))
+val stream = kdf.writeStream
 	        .outputMode("append")
 		.format("console")
 		.start()
