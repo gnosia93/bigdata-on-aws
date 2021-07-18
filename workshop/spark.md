@@ -114,7 +114,7 @@ scala>
 ```
 scala> :paste
 scala> val kdf = spark.read.format("kafka") 
-                     .option("kafka.bootstrap.servers", "localhost:9092")     // 브로커를 여려분들의 카프카 브로커 주소로 변경하세요.
+                     .option("kafka.bootstrap.servers", " b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092")     // 브로커를 여려분들의 카프카 브로커 주소로 변경하세요.
                      .option("subscribe", "cpu-metric") 
                      .option("startingOffsets", "earliest") 
                      .load()  // kdf 는 카프카 데이터 프레임입니다. 
