@@ -1,5 +1,3 @@
-[hive](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/hive.png)
-
 아파치 하이브(Apache Hive)는 하둡에서 동작하는 데이터 웨어하우스(Data Warehouse) 인프라 스트럭처로서 데이터 요약, 질의 및 분석 기능을 제공합니다. 페이스북에서 개발되었으며, 
 HDFS이나 HBase와 같은 데이터 저장 시스템에 저장되어 있는 대용량 데이터 집합의 분석을 가능하게 합니다. HiveQL 이라고 불리는 SQL같은 언어를 제공하며 맵리듀스의 모든 기능을 지원합니다.
 
