@@ -22,13 +22,14 @@ emr 제플린 주소 확인 후, 브라우저로 제플린 노트북 연결.
 ![note2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-create-note2.png)
 
 
-
-
 ### 3. 데이터 프레임의 이해 ###
 
-spark 에서 데이터 프레임은 구조적인 API 중 하나로, DB의 테이블과 같이 row 와 column 을 가지고 있는 객체로서 데이터에 대한 조회, 처리 및 집계 기능을 제공합니다. 아래 spark 데이터 프레임 코드를 제플린 노트북에서 실행하고, 결과를 확인 합니다. 
+데이터 프레임은 스파크가 제공하는 구조적인 API 중 하나로, 칼럼과 로우를 가진 DB 테이블의 처럼 데이터를 조작하는 것을 가능하게 하는 스파크 객체로서, 데이터에 대한 조회, 필터링 및 집계 기능을 제공합니다. 아래 spark 데이터 프레임 샘플 코드를 제플린 노트북에서 실행하고, 결과를 확인 합니다. 
 
-[코드]
+다음 그림은 제플린 노트북 실행 화면을 덤프한 것입니다. 
+![note3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-notebook.png)
+
+[샘플 코드]
 ```
 // 하둡에서 json 파일을읽어 데이터프레임으로 변환
 val df = spark.read.format("json")
@@ -140,7 +141,7 @@ df: org.apache.spark.sql.DataFrame = [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_
 
 ### 4. 데이터 프레임 필터링 하기 ###
 
-[코드]
+[샘플 코드]
 ```
 // 필터링 하기
 df.filter($"count" < 2).show(3)
@@ -222,7 +223,7 @@ only showing top 5 rows
 
 ### 5. 데이터 프레임 집계와 그룹핑 ###
 
-[코드]
+[샘플 코드]
 ```
 val df = spark.read.format("csv")
     .option("header", "true")
@@ -327,7 +328,7 @@ df: org.apache.spark.sql.DataFrame = [InvoiceNo: string, StockCode: string ... 6
 
 ### 6. 스파크 SQL ###
 
-[코드]
+[샘플 코드]
 ```
 // 2015_summary 뷰 생성
 val df = spark.read.format("json")
