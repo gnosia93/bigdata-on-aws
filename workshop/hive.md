@@ -7,7 +7,7 @@ HDFS이나 HBase와 같은 데이터 저장 시스템에 저장되어 있는 대
 
 ### 1. 실습 데이터 다운로드 ###
 
-이번 실습에서는 하버드 데이터버스에서 제공하는 미 항공 데이터 샘플을 이용하도록 하겠습니다. (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HG7NV7)
+이번 실습에서는 하버드 데이터버스에서 제공하는 미 항공 데이터 샘플을 이용하도록 하겠습니다. (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HG7NV7)  
 ec2 인스턴스로 로그인 한 후 실습 데이터를 다운로드 합니다.
 
 ```
