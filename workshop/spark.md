@@ -238,6 +238,8 @@ Batch: 3
 
 ### 메시지 파싱하기 ###
 
+value 칼럼의 값에서 idle, iowait, user, sys 값만 출력한다. 
+
 ```
 scala> import org.apache.spark.sql.functions.udf
 
