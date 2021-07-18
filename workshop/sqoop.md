@@ -138,7 +138,7 @@ airline_db=> \q
 
 ### 4. sqoop import to hdfs ###
 
-emr 마스터 노드로 로그인 한 후, sqoop import 를 실행한다. 
+emr 마스터 노드로 로그인 한 후,  
 ```
 $ terraform output 
 Outputs:
