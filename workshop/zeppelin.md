@@ -215,7 +215,7 @@ only showing top 5 rows
 +-----------------+-------------------+-----+
 ```
 
-### 5. 집계 / 그룹핑 ###
+### 5. 데이터 프레임 집계와 그룹핑 ###
 
 [코드]
 ```
@@ -319,3 +319,5 @@ only showing top 20 rows
 
 df: org.apache.spark.sql.DataFrame = [InvoiceNo: string, StockCode: string ... 6 more fields]
 ```
+
+### 6. 스파크 SQL ###
