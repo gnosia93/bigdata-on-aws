@@ -148,7 +148,7 @@ scala> kdf.sort(desc("timestamp")).show(5)       // timestamp 의 역순으로 �
 only showing top 5 rows
 ```
 
-### 스트리밍 처리 ###
+### 3. 스트리밍 처리 ###
 
 배치처리에서는 spark.read 로 데이터를 읽어오지만, 스트리밍 처리에서는 readStream 함수를 이용하여 데이터를 읽어온다.
 kafka 메시지 칼럼 중, string 타입의 value 칼럼은 byte array로 메시지가 출력되는데, udf 함수를 이용하여 byte array 를 string 으로 변환한다. 
