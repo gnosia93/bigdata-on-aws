@@ -128,11 +128,84 @@ only showing top 20 rows
 df: org.apache.spark.sql.DataFrame = [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string ... 1 more field]
 ```
 
-### 4. 데이터 프레임 필터링 및 집계하기 ###
+### 4. 데이터 프레임 필터링 하기 ###
+
+[코드]
 ```
 // 필터링 하기
-df.filter($"count" < 2).show()
-df.where("count < 2").show()
+df.filter($"count" < 2).show(3)
+df.where("count = 2").show(3)
+
+// distinct 계산하기
+df.select("DEST_COUNTRY_NAME", "ORIGIN_COUNTRY_NAME").distinct().count()
+
+// 정렬하기
+df.sort("count").show(5)
+df.orderBy("count", "DEST_COUNTRY_NAME").show(5)
+df.orderBy(desc("count"), asc("DEST_COUNTRY_NAME")).show(5)
+
+// 로우 제한하기
+df.limit(3).show()
 ```
 
+[결과]
+```
++-----------------+-------------------+-----+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++-----------------+-------------------+-----+
+|    United States|            Croatia|    1|
+|    United States|          Singapore|    1|
+|          Moldova|      United States|    1|
++-----------------+-------------------+-----+
+only showing top 3 rows
 
++-----------------+-------------------+-----+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++-----------------+-------------------+-----+
+|          Liberia|      United States|    2|
+|          Hungary|      United States|    2|
+|    United States|            Vietnam|    2|
++-----------------+-------------------+-----+
+only showing top 3 rows
+
++--------------------+-------------------+-----+
+|   DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++--------------------+-------------------+-----+
+|               Malta|      United States|    1|
+|Saint Vincent and...|      United States|    1|
+|       United States|            Croatia|    1|
+|       United States|          Gibraltar|    1|
+|       United States|          Singapore|    1|
++--------------------+-------------------+-----+
+only showing top 5 rows
+
++-----------------+-------------------+-----+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++-----------------+-------------------+-----+
+|     Burkina Faso|      United States|    1|
+|    Cote d'Ivoire|      United States|    1|
+|           Cyprus|      United States|    1|
+|         Djibouti|      United States|    1|
+|        Indonesia|      United States|    1|
++-----------------+-------------------+-----+
+only showing top 5 rows
+
++-----------------+-------------------+------+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME| count|
++-----------------+-------------------+------+
+|    United States|      United States|370002|
+|    United States|             Canada|  8483|
+|           Canada|      United States|  8399|
+|    United States|             Mexico|  7187|
+|           Mexico|      United States|  7140|
++-----------------+-------------------+------+
+only showing top 5 rows
+
++-----------------+-------------------+-----+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++-----------------+-------------------+-----+
+|    United States|            Romania|   15|
+|    United States|            Croatia|    1|
+|    United States|            Ireland|  344|
++-----------------+-------------------+-----+
+```
