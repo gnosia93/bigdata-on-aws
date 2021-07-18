@@ -127,3 +127,10 @@ only showing top 20 rows
 
 df: org.apache.spark.sql.DataFrame = [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string ... 1 more field]
 ```
+
+### 3. 데이터 프레임 필터링 및 집계하기 ###
+```
+
+```
+
+
