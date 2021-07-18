@@ -2,8 +2,13 @@
 
 * https://github.com/databricks/Spark-The-Definitive-Guide
 ```
-$ terraform output | grep ec2_public
+$ terraform output 
+Outputs:
+
 ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+emr_master_public_dns = ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com
+msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
 
 $ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
 Last login: Mon Jul 12 02:47:04 2021 from 218.238.107.63
@@ -53,7 +58,7 @@ hdfs URL 을 localhost 에서 여러분들의 주소로 바꾼 후, 아래 샘�
 ```
 // 하둡에서 json 파일을읽어 데이터프레임으로 변환
 val df = spark.read.format("json")
-    .load("hdfs://localhost:9000/tmp/spark/2015-summary.json")         // hdfs URL을 emr 마스터 주소로 바꾸세요.
+    .load("hdfs://ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com:8020/tmp/spark/2015-summary.json")         // hdfs URL을 emr 마스터 주소로 바꾸세요.
 
 println("rows :" + df.count())    
 df.show(10)    
