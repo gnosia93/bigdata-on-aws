@@ -193,6 +193,44 @@ sqoop import 명령어를 이용하여 RDS 테이블 데이터를 hdfs 로 impor
 -rw-r--r--   1 hadoop hdfsadmingroup      36285 2021-07-18 04:15 /tmp/workshop/carriers/carrier-2021-07-18-m-00000
 ```
 
+### 5. 하이브 테이블 생성 ###
+
+[hadoop@ip-10-1-1-136 ~]$ hive
+Hive Session ID = 31dea7d2-4353-419a-8321-5c442833865f
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: false
+Hive Session ID = c2605b66-b002-4992-a187-169596f9a319
+
+hive> create database if not exists workshop;
+OK
+Time taken: 0.053 seconds
+
+hive> show databases;
+OK
+default
+workshop
+Time taken: 0.021 seconds, Fetched: 2 row(s)
+
+hive> create external table workshop.carriers (
+  code          String,
+  description   String
+)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile
+location '/tmp/workshop/carriers';   
+
+hive> select * from workshop.carriers limit 5;
+OK
+02Q	Titan Airways
+04Q	Tradewind Aviation
+05Q	Comlux Aviation
+06Q	Master Top Linhas Aereas Ltd.
+07Q	Flair Airlines Ltd.
+Time taken: 0.125 seconds, Fetched: 5 row(s)
+```
+
 ## 참고자료 ##
 
 * https://stackoverflow.com/questions/26684643/error-must-be-member-of-role-when-creating-schema-in-postgresql
