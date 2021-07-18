@@ -42,33 +42,32 @@ E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
 EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
 
 [hadoop@ip-10-1-1-99 ~]$ 
+
 [hadoop@ip-10-1-1-99 ~]$ spark-shell --master yarn --executor-memory 1G --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
-2021-07-17 19:29:48,008 WARN util.Utils: Your hostname, f8ffc2077dc2.ant.amazon.com resolves to a loopback address: 127.0.0.1; using 192.168.29.175 instead (on interface en0)
-2021-07-17 19:29:48,008 WARN util.Utils: Set SPARK_LOCAL_IP if you need to bind to another address
-:: loading settings :: url = jar:file:/Users/soonbeom/analytics/spark-3.1.2-bin-hadoop3.2/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
-Ivy Default Cache set to: /Users/soonbeom/.ivy2/cache
-The jars for the packages stored in: /Users/soonbeom/.ivy2/jars
+:: loading settings :: url = jar:file:/usr/lib/spark/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /home/hadoop/.ivy2/cache
+The jars for the packages stored in: /home/hadoop/.ivy2/jars
 org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
-:: resolving dependencies :: org.apache.spark#spark-submit-parent-78407ac2-9036-4a64-915b-9e414b76b15b;1.0
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-a12e58f4-40e5-4b50-bacb-1d94c181e978;1.0
 	confs: [default]
-	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.1.2 in central
-	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.1.2 in central
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.1.1 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.1.1 in central
 	found org.apache.kafka#kafka-clients;2.6.0 in central
 	found com.github.luben#zstd-jni;1.4.8-1 in central
-	found org.lz4#lz4-java;1.7.1 in local-m2-cache
+	found org.lz4#lz4-java;1.7.1 in central
 	found org.xerial.snappy#snappy-java;1.1.8.2 in central
-	found org.slf4j#slf4j-api;1.7.30 in local-m2-cache
+	found org.slf4j#slf4j-api;1.7.30 in central
 	found org.spark-project.spark#unused;1.0.0 in central
 	found org.apache.commons#commons-pool2;2.6.2 in central
-:: resolution report :: resolve 283ms :: artifacts dl 5ms
+:: resolution report :: resolve 378ms :: artifacts dl 10ms
 	:: modules in use:
 	com.github.luben#zstd-jni;1.4.8-1 from central in [default]
 	org.apache.commons#commons-pool2;2.6.2 from central in [default]
 	org.apache.kafka#kafka-clients;2.6.0 from central in [default]
-	org.apache.spark#spark-sql-kafka-0-10_2.12;3.1.2 from central in [default]
-	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.1.2 from central in [default]
-	org.lz4#lz4-java;1.7.1 from local-m2-cache in [default]
-	org.slf4j#slf4j-api;1.7.30 from local-m2-cache in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.1.1 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.1.1 from central in [default]
+	org.lz4#lz4-java;1.7.1 from central in [default]
+	org.slf4j#slf4j-api;1.7.30 from central in [default]
 	org.spark-project.spark#unused;1.0.0 from central in [default]
 	org.xerial.snappy#snappy-java;1.1.8.2 from central in [default]
 	---------------------------------------------------------------------
@@ -77,23 +76,23 @@ org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
 	---------------------------------------------------------------------
 	|      default     |   9   |   0   |   0   |   0   ||   9   |   0   |
 	---------------------------------------------------------------------
-:: retrieving :: org.apache.spark#spark-submit-parent-78407ac2-9036-4a64-915b-9e414b76b15b
+:: retrieving :: org.apache.spark#spark-submit-parent-a12e58f4-40e5-4b50-bacb-1d94c181e978
 	confs: [default]
-	0 artifacts copied, 9 already retrieved (0kB/9ms)
-2021-07-17 19:29:48,766 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+	0 artifacts copied, 9 already retrieved (0kB/10ms)
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-Spark context Web UI available at http://192.168.29.175:4040
-Spark context available as 'sc' (master = local, app id = local-1626517793191).
+21/07/18 03:10:07 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+Spark context Web UI available at http://ip-10-1-1-99.ap-northeast-2.compute.internal:4040
+Spark context available as 'sc' (master = yarn, app id = application_1626574200222_0005).
 Spark session available as 'spark'.
 Welcome to
       ____              __
      / __/__  ___ _____/ /__
     _\ \/ _ \/ _ `/ __/  '_/
-   /___/ .__/\_,_/_/ /_/\_\   version 3.1.2
+   /___/ .__/\_,_/_/ /_/\_\   version 3.1.1-amzn-0
       /_/
 
-Using Scala version 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_231)
+Using Scala version 2.12.10 (OpenJDK 64-Bit Server VM, Java 1.8.0_282)
 Type in expressions to have them evaluated.
 Type :help for more information.
 
