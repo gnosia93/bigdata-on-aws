@@ -1,9 +1,4 @@
-### 1. 제플린 접속하기 ###
-
-emr 제플린에 아래와 같이 접속합니다. 
-
-
-### 2. hdfs에 데이터 로딩하기 ###
+### 1. hdfs에 데이터 로딩하기 ###
 
 * https://github.com/databricks/Spark-The-Definitive-Guide
 ```
@@ -17,6 +12,16 @@ $ hadoop fs -ls -R /tmp/spark
 -rw-r--r--   1 soonbeom supergroup      21368 2021-07-18 17:00 /tmp/spark/2015-summary.json
 -rw-r--r--   1 soonbeom supergroup   45038760 2021-07-18 17:58 /tmp/spark/online-retail-dataset.csv
 ```
+
+
+### 2. 제플린 노트북 생성 ###
+
+emr 제플린 주소 확인 후, 브라우저로 제플린 노트북 연결.
+
+![note1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-create-note1.png)
+![note2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-create-note2.png)
+
+
 
 
 ### 3. 데이터 프레임의 이해 ###
