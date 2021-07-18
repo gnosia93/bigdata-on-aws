@@ -236,72 +236,13 @@ Batch: 3
 +----+--------------------+----------+---------+------+-------------------+-------------+
 ```
 
-### value 칼럼 --> object ###
+### 메시지 파싱하기 ###
 	
-  * https://sparkbyexamples.com/spark/spark-streaming-with-kafka/
-
-[메시지 포맷]
-```
-cpu,                                 
-cpu=cpu-total,
-host=f8ffc2077dc2.ant.amazon.com 
-usage_steal=0,
-usage_guest=0,
-usage_system=2.1059216013314246,
-usage_iowait=0,
-usage_irq=0,
-usage_softirq=0,
-usage_guest_nice=0,
-usage_user=3.5029190992441994,
-usage_idle=94.39115929929922,
-usage_nice=0 1626523194000000000
-```
-
-
-* https://stackoverflow.com/questions/39255973/split-1-column-into-3-columns-in-spark-scala
-
-[칼럼 Tokenize] - 원본 메이시의 엘리먼트간의 순서가 뒤죽박죽이라서.. 순서대로 짤라내진 못하고.. kv 형태로 바꿔야 할듯.. 또한 tokenize 는 comma | space 가 되어야 할듯.
-
-```
-scala> val df2 = df.select(substring_index(col("value"), ",", -10).as("b"))
-df2: org.apache.spark.sql.DataFrame = [b: string]
-
-
-scala> import spark.implicits._
-import spark.implicits._
-
-scala> import org.apache.spark.sql.functions.split
-import org.apache.spark.sql.functions.split
-
-
-withColumn("col1", split(col("text"), "\\.").getItem(0))
-  .withColumn("col2", split(col("text"), "\\.").getItem(1))
-  .withColumn("col3", split(col("text"), "\\.").getItem(2))
-
-
-scala> val df2 = df.withColumn("idle",   split($"value", ",").getItem(4))
-		   
-		   
-     		     	$"_tmp".getItem(2).as("host"),
-		//	$"_tmp".getItem(3).as("usage_steal"),
-		//	$"_tmp".getItem(4).as("usage_guest"),
-			$"_tmp".getItem(5).as("usage_system"),
-			$"_tmp".getItem(6).as("usage_iowait"),
-		//	$"_tmp".getItem(7).as("usage_irq"),
-		//	$"_tmp".getItem(8).as("usage_softirq"),
-		//	$"_tmp".getItem(9).as("usage_guest_nice"),
-			$"_tmp".getItem(10).as("usage_user"),
-			$"_tmp".getItem(11).as("usage_idle"),
-		//	$"_tmp".getItem(12).as("usage_nice"),
-		   )
-
-scala> df2.show()
-```
-
-
+  
 ### windowing 함수 태우기 ###
+
 
 
 ## 참고자료 ##
 
-* [java.lang.IllegalArgumentException: Required executor memory (4743 MB), offHeap memory (0) MB, overhead (889 MB), and PySpark memory (0 MB) is above the max threshold (3072 MB) of this cluster! Please check the values of 'yarn.scheduler.maximum-allocation-mb' and/or 'yarn.nodemanager.resource.memory-mb'.)](https://m.blog.naver.com/gyrbsdl18/220594197752)
+
