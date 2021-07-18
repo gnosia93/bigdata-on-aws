@@ -20,7 +20,9 @@
 
 * [5. 스파크 스트리밍 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/spark.md) 
 
-* [6. Sqoop 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/sqoop.md)
+* [6. 스쿠프 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/sqoop.md)
+
+* [7. 제플린 노트북 실행하기](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/zeppelin.md)
 
 
 
