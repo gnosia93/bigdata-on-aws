@@ -5,8 +5,18 @@
 
 emr 에서 yarn 설정 파일은 마스터 노드의 /etc/hadoop/conf 디렉토리 밑에 있다. 
 
+[yarn-site.xml]
 ```
-[hadoop@ip-10-1-1-99 conf]$ cd /etc/hadoop/conf
+<property>
+    <name>yarn.nodemanager.resource.cpu-vcores</name>
+    <value>4</value>
+</property>
+  
+<property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>6144</value>
+</property>  
+
 
 
 ```
