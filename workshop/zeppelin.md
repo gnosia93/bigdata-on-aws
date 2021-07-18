@@ -217,6 +217,7 @@ only showing top 5 rows
 
 ### 5. 집계 / 그룹핑 ###
 
+[코드]
 ```
 val df = spark.read.format("csv")
     .option("header", "true")
