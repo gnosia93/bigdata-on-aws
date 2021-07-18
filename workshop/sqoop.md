@@ -1,5 +1,7 @@
 ![sqoop](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/sqoop1.jpg)
 
+아파치 스쿱(sqoop)은 관계형 데이터베이스와 하둡 사이에서 데이터 이관을 지원하는 소프트웨어로, 관계형 데이터베이스의 데이터를 HDFS, 하이브, Hbase에 임포트(import)하거나, 반대로 관계형 DB로 익스포트(export)할 수 있습니다. 스쿱은 클라우데라에서 개발했으며, 현재 아파치 오픈소스 프로젝트로 공개되어 있습니다. (현재는 deprecated 됨)
+
 
 ### 1. 실습 데이터 다운로드 ###
 
@@ -253,6 +255,6 @@ Time taken: 6.669 seconds, Fetched: 1 row(s)
 
 ## 참고자료 ##
 
-* [스쿠프 튜토리얼](https://data-flair.training/blogs/apache-sqoop-tutorial/)
+* [스쿱 튜토리얼](https://data-flair.training/blogs/apache-sqoop-tutorial/)
 
 * https://stackoverflow.com/questions/26684643/error-must-be-member-of-role-when-creating-schema-in-postgresql
