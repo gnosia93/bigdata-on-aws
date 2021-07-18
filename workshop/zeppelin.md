@@ -215,4 +215,23 @@ only showing top 5 rows
 +-----------------+-------------------+-----+
 ```
 
-### 5. 집계하기 ###
+### 5. 집계 / 그룹핑 ###
+
+```
+val df = spark.read.format("csv")
+    .option("header", "true")
+    .option("inferSchema", "true")    // 스키마 추론
+    .load("hdfs://localhost:9000/tmp/spark/online-retail-dataset.csv")
+
+df.show()    
+println("rows: " + df.count())
+df.printSchema()
+
+// unique 한 StockCode 갯수 계산
+df.select(countDistinct("StockCode")).show()
+
+// min / max / sum / avg
+df.select(min("Quantity"), max("Quantity"), sum("Quantity"), avg("Quantity")).show()
+    
+    
+```
