@@ -461,5 +461,6 @@ drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/ware
 
 ## 참고자료 ##
 
+* [하이브란](https://wikidocs.net/23282)
 * [하이브 JOB KILL하기](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/yarn.md)
 * [하이브 로그 확인하기](https://aws.amazon.com/ko/premiumsupport/knowledge-center/logs-hive-queries-amazon-emr/)
