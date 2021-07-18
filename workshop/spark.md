@@ -17,6 +17,14 @@ emr 에서 yarn 설정 파일은 마스터 노드의 /etc/hadoop/conf 디렉토�
     <value>6144</value>
 </property>  
 
+<property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>32</value>
+</property>
+<property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>3072</value>
+</property>
 
 
 ```
