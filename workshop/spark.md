@@ -42,7 +42,7 @@ E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
 EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
 
 [hadoop@ip-10-1-1-99 ~]$ 
-[hadoop@ip-10-1-1-99 ~]$ spark-shell --master yarn --executor-memory 2G --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
+[hadoop@ip-10-1-1-99 ~]$ spark-shell --master yarn --executor-memory 1G --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
 2021-07-17 19:29:48,008 WARN util.Utils: Your hostname, f8ffc2077dc2.ant.amazon.com resolves to a loopback address: 127.0.0.1; using 192.168.29.175 instead (on interface en0)
 2021-07-17 19:29:48,008 WARN util.Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 :: loading settings :: url = jar:file:/Users/soonbeom/analytics/spark-3.1.2-bin-hadoop3.2/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
