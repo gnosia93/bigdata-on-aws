@@ -6,3 +6,7 @@
   - spark job 's output destination is hdfs
 
 * executed every 10 min.
+
+------------
+
+* https://dullyshin.github.io/2020/03/13/PostgreSQL-generateSeries/
