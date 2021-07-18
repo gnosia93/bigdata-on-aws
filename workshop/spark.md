@@ -1,35 +1,5 @@
 이번 챕터에서는 스파크 스트리밍 API 를 이용하여, 카프카로 전송된 EC2 의 CPU 정보를 실시간으로 읽고, 처리해 보도록 하겠습니다. 
 
-
-### 1. yarn 메모리 설정 확인 ###
-
-emr 에서 yarn 설정 파일은 마스터 노드의 /etc/hadoop/conf 디렉토리 밑에 있다. 
-
-[yarn-site.xml]
-```
-<property>
-    <name>yarn.nodemanager.resource.cpu-vcores</name>
-    <value>4</value>
-</property>
-  
-<property>
-    <name>yarn.nodemanager.resource.memory-mb</name>
-    <value>6144</value>
-</property>  
-
-<property>
-    <name>yarn.scheduler.minimum-allocation-mb</name>
-    <value>32</value>
-</property>
-<property>
-    <name>yarn.scheduler.maximum-allocation-mb</name>
-    <value>3072</value>
-</property>
-```
-
-* [YARN memory and CPU configuration](https://www.programmersought.com/article/546941958/)
-
-
 ### 1. 스파크 쉘 실행하기 ###
 
 emr 마스터 노드로 로그인 한 후, package 옵션으로 kafka 패키지를 설정하여 스파크쉘을 실행합니다. 실행시 스파크쉘은 카프카 패키지를 자동으로 다운로드 받습니다.
