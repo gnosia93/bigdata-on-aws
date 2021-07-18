@@ -1,4 +1,5 @@
 ![spark-streaming](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/spark-streaming1.png)
+
 이번 챕터에서는 스파크 스트리밍 API 를 이용하여, 카프카로 전송된 EC2 의 CPU 정보를 실시간으로 읽고, 처리해 보도록 하겠습니다. 
 
 ### 1. 스파크 쉘 실행하기 ###
