@@ -287,9 +287,14 @@ val stream = kdf.writeStream
 only showing top 5 rows
 ```
 
-### windowing 함수 태우기 ###
+### 윈도우 함수 실행하기 ###
 
-
+```
+val windowedCounts = kdf.groupBy(
+  window($"timestamp", "10 minutes", "5 minutes"),
+  $"user"
+).max().show(5)
+```
 
 ## 참고자료 ##
 
