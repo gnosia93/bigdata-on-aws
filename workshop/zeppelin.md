@@ -375,4 +375,5 @@ res132: Boolean = true
 ## 참고 ##
 
 * [데이터 프레임 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-df.zpln)
-* [스파크SQL 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-sql.zpln)
+* [스파크 SQL 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-sql.zpln)
+* [스파크 스트리밍 예제 노트북](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/notebook/spark-streaming.zpln)
