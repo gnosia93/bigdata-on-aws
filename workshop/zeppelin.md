@@ -14,9 +14,6 @@ $ hadoop fs -put online-retail-dataset.csv /tmp/spark
 
 $ hadoop fs -ls -R /tmp/spark
 -rw-r--r--   1 soonbeom supergroup      21368 2021-07-18 17:00 /tmp/spark/2015-summary.json
-
-
-
 ```
 
 
