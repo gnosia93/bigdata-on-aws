@@ -172,37 +172,37 @@ val stream = kdf.writeStream
 		.format("console")
 		.start()
 		.awaitTermination()
-		
 
 // Exiting paste mode, now interpreting.
 
-2021-07-17 20:35:59,990 WARN streaming.StreamingQueryManager: Temporary checkpoint location created which is deleted normally when the query didn't fail: /private/var/folders/jr/0gpm8d5j0wvg8q6b56tpkfhh701ytj/T/temporary-2c36e37c-a38d-489f-9cbb-158ec00ba9f2. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+21/07/18 03:23:58 WARN StreamingQueryManager: Temporary checkpoint location created which is deleted normally when the query didn't fail: /mnt/tmp/temporary-03c63662-bd87-49f7-a76d-5924293c7512. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+21/07/18 03:23:58 WARN StreamingQueryManager: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
 -------------------------------------------
 Batch: 0
 -------------------------------------------
 +----+--------------------+----------+---------+------+-------------------+-------------+
 | key|               value|     topic|partition|offset|          timestamp|timestampType|
 +----+--------------------+----------+---------+------+-------------------+-------------+
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     0|2021-07-17 18:42:39|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     1|2021-07-17 18:42:42|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     2|2021-07-17 18:42:45|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     3|2021-07-17 18:42:48|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     4|2021-07-17 18:42:51|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     5|2021-07-17 18:42:54|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     6|2021-07-17 18:42:57|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     7|2021-07-17 18:43:00|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     8|2021-07-17 18:43:03|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|     9|2021-07-17 18:43:06|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    10|2021-07-17 18:43:09|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    11|2021-07-17 18:43:12|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    12|2021-07-17 18:43:15|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    13|2021-07-17 18:43:18|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    14|2021-07-17 18:43:21|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    15|2021-07-17 18:43:24|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    16|2021-07-17 18:43:27|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    17|2021-07-17 18:43:30|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    18|2021-07-17 18:43:33|            0|
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|    19|2021-07-17 18:43:36|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     0|2021-07-17 08:00:24|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     1|2021-07-17 08:00:27|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     2|2021-07-17 08:00:30|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     3|2021-07-17 08:00:33|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     4|2021-07-17 08:00:36|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     5|2021-07-17 08:00:39|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     6|2021-07-17 08:00:42|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     7|2021-07-17 08:00:45|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     8|2021-07-17 08:00:48|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|     9|2021-07-17 08:00:51|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    10|2021-07-17 08:00:54|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    11|2021-07-17 08:00:57|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    12|2021-07-17 08:01:00|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    13|2021-07-17 08:01:03|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    14|2021-07-17 08:01:06|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    15|2021-07-17 08:01:09|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    16|2021-07-17 08:01:12|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    17|2021-07-17 08:01:15|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    18|2021-07-17 08:01:18|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0|    19|2021-07-17 08:01:21|            0|
 +----+--------------------+----------+---------+------+-------------------+-------------+
 only showing top 20 rows
 
@@ -212,7 +212,9 @@ Batch: 1
 +----+--------------------+----------+---------+------+-------------------+-------------+
 | key|               value|     topic|partition|offset|          timestamp|timestampType|
 +----+--------------------+----------+---------+------+-------------------+-------------+
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|  2258|2021-07-17 20:36:00|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0| 23271|2021-07-18 03:24:03|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0| 23272|2021-07-18 03:24:06|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0| 23273|2021-07-18 03:24:09|            0|
 +----+--------------------+----------+---------+------+-------------------+-------------+
 
 -------------------------------------------
@@ -221,7 +223,7 @@ Batch: 2
 +----+--------------------+----------+---------+------+-------------------+-------------+
 | key|               value|     topic|partition|offset|          timestamp|timestampType|
 +----+--------------------+----------+---------+------+-------------------+-------------+
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|  2259|2021-07-17 20:36:03|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0| 23274|2021-07-18 03:24:12|            0|
 +----+--------------------+----------+---------+------+-------------------+-------------+
 
 -------------------------------------------
@@ -230,9 +232,8 @@ Batch: 3
 +----+--------------------+----------+---------+------+-------------------+-------------+
 | key|               value|     topic|partition|offset|          timestamp|timestampType|
 +----+--------------------+----------+---------+------+-------------------+-------------+
-|null|cpu,cpu=cpu-total...|cpu-metric|        0|  2260|2021-07-17 20:36:06|            0|
+|null|cpu,cpu=cpu-total...|cpu-metric|        0| 23275|2021-07-18 03:24:15|            0|
 +----+--------------------+----------+---------+------+-------------------+-------------+
-
 ```
 
 ### value 칼럼 --> object ###
