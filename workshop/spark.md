@@ -317,19 +317,4 @@ scala> df2.show()
 
 ## 참고자료 ##
 
-* [Spark Streaming with Kafka Example](https://sparkbyexamples.com/spark/spark-streaming-with-kafka/)
-	; 이 사이트가 좋은듯~.
-	
-* [스트리밍 배치주기 설정](https://stackoverflow.com/questions/57760563/how-to-specify-batch-interval-in-spark-structured-streaming)
-
-* [Getting Started with Spark Streaming, Python, and Kafka](https://www.rittmanmead.com/blog/2017/01/getting-started-with-spark-streaming-with-python-and-kafka/)
-
-* [Spark-kafka 와 연동하는 방법](https://eyeballs.tistory.com/210)
-
-* https://moons08.github.io/programming/sparkStreaming/
-
-* [빅데이터 - 스칼라(scala), 스파크(spark)로 시작하기](https://wikidocs.net/26793)
-
-* https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
-
-* https://towardsdatascience.com/connecting-the-dots-python-spark-and-kafka-19e6beba6404
+* [java.lang.IllegalArgumentException: Required executor memory (4743 MB), offHeap memory (0) MB, overhead (889 MB), and PySpark memory (0 MB) is above the max threshold (3072 MB) of this cluster! Please check the values of 'yarn.scheduler.maximum-allocation-mb' and/or 'yarn.nodemanager.resource.memory-mb'.)](https://m.blog.naver.com/gyrbsdl18/220594197752)
