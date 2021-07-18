@@ -1,4 +1,4 @@
-![sqoop](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/sqoop.jpg)
+![sqoop](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/sqoop1.jpg)
 
 
 ### 1. 실습 데이터 다운로드 ###
