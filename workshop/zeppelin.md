@@ -16,6 +16,7 @@ $ hadoop fs -ls -R /tmp/spark
 
 ### 3. 데이터 프레임의 이해 ###
 
+[실행코드]
 ```
 // 하둡에서 json 파일을읽어 데이터프레임으로 변환
 val df = spark.read.format("json")
@@ -46,4 +47,81 @@ df.withColumn("destination", $"DEST_COUNTRY_NAME")
     .withColumn("origin", $"ORIGIN_COUNTRY_NAME") 
     .withColumnRenamed("count", "cnt")
     .drop("DEST_COUNTRY_NAME").show()
+```
+
+[결과]
+```
+rows :256
++-----------------+-------------------+-----+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++-----------------+-------------------+-----+
+|    United States|            Romania|   15|
+|    United States|            Croatia|    1|
+|    United States|            Ireland|  344|
+|            Egypt|      United States|   15|
+|    United States|              India|   62|
+|    United States|          Singapore|    1|
+|    United States|            Grenada|   62|
+|       Costa Rica|      United States|  588|
+|          Senegal|      United States|   40|
+|          Moldova|      United States|    1|
++-----------------+-------------------+-----+
+only showing top 10 rows
+
+root
+ |-- DEST_COUNTRY_NAME: string (nullable = true)
+ |-- ORIGIN_COUNTRY_NAME: string (nullable = true)
+ |-- count: long (nullable = true)
+
++-------------------+
+|ORIGIN_COUNTRY_NAME|
++-------------------+
+|            Romania|
+|            Croatia|
+|            Ireland|
++-------------------+
+only showing top 3 rows
+
++-----------------+-------------------+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|
++-----------------+-------------------+
+|    United States|            Romania|
++-----------------+-------------------+
+only showing top 1 row
+
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+|            Romania|            Romania|            Romania|            Romania|            Romania|            Romania|
+|            Croatia|            Croatia|            Croatia|            Croatia|            Croatia|            Croatia|
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+only showing top 2 rows
+
++-------------------+---+--------------------+----------------+
+|ORIGIN_COUNTRY_NAME|cnt|         destination|          origin|
++-------------------+---+--------------------+----------------+
+|            Romania| 15|       United States|         Romania|
+|            Croatia|  1|       United States|         Croatia|
+|            Ireland|344|       United States|         Ireland|
+|      United States| 15|               Egypt|   United States|
+|              India| 62|       United States|           India|
+|          Singapore|  1|       United States|       Singapore|
+|            Grenada| 62|       United States|         Grenada|
+|      United States|588|          Costa Rica|   United States|
+|      United States| 40|             Senegal|   United States|
+|      United States|  1|             Moldova|   United States|
+|       Sint Maarten|325|       United States|    Sint Maarten|
+|   Marshall Islands| 39|       United States|Marshall Islands|
+|      United States| 64|              Guyana|   United States|
+|      United States|  1|               Malta|   United States|
+|      United States| 41|            Anguilla|   United States|
+|      United States| 30|             Bolivia|   United States|
+|           Paraguay|  6|       United States|        Paraguay|
+|      United States|  4|             Algeria|   United States|
+|      United States|230|Turks and Caicos ...|   United States|
+|          Gibraltar|  1|       United States|       Gibraltar|
++-------------------+---+--------------------+----------------+
+only showing top 20 rows
+
+df: org.apache.spark.sql.DataFrame = [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string ... 1 more field]
 ```
