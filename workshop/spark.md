@@ -159,7 +159,7 @@ scala> import org.apache.spark.sql.functions.udf
 
 scala> :paste
 var kdf = spark.readStream.format("kafka")
-	       .option("kafka.bootstrap.servers", ""b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092") 
+	       .option("kafka.bootstrap.servers", "b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092") 
                .option("subscribe", "cpu-metric") 
                .option("startingOffsets", "earliest") 
                .load()  // kdf is kafka data frame
