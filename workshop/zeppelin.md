@@ -47,13 +47,13 @@ emr 제플린 주소 확인 후, 브라우저로 제플린 노트북 연결한 �
 
 ![note3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-notebook.png)
 
-아래 샘플 코드를 제플린 노트북에서 실행하고, 그 결과를 확인 하도록 합니다. 
+hdfs URL 을 localhost 에서 여러분들의 주소로 바꾼 후, 아래 샘플 코드를 제플린 노트북에서 실행하고, 그 결과를 확인 하도록 합니다. 
 
 [샘플 코드]
 ```
 // 하둡에서 json 파일을읽어 데이터프레임으로 변환
 val df = spark.read.format("json")
-    .load("hdfs://localhost:9000/tmp/spark/2015-summary.json")
+    .load("hdfs://localhost:9000/tmp/spark/2015-summary.json")         // hdfs URL을 emr 마스터 주소로 바꾸세요.
 
 println("rows :" + df.count())    
 df.show(10)    
@@ -248,7 +248,7 @@ only showing top 5 rows
 val df = spark.read.format("csv")
     .option("header", "true")
     .option("inferSchema", "true")    // 스키마 추론
-    .load("hdfs://localhost:9000/tmp/spark/online-retail-dataset.csv")
+    .load("hdfs://localhost:9000/tmp/spark/online-retail-dataset.csv")          // hdfs URL을 emr 마스터 주소로 바꾸세요.
 
 df.show()    
 println("rows: " + df.count())
@@ -354,7 +354,7 @@ df: org.apache.spark.sql.DataFrame = [InvoiceNo: string, StockCode: string ... 6
 ```
 // 2015_summary 뷰 생성
 val df = spark.read.format("json")
-    .load("hdfs://localhost:9000/tmp/spark/2015-summary.json")
+    .load("hdfs://localhost:9000/tmp/spark/2015-summary.json")               // hdfs URL을 emr 마스터 주소로 바꾸세요.
     .createOrReplaceTempView("2015_summary")
     
 // 쿼리 실행    
