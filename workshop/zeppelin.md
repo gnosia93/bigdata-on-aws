@@ -7,7 +7,7 @@ emr 제플린에 아래와 같이 접속합니다.
 
 ```
 $ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/flight-data/json/2015-summary.json
-$ wget https://github.com/databricks/Spark-The-Definitive-Guide/blob/master/data/retail-data/all/online-retail-dataset.csv
+$ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/retail-data/all/online-retail-dataset.csv
 
 $ hadoop fs -put 2015-summary.json /tmp/spark
 $ hadoop fs -put online-retail-dataset.csv /tmp/spark
