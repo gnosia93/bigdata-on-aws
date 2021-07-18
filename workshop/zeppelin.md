@@ -1,3 +1,11 @@
+Apache Zeppelin은 Spark 쉘을 통한 데이터 분석의 불편함을 Web기반의 Notebook 환경을 통해 해결해보고자 만들어진 어플리케이션으로, 
+코드를 작성, 실행, 결과확인, 코드수정 과정을 반복하면서 원하는 결과를 만들어 낼수있는 작업환경을 지칭합니다.
+
+Zeppelin 에 대한 좀더 자세한 내용은 아래 링크를 참조하세요.
+
+* [Apache Zeppelin 이란 무엇인가?](https://medium.com/apache-zeppelin-stories/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EC%9D%BC%EA%B8%B0-2-apache-zeppelin-%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-f3a520297938)
+
+
 ### 1. hdfs에 데이터 로딩하기 ###
 
 * https://github.com/databricks/Spark-The-Definitive-Guide
