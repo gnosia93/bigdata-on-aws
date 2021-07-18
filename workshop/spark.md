@@ -5,14 +5,44 @@
 emr 마스터 노드로 로그인 한 후, package 옵션으로 kafka 패키지를 설정하여 스파크쉘을 실행합니다. 실행시 스파크쉘은 카프카 패키지를 자동으로 다운로드 받습니다.
 
 ```
-$ terraform output |grep ec2_public
+$ terraform output 
+Outputs:
+
 ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+emr_master_public_dns = ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com
+msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
 
+$ ssh -i ~/.ssh/tf_key hadoop@ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com
+The authenticity of host 'ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com (3.34.196.21)' can't be established.
+ECDSA key fingerprint is SHA256:IiVTTs4lnxFzQHBPIBgCErqNLmQrE/oKUJSAbJTA+AM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com,3.34.196.21' (ECDSA) to the list of known hosts.
 
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
 
+https://aws.amazon.com/amazon-linux-2/
+62 package(s) needed for security, out of 103 available
+Run "sudo yum update" to apply all updates.
 
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
 
-$ spark-shell --master local --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2
+[hadoop@ip-10-1-1-99 ~]$ 
+[hadoop@ip-10-1-1-99 ~]$ spark-shell --master local --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
 2021-07-17 19:29:48,008 WARN util.Utils: Your hostname, f8ffc2077dc2.ant.amazon.com resolves to a loopback address: 127.0.0.1; using 192.168.29.175 instead (on interface en0)
 2021-07-17 19:29:48,008 WARN util.Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 :: loading settings :: url = jar:file:/Users/soonbeom/analytics/spark-3.1.2-bin-hadoop3.2/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
@@ -69,6 +99,7 @@ Type :help for more information.
 
 scala>
 ```
+* https://mvnrepository.com/artifact/org.apache.spark/spark-sql-kafka-0-10_2.12/3.1.1
 
 ### 2. 배치처리 ###
 
