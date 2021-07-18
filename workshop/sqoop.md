@@ -138,19 +138,55 @@ airline_db=> \q
 
 ### 4. sqoop import to hdfs ###
 
+emr 마스터 노드로 로그인 한 후, sqoop import 를 실행한다. 
 ```
-$ terraform output | grep rds
+$ terraform output 
+Outputs:
+
+ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+emr_master_public_dns = ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com
+msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
 rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
+
+$ ssh -i ~/.ssh/tf_key hadoop@ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com
+The authenticity of host 'ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com (3.34.196.21)' can't be established.
+ECDSA key fingerprint is SHA256:IiVTTs4lnxFzQHBPIBgCErqNLmQrE/oKUJSAbJTA+AM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com,3.34.196.21' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+62 package(s) needed for security, out of 103 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+[hadoop@ip-10-1-1-99 ~]$ 
 ```
 sqoop import 명령어를 이용하여 RDS 테이블 데이터를 hdfs 로 import 한다. 
 -m 파라미터는 매퍼의 갯수로 여기서는 1 로 설정한다. 
 ```
-$ sqoop import \
+[hadoop@ip-10-1-1-99 ~]$ sqoop import \
    --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
    --username airline \
    --password airline \
    --table carriers \
-   --target-dir hdfs://localhost:9000/tmp/workshop/carrriers \ 
+   --target-dir /tmp/workshop/carrriers \ 
    -m 1
 ```
 
