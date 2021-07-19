@@ -56,6 +56,14 @@ with DAG(
            --split-by line -m 4 \
            --append
         """
-    sqoop_import_dummy_table = BashOperator(task_id='sqoop_import_dummy_table', bash_command=cmd, dag=dag)
+    sqoop_import_dummy_table = BashOperator(
+        task_id='sqoop_import_dummy_table', 
+        bash_command=cmd, 
+        dag=dag, 
+        env={
+            'CUSTOM_ENV': 'CUSTOM_VALUE',
+            **os.environ
+        }
+    )
     
     drop_dummy_table >> ctas_dummy_table >> sqoop_import_dummy_table
