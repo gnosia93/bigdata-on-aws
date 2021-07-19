@@ -211,9 +211,11 @@ sudo -u ubuntu wget https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/h
 sudo -u ubuntu tar xvfz /home/ubuntu/hadoop-3.2.1.tar.gz -C /home/ubuntu
 export HADOOP_HOME=/home/ubuntu/hadoop-3.2.1
 export SPARK_HOME=/home/ubuntu/spark-3.1.2-bin-hadoop3.2
+export SQOOP_HOME=/home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0
 sudo -u ubuntu echo "export HADOOP_HOME=/home/ubuntu/hadoop-3.2.1" >> /home/ubuntu/.bash_profile
 sudo -u ubuntu echo "export SPARK_HOME=/home/ubuntu/spark-3.1.2-bin-hadoop3.2" >> /home/ubuntu/.bash_profile
-sudo -u ubuntu echo "export PATH=$PATH:$HADOOP_HOME/bin:$SPARK_HOME/bin" >> /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "export SQOOP_HOME=/home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0" >> /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "export PATH=$PATH:$HADOOP_HOME/bin:$SPARK_HOME/bin:$SQOOP_HOME/bin" >> /home/ubuntu/.bash_profile
 touch /home/ubuntu/done
 _DATA
 
