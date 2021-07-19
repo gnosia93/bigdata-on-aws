@@ -29,7 +29,7 @@ with DAG(
         task_id="ctas_dummy_table",
         postgres_conn_id="postgres_default",
         sql="""
-            create table tbl_dummy as 
+            create table tbl_airflow_dummy as 
             select 'dummy'|| right('0' || line, 2) as line, 
             repeat('Aa', 20) as comment, 
             to_char(generate_series('2021-01-01 00:00'::timestamp,'2021-06-30 12:00', '1 minutes'), 'YYYY-MM-dd hh:mi') as created
@@ -41,7 +41,7 @@ with DAG(
         task_id="drop_dummy_table",
         postgres_conn_id="postgres_default",
         sql="""
-            drop table if exists tbl_dummy;
+            drop table if exists tbl_airflow_dummy;
             """,
     )
     
