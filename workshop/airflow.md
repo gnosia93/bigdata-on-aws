@@ -92,7 +92,7 @@ if __name__ == "__main__":
     dag.cli()
 ```
 
-* conda 
+* conda 인 경우는 conda 로 install 해야 한다. 
 ```
 $ cd $AIRFLOW_HOME/dags
 $ sudo pip install apache-airflow-providers-postgres
