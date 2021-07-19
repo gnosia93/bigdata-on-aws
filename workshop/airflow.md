@@ -27,11 +27,10 @@ $ sqoop import \
 ```
 
 
-### 2. airflow 잡 등록하기 ###
+### 2. hadoop 설정하기 ###
 
-에어플로우에서 잡을 등록하는 방법은 의외로 간단합니다. 잡 로직을 구현한 파이썬 파일을 $AIRFLOW_HOME/dags/ 디렉토리에 복사 하면 됩니다. 
-아래와 같이 airflow ec2 인스턴스 로그인 하여, ps 명령어를 이용하여 airflow 가 정상적으로 동작중인지 확인힙니다.
-파이썬으로 구현된 job 파일을 받아오기 위해 아래 예제에서 처럼 github repo 를 clone 한 후, ~/airflow/dags 디렉토리로 job 파일을 복사합니다. 
+core-site.xml 파일을 편집해서 fs.defaultFS 값을 여러분들의 emr 주소로 변경합니다. 
+
 ```
 $ terraform output | grep airflow
 airflow_public_ip = ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com
@@ -43,6 +42,23 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com,13.125.226.210' (ECDSA) to the list of known hosts.
 Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-1029-aws x86_64)
 
+ubuntu@ip-10-1-1-93:~$ cd $HADOOP_HOME/etc/hadoop
+
+ubuntu@ip-10-1-1-93:~$ vi core-site.xml
+<configuration>
+        <property>
+                <name>fs.defaultFS</name>
+                <value>hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020</value>       # 여러분들의 emr 마스터 노드 주소로 변경하세요.
+        </property>
+</configuration>
+```
+
+### 3. airflow 잡 등록하기 ###
+
+에어플로우에서 잡을 등록하는 방법은 의외로 간단합니다. 잡 로직을 구현한 파이썬 파일을 $AIRFLOW_HOME/dags/ 디렉토리에 복사 하면 됩니다. 
+아래와 같이 airflow ec2 인스턴스 로그인 하여, ps 명령어를 이용하여 airflow 가 정상적으로 동작중인지 확인힙니다.
+파이썬으로 구현된 job 파일을 받아오기 위해 아래 예제에서 처럼 github repo 를 clone 한 후, ~/airflow/dags 디렉토리로 job 파일을 복사합니다. 
+```
 ubuntu@ip-10-1-1-93:~$ ps aux | grep airflow
 ubuntu     10019  0.7  1.5 375160 116900 ?       S    10:20   0:01 /usr/bin/python3 /usr/local/bin/airflow webserver -D
 ubuntu     10023  0.0  0.5  68056 42704 ?        S    10:20   0:00 gunicorn: master [airflow-webserver]
@@ -64,21 +80,6 @@ dag_id               | filepath                | owner   | paused
 =====================+=========================+=========+=======
 airflow_workshop_job | airflow_workshop_job.py | airflow | None
 ```
-
-### 2. hadoop 설정하기 ###
-
-```
-ubuntu@ip-10-1-1-93:~$ cd $HADOOP_HOME/etc/hadoop
-ubuntu@ip-10-1-1-93:~$ vi core-site.xml
-<configuration>
-        <property>
-                <name>fs.defaultFS</name>
-                <value>hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020</value>       # 여러분들의 emr 마스터 노드 주소로 변경하세요.
-        </property>
-</configuration>
-```
-
-### 3. airflow 접속 ###
 
 브라우저를 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
 
