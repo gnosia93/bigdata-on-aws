@@ -49,6 +49,48 @@ ubuntu     10077  6.5  0.9 109388 76680 ?        S    10:23   0:00 /usr/bin/pyth
 ubuntu     10078  0.0  0.9 108620 75360 ?        S    10:23   0:00 airflow serve-logs
 ubuntu     10079  0.5  0.9 109132 77032 ?        S    10:23   0:00 airflow scheduler -- DagFileProcessorManager
 ubuntu     10094  0.0  0.0   8160   740 pts/0    S+   10:24   0:00 grep airflow
+
+ubuntu@ip-10-1-1-93:~/airflow$ airflow dags list
+dag_id                                  | filepath                                                                                          | owner   | paused
+========================================+===================================================================================================+=========+=======
+example_bash_operator                   | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_bash_operator.py              | airflow | True
+example_branch_datetime_operator_2      | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_branch_datetime_operator.py   | airflow | True
+example_branch_dop_operator_v3          | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_branch_python_dop_operator_3. | airflow | True
+                                        | py                                                                                                |         |
+example_branch_labels                   | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_branch_labels.py              | airflow | True
+example_branch_operator                 | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_branch_operator.py            | airflow | True
+example_complex                         | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_complex.py                    | airflow | True
+example_dag_decorator                   | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_dag_decorator.py              | airflow | True
+example_external_task_marker_child      | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_external_task_marker_dag.py   | airflow | True
+example_external_task_marker_parent     | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_external_task_marker_dag.py   | airflow | True
+example_kubernetes_executor             | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_kubernetes_executor.py        | airflow | True
+example_nested_branch_dag               | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_nested_branch_dag.py          | airflow | True
+example_passing_params_via_test_command | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_passing_params_via_test_comma | airflow | True
+                                        | nd.py                                                                                             |         |
+example_python_operator                 | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_python_operator.py            | airflow | True
+example_short_circuit_operator          | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_short_circuit_operator.py     | airflow | True
+example_skip_dag                        | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_skip_dag.py                   | airflow | True
+example_subdag_operator                 | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_subdag_operator.py            | airflow | True
+example_subdag_operator.section-1       | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_subdag_operator.py            | airflow | True
+example_subdag_operator.section-2       | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_subdag_operator.py            | airflow | True
+example_task_group                      | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_task_group.py                 | airflow | True
+example_task_group_decorator            | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_task_group_decorator.py       | airflow | True
+example_trigger_controller_dag          | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_trigger_controller_dag.py     | airflow | True
+example_trigger_target_dag              | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_trigger_target_dag.py         | airflow | True
+example_weekday_branch_operator         | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_branch_day_of_week_operator.p | airflow | True
+                                        | y                                                                                                 |         |
+example_xcom                            | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_xcom.py                       | airflow | True
+example_xcom_args                       | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_xcomargs.py                   | airflow | True
+example_xcom_args_with_operators        | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_xcomargs.py                   | airflow | True
+latest_only                             | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_latest_only.py                | airflow | True
+latest_only_with_trigger                | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_latest_only_with_trigger.py   | airflow | True
+test_utils                              | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/test_utils.py                         | airflow | True
+tutorial                                | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/tutorial.py                           | airflow | True
+tutorial_etl_dag                        | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/tutorial_etl_dag.py                   | airflow | True
+tutorial_taskflow_api_etl               | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/tutorial_taskflow_api_etl.py          | airflow | True
+tutorial_taskflow_api_etl_virtualenv    | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/tutorial_taskflow_api_etl_virtualenv. | airflow | True
+                                        | py                                                                                                |         |
+
 ```
 
 
