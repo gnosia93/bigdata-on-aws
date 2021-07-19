@@ -202,8 +202,8 @@ sudo -u ubuntu echo "AUTH_ROLE_PUBLIC = 'Admin'" >> /home/ubuntu/airflow/webserv
 sudo -u ubuntu sed -i s/'load_examples = True'/'load_examples = False'/g /home/ubuntu/airflow/airflow.cfg    
 sudo -u ubuntu airflow webserver -D
 sudo -u ubuntu airflow scheduler -D    
-sudo apt install postgresql-client-common    
-touch /home/ubuntu/done    
+sudo apt-get install -y postgresql-client
+touch /home/ubuntu/done
 _DATA
 
     tags = {
