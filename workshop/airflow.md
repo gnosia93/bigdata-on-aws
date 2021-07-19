@@ -52,6 +52,19 @@ ubuntu@ip-10-1-1-93:~$ vi core-site.xml
                 <value>hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020</value>       # 여러분들의 emr 마스터 노드 주소로 변경하세요.
         </property>
 </configuration>
+
+
+$ cd /Users/soonbeom/analytics/sqoop-1.4.7.bin__hadoop-2.6.0
+$ cp conf/sqoop-env-template.sh conf/sqoop-env.sh
+$ vi conf/sqoop-env.sh
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+
+
+ubuntu@ip-10-1-1-198:~$ cp $SQOOP_HOME/conf/sqoop-env-template.sh $SQOOP_HOME/conf/sqoop-env.sh
+ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_COMMON_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
+ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
+
 ```
 
 ### 3. airflow 잡 등록하기 ###
