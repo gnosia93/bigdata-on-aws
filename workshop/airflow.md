@@ -99,7 +99,7 @@ Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigge
 
 ![job-start2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-2.png)
 
-잡 목록에서 airflow_workshp_job 을 클릭하여 Tree View 에서 작업 상태를 관찰합니다. 
+잡 목록에서 airflow_workshp_job 을 클릭하여 Tree View 화면에서 작업 상태를 관찰합니다. 
 ![job-start3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-3.png)
 
 
