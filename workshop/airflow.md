@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
 ````
 $ cd $AIRFLOW_HOME/dags
-$ pip install apache-airflow-providers-postgres
+$ sudo pip install apache-airflow-providers-postgres
 
 ```
 
