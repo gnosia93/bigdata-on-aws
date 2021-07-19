@@ -27,7 +27,6 @@ $ HADOOP_USER_NAME=hdfs sqoop import \
    --delete-target-dir
 ```
 --append 추가하기
-
 --delete-target-dir 덮어쓰기
 
 ### 2. hadoop 설정하기 ###
