@@ -23,10 +23,12 @@ $ sqoop import \
    --table tbl_airflow_dummy \
    --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
    --bindir . \
-   --split-by line \
-   -m 4
+   --split-by line -m 4 \
+   --delete-target-dir
 ```
+--append 추가하기
 
+--delete-target-dir 덮어쓰기
 
 ### 2. hadoop 설정하기 ###
 
