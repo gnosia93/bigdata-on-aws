@@ -199,21 +199,21 @@ sudo -u ubuntu echo 'alias python=python3' >> /home/ubuntu/.bash_profile
 sudo -u ubuntu mkdir -p /home/ubuntu/airflow/dags
 sudo -u ubuntu airflow db init
 sudo -u ubuntu echo "AUTH_ROLE_PUBLIC = 'Admin'" >> /home/ubuntu/airflow/webserver_config.py
-sudo -u ubuntu sed -i s/'load_examples = True'/'load_examples = False'/g /home/ubuntu/airflow/airflow.cfg    
+sudo -u ubuntu sed -i s/'load_examples = True'/'load_examples = False'/g /home/ubuntu/airflow/airflow.cfg
 sudo -u ubuntu airflow webserver -D
-sudo -u ubuntu airflow scheduler -D    
+sudo -u ubuntu airflow scheduler -D
 sudo apt-get install -y postgresql-client
 sudo -u ubuntu wget http://archive.apache.org/dist/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -P /home/ubuntu
-sudo -u ubuntu tar xvfz /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /home/ubuntu   
+sudo -u ubuntu tar xvfz /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /home/ubuntu
 sudo -u ubuntu wget https://mirror.navercorp.com/apache/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz -P /home/ubuntu
-sudo -u ubuntu tar xvfz /home/ubuntu/spark-3.1.2-bin-hadoop3.2.tgz -C /home/ubuntu    
+sudo -u ubuntu tar xvfz /home/ubuntu/spark-3.1.2-bin-hadoop3.2.tgz -C /home/ubuntu
 sudo -u ubuntu wget https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz -P /home/ubuntu
-sudo -u ubuntu tar xvfz /home/ubuntu/hadoop-3.2.1.tar.gz -C /home/ubuntu      
-export HADOOP_HOME=/home/ubuntu/hadoop-3.2.1    
-export SPARK_HOME=/home/ubuntu/spark-3.1.2-bin-hadoop3.2    
-sudo -u ubuntu echo "export HADOOP_HOME=/home/ubuntu/hadoop-3.2.1" >> /home/ubuntu/.bash_profile 
-sudo -u ubuntu echo "export SPARK_HOME=/home/ubuntu/spark-3.1.2-bin-hadoop3.2" >> /home/ubuntu/.bash_profile 
-sudo -u ubuntu echo "export PATH=$PATH:$HADOOP_HOME/bin:$SPARK_HOME/bin" >> /home/ubuntu/.bash_profile     
+sudo -u ubuntu tar xvfz /home/ubuntu/hadoop-3.2.1.tar.gz -C /home/ubuntu
+export HADOOP_HOME=/home/ubuntu/hadoop-3.2.1
+export SPARK_HOME=/home/ubuntu/spark-3.1.2-bin-hadoop3.2
+sudo -u ubuntu echo "export HADOOP_HOME=/home/ubuntu/hadoop-3.2.1" >> /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "export SPARK_HOME=/home/ubuntu/spark-3.1.2-bin-hadoop3.2" >> /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "export PATH=$PATH:$HADOOP_HOME/bin:$SPARK_HOME/bin" >> /home/ubuntu/.bash_profile
 touch /home/ubuntu/done
 _DATA
 
