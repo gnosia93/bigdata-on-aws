@@ -27,13 +27,6 @@ ubuntu     10079  0.5  0.9 109132 77032 ?        S    10:23   0:00 airflow sched
 ubuntu     10094  0.0  0.0   8160   740 pts/0    S+   10:24   0:00 grep airflow
 
 ubuntu@ip-10-1-1-93:~$ git clone https://github.com/gnosia93/bigdata-on-aws.git
-Cloning into 'bigdata-on-aws'...
-remote: Enumerating objects: 1686, done.
-remote: Counting objects: 100% (1031/1031), done.
-remote: Compressing objects: 100% (627/627), done.
-remote: Total 1686 (delta 706), reused 576 (delta 399), pack-reused 655
-Receiving objects: 100% (1686/1686), 4.24 MiB | 4.86 MiB/s, done.
-Resolving deltas: 100% (1109/1109), done.
 
 ubuntu@ip-10-1-1-93:~$ cp bigdata-on-aws/jobs/airflow_workshop_job.py ~/airflow/dags/
 
