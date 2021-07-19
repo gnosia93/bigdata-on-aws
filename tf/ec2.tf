@@ -204,9 +204,9 @@ sudo -u ubuntu airflow webserver -D
 sudo -u ubuntu airflow scheduler -D    
 sudo apt-get install -y postgresql-client
 sudo -u ubuntu wget http://archive.apache.org/dist/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -P /home/ubuntu
-sudo -u ubuntu tar xvfz /home/ubutu/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /home/ubuntu   
+sudo -u ubuntu tar xvfz /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /home/ubuntu   
 sudo -u ubuntu wget https://mirror.navercorp.com/apache/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz -P /home/ubuntu
-sudo -u ubuntu tar xvfz /home/ubutu/spark-3.1.2-bin-hadoop3.2.tgz -C /home/ubuntu       
+sudo -u ubuntu tar xvfz /home/ubuntu/spark-3.1.2-bin-hadoop3.2.tgz -C /home/ubuntu       
 touch /home/ubuntu/done
 _DATA
 
