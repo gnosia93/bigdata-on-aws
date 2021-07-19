@@ -41,8 +41,9 @@ $ sqoop import \
    --password airline \
    --table tbl_airflow_dummy \
    --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
-   --bindir .
-   -m 1
+   --bindir . \
+   --split-by line \
+   -m 10
 ```
 
 ### 2. airflow 잡 등록하기 ###
