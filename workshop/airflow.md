@@ -92,10 +92,11 @@ if __name__ == "__main__":
     dag.cli()
 ```
 
-````
+* conda 
+```
 $ cd $AIRFLOW_HOME/dags
 $ sudo pip install apache-airflow-providers-postgres
-
+$ conda install -c conda-forge apache-airflow-providers-postgres
 ```
 
 
