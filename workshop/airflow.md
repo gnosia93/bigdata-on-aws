@@ -40,13 +40,6 @@ ubuntu@ip-10-1-1-93:~$ vi core-site.xml
 </configuration>
 
 
-$ cd /Users/soonbeom/analytics/sqoop-1.4.7.bin__hadoop-2.6.0
-$ cp conf/sqoop-env-template.sh conf/sqoop-env.sh
-$ vi conf/sqoop-env.sh
-export HADOOP_COMMON_HOME=$HADOOP_HOME
-export HADOOP_MAPRED_HOME=$HADOOP_HOME
-
-
 ubuntu@ip-10-1-1-198:~$ cp $SQOOP_HOME/conf/sqoop-env-template.sh $SQOOP_HOME/conf/sqoop-env.sh
 ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_COMMON_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
 ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
