@@ -43,8 +43,13 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 * http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
 
-### 3. connection 설정 ###
+### 3. connections 설정 ###
 
+postgres_default 커넥션 값을 아래와 같이 설정합니다. 
+
+![conn1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-1.png)
+![conn2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-2.png)
+![conn3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-3.png)
 
 
 
