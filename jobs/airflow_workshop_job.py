@@ -8,7 +8,7 @@ from airflow.providers.postgres.operators.postgres import PostgresOperator
 args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2019, 8, 25),
+    'start_date': datetime(2021, 7, 1),
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
