@@ -194,10 +194,11 @@ sudo apt-get install libkrb5-dev -y
 sudo apt-get install libsasl2-dev -y
 sudo pip install apache-airflow
 sudo pip install apache-airflow-providers-postgres    
-sudo -u ubuntu echo 'export AIRFLOW_HOME=~/airflow' > /home/ubuntu/.bash_profile
+sudo -u ubuntu echo 'export AIRFLOW_HOME=~/airflow' >> /home/ubuntu/.bash_profile
 sudo -u ubuntu echo "AUTH_ROLE_PUBLIC = 'Admin'" >> /home/ubuntu/airflow/webserver_config.py
 sudo -u ubuntu echo 'alias python=python3' >> /home/ubuntu/.bash_profile    
 sudo -u ubuntu mkdir -p /home/ubuntu/airflow/dags
+sudo -u ubuntu airflow db init    
 _DATA
 
     tags = {
