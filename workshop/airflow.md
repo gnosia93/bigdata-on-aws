@@ -82,12 +82,13 @@ Port : 5432
 
 ### 4. job 실행하기 ###
 
-airflow_workshop_job 의 좌측에 있는 회식 버큰을 토글하여 파란색으로 바꾼 다음, Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigger DAG] 메뉴를 선택합니다.  
+airflow_workshop_job 의 좌측에 있는 회식 버큰을 토글하여 파란색으로 바꾼 다음,  
 
 ![job-start1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-1.png) 
+
+Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigger DAG] 메뉴를 선택합니다.
+
 ![job-start2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-2.png)
-
-
 
 
 ### airflow job spec ###
