@@ -1,5 +1,13 @@
+### 1. airflow 잡 스팩 ###
 
-### 1. airflow 잡 등록하기 ###
+* database operator - dummmy 레코드 gen (300만건)
+* sqoop operator - import data into hadoop 
+* spark operator - summary spark job with hdfs
+  - spark job 's output destination is hdfs
+* 매일 실행
+
+
+### 2. airflow 잡 등록하기 ###
 
 에어플로우에서 잡을 등록하는 방법은 의외로 간단합니다. 잡 로직을 구현한 파이썬 파일을 $AIRFLOW_HOME/dags/ 디렉토리에 copy 하면 된다. 
 ```
@@ -35,14 +43,14 @@ dag_id               | filepath                | owner   | paused
 airflow_workshop_job | airflow_workshop_job.py | airflow | None
 ```
 
-### 2. airflow 접속 ###
+### 3. airflow 접속 ###
 
 브라우저를 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
 
 * http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
 
-### 3. connections 설정 ###
+### 4. connections 설정 ###
 
 [airflow_workshop_job](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py) 파이썬 코드에서는 postgresql 데이터베이스에 접근하기 위해서, postgres_default 라는 키워드를 사용하고 있습니다. 해당 키워드는 에어 플로우가 기본적으로 제공하는 postgresql 용 키값으로 airflow 의 connections 메뉴에서 해당 키에 대한 정보를 설정하실 수 있습니다.
 
@@ -79,7 +87,7 @@ Port : 5432
 
 
 
-### 4. job 실행하기 ###
+### 5. job 실행하기 ###
 
 airflow_workshop_job 의 좌측에 있는 회식 버큰을 토글하여 파란색으로 바꾼 다음,  
 
@@ -88,16 +96,6 @@ airflow_workshop_job 의 좌측에 있는 회식 버큰을 토글하여 파란�
 Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigger DAG] 메뉴를 선택합니다.
 
 ![job-start2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-2.png)
-
-
-### airflow job spec ###
-
-* database operator - dummmy 레코드 gen (300만건)
-* sqoop operator - import data into hadoop 
-* spark operator - summary spark job with hdfs
-  - spark job 's output destination is hdfs
-
-* executed every 10 min.
 
 
 ## 참고자료 ##
