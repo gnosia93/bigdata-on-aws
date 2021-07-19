@@ -82,7 +82,7 @@ Port : 5432
 
 ### 4. job 실행하기 ###
 
- 
+![job-start](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-1.png) 
 
 
 
