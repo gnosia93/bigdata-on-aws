@@ -5,7 +5,10 @@
 * spark operator - summary spark job with hdfs
   - spark job 's output destination is hdfs
 * 실행주기 - 매일
-
+ 
+``` 
+(중요) - emr 클러스터의 spark-submit 과 sqoop 프로그램을 구동하기 위해서 airflow 가 설치된 노드에 sqoop 과 spark 을 설치하도록 한다. 그렇지 않은 경우 airflow ssh operator 를 이용해야 하는 것데, 그렇게 되는 경우 airflow ec2 서버에 ssh public key 를 올려놔야 해서 보안상 이슈가 생긴다. 스파크의 경우 클라이언트로 동작하지만, rest api 를 제공하는 않는 sqoop 버전 1 에서는 어쩔수 없는 선택으로, emr 클러스터와 동일한 버전의 sqoop 를 airflow ec2 에 설치하도록 한다. 
+```
 
 ### 2. airflow 잡 등록하기 ###
 
