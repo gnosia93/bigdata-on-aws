@@ -17,6 +17,8 @@
 ### PostgreSQL ###
 
 ```
+airline_db=> drop table if exists tbl_dummy;
+
 airline_db=> create table tbl_dummy as 
 select 'dummy'|| right('0' || line, 2) as line, 
        repeat('Aa', 20) as comment, 
