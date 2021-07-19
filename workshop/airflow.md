@@ -107,6 +107,9 @@ Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigge
 
 * [우분투에 airflow 설치하기](https://jungwoon.github.io/airflow/2019/02/26/Airflow.html)
 
+* [SSHOperator 사용법](https://prometheo.tistory.com/48)
+
+* [Sqoop 서버 with 에어플로우](https://stackoverflow.com/questions/51120240/using-sqoop-move-tables-from-mysql-to-hive-scheduled-using-remotely-installed-ai)
 
 
 
