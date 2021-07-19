@@ -60,9 +60,22 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
           """,
     )   
 ```
-Admin > 
+
+상단 Admin 메뉴의 Connections 팝업창 메뉴로 이동한 다음, 
 ![conn1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-1.png)
+
+postgres_default 항목을 찾아 [Edit record] 버튼을 클릭합니다. 
 ![conn2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-2.png)
+
+[Edit Connection] 화면에서 Host, Schema, Login, Password 및 Port 정보를 입력한 후 좌측 하든의 [Save] 버튼을 클릭하여 설정 내용을 저장합니다. 
+
+```
+Host : your-rds-endpoint
+Schema : airline_db
+Login : airline
+Password : airline
+Port : 5432
+```
 ![conn3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-3.png)
 
 
