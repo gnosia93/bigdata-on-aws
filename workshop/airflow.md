@@ -60,7 +60,7 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
           """,
     )   
 ```
-
+Admin > 
 ![conn1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-1.png)
 ![conn2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-2.png)
 ![conn3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-3.png)
