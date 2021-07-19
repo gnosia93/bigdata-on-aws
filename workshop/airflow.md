@@ -94,19 +94,12 @@ $ conda install -c conda-forge apache-airflow-providers-postgres
 
 * executed every 10 min.
 
-------------
-
-
--- connection 
-* https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html
-* https://xnuinside.medium.com/short-guide-how-to-use-postgresoperator-in-apache-airflow-ca78d35fb435
-
-
-
 
 ## 참고자료 ##
 
-* https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/operators/postgres_operator_howto_guide.html
-* https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/connections/postgres.html
+* [우분투에 airflow 설치하기](https://jungwoon.github.io/airflow/2019/02/26/Airflow.html)
+
+
+
 
 
