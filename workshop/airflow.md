@@ -7,10 +7,11 @@
 * 실행주기 - 매일
  
 ``` 
-(중요) - emr 클러스터의 spark-submit 과 sqoop 프로그램을 구동하기 위해서 airflow 가 설치된 노드에 sqoop 과 spark 을 설치하도록 한다. 
-그렇지 않은 경우 airflow ssh operator 를 이용해야 하는 것데, 그렇게 되는 경우 airflow ec2 서버에 ssh public key 를 올려놔야 해서 보안상 
-이슈가 생긴다. 스파크의 경우 클라이언트로 동작하지만, rest api 를 제공하는 않는 sqoop 버전 1 에서는 어쩔수 없는 선택으로, 
-emr 클러스터와 동일한 버전의 sqoop 를 airflow ec2 에 설치하도록 한다. 
+(중요) - 에어플로우 마스터 노드에 spark 및 sqoop 프로그램 설치가 필요하다. spark 의경우 emr 클러스터의 클라이언트로 동작하게 되지만, 
+단순 커맨드 라인 인터페이스인 sqoop 의 경우 어찌 보면 중복 설치의 개념이긴 하다.
+에어 플로우 ssh operator 를 사용하는 경우 이러한 문제를 방지할 순 있으나, ssh public key 를 에어플로우 서버에 올려놔야 해서 보안상 
+문제가 발생할 소지가 있으므로, 에어플로우 마스터 노드에 spark 과 sqoop 을 설치하도록 한다. 
+두 소프트웨어의 설치는 terraform 에서 자동으로 실행된다. 
 ```
 
 ### 2. airflow 잡 등록하기 ###
