@@ -23,7 +23,7 @@ sqoop import \
    --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
    --username airline \
    --password airline \
-   --table tmp_airflow_dummy \
+   --table tbl_airflow_dummy \
    --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
    -m 1
 ```
