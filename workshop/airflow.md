@@ -92,6 +92,12 @@ if __name__ == "__main__":
     dag.cli()
 ```
 
+````
+$ cd $AIRFLOW_HOME/dags
+$ pip install apache-airflow-providers-postgres
+
+```
+
 
 ## 참고자료 ##
 
