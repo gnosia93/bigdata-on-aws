@@ -14,21 +14,6 @@
 두 소프트웨어의 설치는 terraform 에서 자동으로 실행된다. 
 ```
 
-[스쿱 실행 명령어]
-```
-$ HADOOP_USER_NAME=hdfs sqoop import \
-   --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
-   --username airline \
-   --password airline \
-   --table tbl_airflow_dummy \
-   --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
-   --bindir . \
-   --split-by line -m 4 \
-   --delete-target-dir
-```
---append 추가하기
---delete-target-dir 덮어쓰기
-
 ### 2. hadoop 설정하기 ###
 
 core-site.xml 파일을 편집해서 fs.defaultFS 값을 여러분들의 emr 주소로 변경합니다. 
