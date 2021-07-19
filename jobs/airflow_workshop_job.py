@@ -45,4 +45,17 @@ with DAG(
             """,
     )
     
-    drop_dummy_table >> ctas_dummy_table    
+    cmd = """
+        HADOOP_USER_NAME=hdfs sqoop import \
+           --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
+           --username airline \
+           --password airline \
+           --table tbl_airflow_dummy \
+           --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
+           --bindir . \
+           --split-by line -m 4 \
+           --append
+        """
+    sqoop_import_dummy_table = BashOperator(task_id='sqoop_import_dummy_table', bash_command=cmd, dag=dag)
+    
+    drop_dummy_table >> ctas_dummy_table >> sqoop_import_dummy_table
