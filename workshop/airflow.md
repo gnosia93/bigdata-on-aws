@@ -15,26 +15,6 @@
 ```
 
 ```
-
-
-[ec2-user@ip-10-1-1-31 hadoop]$ cd $HADOOP_HOME/etc/hadoop
-[ec2-user@ip-10-1-1-31 hadoop]$ vi core-site.xml
-<configuration>
-        <property>
-                <name>fs.defaultFS</name>
-                <value>hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020</value>
-        </property>
-</configuration>
-
-
-
-
-/home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0/lib 
-
--> wget https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
--> wget https://jdbc.postgresql.org/download/postgresql-42.2.23.jar
-
-
 $ sqoop import \
    --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
    --username airline \
@@ -45,6 +25,7 @@ $ sqoop import \
    --split-by line \
    -m 4
 ```
+
 
 ### 2. airflow 잡 등록하기 ###
 
@@ -62,7 +43,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com,13.125.226.210' (ECDSA) to the list of known hosts.
 Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-1029-aws x86_64)
 
-ubuntu@ip-10-1-1-93:~/airflow$ ps aux | grep airflow
+ubuntu@ip-10-1-1-93:~$ ps aux | grep airflow
 ubuntu     10019  0.7  1.5 375160 116900 ?       S    10:20   0:01 /usr/bin/python3 /usr/local/bin/airflow webserver -D
 ubuntu     10023  0.0  0.5  68056 42704 ?        S    10:20   0:00 gunicorn: master [airflow-webserver]
 ubuntu     10024  1.6  1.4 358116 115164 ?       Sl   10:20   0:03 [ready] gunicorn: worker [airflow-webserver]
@@ -82,6 +63,19 @@ ubuntu@ip-10-1-1-93:~$ airflow dags list
 dag_id               | filepath                | owner   | paused
 =====================+=========================+=========+=======
 airflow_workshop_job | airflow_workshop_job.py | airflow | None
+```
+
+### 2. hadoop 설정하기 ###
+
+```
+ubuntu@ip-10-1-1-93:~$ cd $HADOOP_HOME/etc/hadoop
+ubuntu@ip-10-1-1-93:~$ vi core-site.xml
+<configuration>
+        <property>
+                <name>fs.defaultFS</name>
+                <value>hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020</value>       # 여러분들의 emr 마스터 노드 주소로 변경하세요.
+        </property>
+</configuration>
 ```
 
 ### 3. airflow 접속 ###
