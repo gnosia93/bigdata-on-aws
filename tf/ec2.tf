@@ -203,6 +203,8 @@ sudo -u ubuntu sed -i s/'load_examples = True'/'load_examples = False'/g /home/u
 sudo -u ubuntu airflow webserver -D
 sudo -u ubuntu airflow scheduler -D    
 sudo apt-get install -y postgresql-client
+sudo -u ubuntu wget http://archive.apache.org/dist/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -P /home/ubuntu
+sudo -u ubuntu tar xvfz /home/ubutu/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /home/ubuntu    
 touch /home/ubuntu/done
 _DATA
 
