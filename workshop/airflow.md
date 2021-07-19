@@ -44,7 +44,7 @@ from airflow.utils.dates import days_ago
 from datetime import datetime, timedelta
 from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
-from airflow.operators.postgres_operator import PostgresOperator
+from airflow.providers.postgres.operators.postgres import PostgresOperator
 
 args = {
     'owner': 'airflow',
