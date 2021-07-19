@@ -206,7 +206,9 @@ sudo apt-get install -y postgresql-client
 sudo -u ubuntu wget http://archive.apache.org/dist/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -P /home/ubuntu
 sudo -u ubuntu tar xvfz /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz -C /home/ubuntu   
 sudo -u ubuntu wget https://mirror.navercorp.com/apache/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz -P /home/ubuntu
-sudo -u ubuntu tar xvfz /home/ubuntu/spark-3.1.2-bin-hadoop3.2.tgz -C /home/ubuntu       
+sudo -u ubuntu tar xvfz /home/ubuntu/spark-3.1.2-bin-hadoop3.2.tgz -C /home/ubuntu    
+sudo -u ubuntu wget https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz -P /home/ubuntu
+sudo -u ubuntu tar xvfz /home/ubuntu/hadoop-3.2.1.tar.gz -C /home/ubuntu        
 touch /home/ubuntu/done
 _DATA
 
