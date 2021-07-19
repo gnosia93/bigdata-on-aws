@@ -1,3 +1,13 @@
+```
+$ sudo yum install python3 -y
+$ pip install apache-airflow
+$ airflow db init
+$ airflow version
+2.1.2
+$ airflow info
+
+```
+
 
 ## airflow jobs ##
 
