@@ -15,6 +15,8 @@
 ```
 
 ```
+
+
 [ec2-user@ip-10-1-1-31 hadoop]$ cd $HADOOP_HOME/etc/hadoop
 [ec2-user@ip-10-1-1-31 hadoop]$ vi core-site.xml
 <configuration>
@@ -26,18 +28,20 @@
 
 
 
+
 /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0/lib 
 
 -> wget https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
 -> wget https://jdbc.postgresql.org/download/postgresql-42.2.23.jar
 
 
-sqoop import \
+$ sqoop import \
    --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
    --username airline \
    --password airline \
    --table tbl_airflow_dummy \
    --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
+   --bindir .
    -m 1
 ```
 
