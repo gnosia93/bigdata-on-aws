@@ -66,31 +66,27 @@ with DAG(
     params={"example_key": "example_value"},
 ) as dag:
 
-    create_pet_table = PostgresOperator(
-        task_id="create_table",
+    ctas_dummy_table = PostgresOperator(
+        task_id="ctas_dummy_table",
         postgres_conn_id="postgres_default",
         sql="""
-            CREATE TABLE IF NOT EXISTS pet (
-            pet_id SERIAL PRIMARY KEY,
-            name VARCHAR NOT NULL,
-            pet_type VARCHAR NOT NULL,
-            birth_date DATE NOT NULL,
-            OWNER VARCHAR NOT NULL);
+            create table tbl_dummy as 
+            select 'dummy'|| right('0' || line, 2) as line, 
+            repeat('Aa', 20) as comment, 
+            to_char(generate_series('2021-01-01 00:00'::timestamp,'2021-06-30 12:00', '1 minutes'), 'YYYY-MM-dd hh:mi') as created
+            from generate_series(1, 100) as tbl(line);
           """,
     )   
     
-    populate_pet_table = PostgresOperator(
-        task_id="populate_pet_table",
+    drop_dummy_table = PostgresOperator(
+        task_id="drop_dummy_table",
         postgres_conn_id="postgres_default",
         sql="""
-            INSERT INTO pet VALUES ( 'Max', 'Dog', '2018-07-05', 'Jane');
-            INSERT INTO pet VALUES ( 'Susie', 'Cat', '2019-05-01', 'Phil');
-            INSERT INTO pet VALUES ( 'Lester', 'Hamster', '2020-06-23', 'Lily');
-            INSERT INTO pet VALUES ( 'Quincy', 'Parrot', '2013-08-11', 'Anne');
+            drop table if exists tbl_dummy;
             """,
     )
     
-    create_pet_table >> populate_pet_table >> get_all_pets >> get_birth_date
+    drop_dummy_table >> ctas_dummy_table
     
 if __name__ == "__main__":
     dag.cli()
