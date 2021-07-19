@@ -7,7 +7,7 @@
 (base) [ec2-user@ip-10-1-1-31 ~]$ conda create -n py37 python-3.7.10 anaconda
 (base) [ec2-user@ip-10-1-1-31 ~]$ conda activate py37
 
-(py37) [ec2-user@ip-10-1-1-31 ~]$ conda install airflow
+(py37) [ec2-user@ip-10-1-1-31 ~]$ conda install -c conda-forge airflow
 (py37) [ec2-user@ip-10-1-1-31 ~]$ airflow db init
 (py37) [ec2-user@ip-10-1-1-31 ~]$ airflow version
 2.1.2
