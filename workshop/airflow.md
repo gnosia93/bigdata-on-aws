@@ -1,4 +1,3 @@
-## airflow jobs ##
 
 ### 1. airflow 잡 등록하기 ###
 
