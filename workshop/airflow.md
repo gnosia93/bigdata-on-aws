@@ -111,6 +111,7 @@ Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigge
 
 * [Sqoop 서버 with 에어플로우](https://stackoverflow.com/questions/51120240/using-sqoop-move-tables-from-mysql-to-hive-scheduled-using-remotely-installed-ai)
 
+* [SSHOperator](https://airflow.apache.org/docs/apache-airflow-providers-ssh/stable/connections/ssh.html)
 
 
 
