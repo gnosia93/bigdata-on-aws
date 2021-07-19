@@ -45,7 +45,21 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 
 ### 3. connections 설정 ###
 
-postgres_default 커넥션 값을 아래와 같이 설정합니다. 
+[airflow_workshop_job](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py) 파이썬 코드에서는 postgresql 데이터베이스에 접근하기 위해서, postgres_default 라는 키워드를 사용하고 있습니다. 해당 키워드는 에어 플로우가 기본적으로 제공하는 postgresql 용 키값으로 airflow 의 connections 메뉴에서 해당 키에 대한 정보를 설정하실 수 있습니다.
+
+```
+ ctas_dummy_table = PostgresOperator(
+        task_id="ctas_dummy_table",
+        postgres_conn_id="postgres_default",
+        sql="""
+            create table tbl_airflow_dummy as 
+            select 'dummy'|| right('0' || line, 2) as line, 
+            repeat('Aa', 20) as comment, 
+            to_char(generate_series('2021-01-01 00:00'::timestamp,'2021-06-30 12:00', '1 minutes'), 'YYYY-MM-dd hh:mi') as created
+            from generate_series(1, 100) as tbl(line);
+          """,
+    )   
+```
 
 ![conn1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-1.png)
 ![conn2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-2.png)
@@ -55,7 +69,7 @@ postgres_default 커넥션 값을 아래와 같이 설정합니다.
 
 ### 4. job 소스 ###
 
-* https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py
+* 
 
 
 
