@@ -16,6 +16,19 @@ data "aws_ami" "amazon-linux-2" {
     }
 }
 
+# ubuntu image for airflow 
+# ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20201026 (ami-007b7745d0725de95)
+data "aws_ami" "ubuntu-20" {
+    most_recent = true
+    owners = [ "099720109477" ]
+
+    filter {
+        name   = "name"
+        values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20201026*"]
+    }
+}
+
+
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
 resource "aws_security_group" "bigdata_ec2_sg" {
     name        = "bigdata_ec2_sg"
@@ -33,7 +46,19 @@ resource "aws_security_group" "bigdata_ec2_sg" {
             prefix_list_ids = [ ]
             security_groups = [ ]
             self = false
+        },
+        {
+            cidr_blocks = [ var.your_ip_addr, var.vpc_cidr_block ] 
+            description = "ec2 ingress"
+            from_port = 8080
+            to_port = 8080
+            protocol = "tcp"
+            ipv6_cidr_blocks = [ ]
+            prefix_list_ids = [ ]
+            security_groups = [ ]
+            self = false
         }
+
     ]
 
     egress = [ 
@@ -144,6 +169,47 @@ _DATA
     } 
 }
 
+resource "aws_instance" "bigdata_airflow" {
+    ami = data.aws_ami.ubuntu-20.id
+    associate_public_ip_address = true
+    instance_type = "c5.xlarge"
+    iam_instance_profile = aws_iam_instance_profile.bigdata_ec2_profile.name
+    monitoring = true
+    root_block_device {
+        volume_size = "50"
+    }
+    key_name = var.key_pair
+    vpc_security_group_ids = [ aws_security_group.bigdata_ec2_sg.id ]
+    subnet_id = aws_subnet.bigdata_pub_subnet1.id
+    user_data = <<_DATA
+#! /bin/bash
+sudo apt-get update
+sudo apt-get install pip -y
+sudo pip install --upgrade pip
+sudo apt-get install python-setuptools -y
+sudo apt-get install python-dev -y
+sudo apt-get install libmysqlclient-dev -y
+sudo apt-get install libssl-dev -y
+sudo apt-get install libkrb5-dev -y
+sudo apt-get install libsasl2-dev -y
+sudo pip install apache-airflow
+sudo pip install apache-airflow-providers-postgres    
+sudo -u ubuntu echo 'export AIRFLOW_HOME=~/airflow' > /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "AUTH_ROLE_PUBLIC = 'Admin'" >> /home/ubuntu/airflow/webserver_config.py
+sudo -u ubuntu echo 'alias python=python3' >> /home/ubuntu/.bash_profile    
+_DATA
+
+    tags = {
+      "Name" = "bigdata_airflow"
+    } 
+}
+
+
+
 output "ec2_public_ip" {
     value = aws_instance.bigdata_ec2.public_dns
+}
+
+output "airflow_public_ip" {
+    value = aws_instance.bigdata_airflow.public_dns
 }
