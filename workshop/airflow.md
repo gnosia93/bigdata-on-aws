@@ -7,7 +7,6 @@
 (base) [ec2-user@ip-10-1-1-31 ~]$ conda create -n py37 python-3.7.10 anaconda
 
 
-
 (base) [ec2-user@ip-10-1-1-31 ~]$ airflow db init
 (base) [ec2-user@ip-10-1-1-31 ~]$ airflow version
 2.1.2
