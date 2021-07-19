@@ -1,6 +1,8 @@
 ```
-$ sudo yum install python3 -y
-$ pip install apache-airflow
+$ wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+$ sh Anaconda3-2020.02-Linux-x86_64.sh
+
+
 $ airflow db init
 $ airflow version
 2.1.2
