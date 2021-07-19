@@ -14,6 +14,16 @@
 두 소프트웨어의 설치는 terraform 에서 자동으로 실행된다. 
 ```
 
+```
+sqoop import \
+   --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
+   --username airline \
+   --password airline \
+   --table tmp_airflow_dummy \
+   --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
+   -m 1
+```
+
 ### 2. airflow 잡 등록하기 ###
 
 에어플로우에서 잡을 등록하는 방법은 의외로 간단합니다. 잡 로직을 구현한 파이썬 파일을 $AIRFLOW_HOME/dags/ 디렉토리에 복사 하면 됩니다. 
