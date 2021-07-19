@@ -16,16 +16,16 @@
 
 ### PostgreSQL ###
 
-* https://dullyshin.github.io/2020/03/13/PostgreSQL-generateSeries/
 * https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/operators/postgres_operator_howto_guide.html
-* https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/connections/postgres.html
-
 ```
 from airflow import DAG
+from airflow.utils.dates import days_ago
 from datetime import datetime, timedelta
+from airflow.operators.bash import BashOperator
+from airflow.operators.dummy import DummyOperator
 from airflow.operators.postgres_operator import PostgresOperator
 
-default_args = {
+args = {
     'owner': 'airflow',
     'depends_on_past': False,
     'start_date': datetime(2019, 8, 25),
@@ -35,15 +35,51 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
-with DAG('example_dag',
-            max_active_runs=3,
-            schedule_interval='@daily',
-            default_args=default_args) as dag:
+with DAG(
+    dag_id='example_bash_operator',
+    default_args=args,
+    schedule_interval='@daily',
+    start_date=days_ago(1),
+    dagrun_timeout=timedelta(minutes=60),
+    tags=['postgres', 'sqoop', 'spark'],
+    params={"example_key": "example_value"},
+) as dag:
 
-    t1 = PostgresOperator(
-        task_id='my_task',
-        sql='sql/my_query.sql'
+    create_pet_table = PostgresOperator(
+        task_id="create_table",
+        postgres_conn_id="postgres_default",
+        sql="""
+            CREATE TABLE IF NOT EXISTS pet (
+            pet_id SERIAL PRIMARY KEY,
+            name VARCHAR NOT NULL,
+            pet_type VARCHAR NOT NULL,
+            birth_date DATE NOT NULL,
+            OWNER VARCHAR NOT NULL);
+          """,
+    )   
+    
+    populate_pet_table = PostgresOperator(
+        task_id="populate_pet_table",
+        postgres_conn_id="postgres_default",
+        sql="""
+            INSERT INTO pet VALUES ( 'Max', 'Dog', '2018-07-05', 'Jane');
+            INSERT INTO pet VALUES ( 'Susie', 'Cat', '2019-05-01', 'Phil');
+            INSERT INTO pet VALUES ( 'Lester', 'Hamster', '2020-06-23', 'Lily');
+            INSERT INTO pet VALUES ( 'Quincy', 'Parrot', '2013-08-11', 'Anne');
+            """,
     )
-
-
+    
+    create_pet_table >> populate_pet_table >> get_all_pets >> get_birth_date
+    
+if __name__ == "__main__":
+    dag.cli()
 ```
+
+
+## 참고자료 ##
+
+* https://dullyshin.github.io/2020/03/13/PostgreSQL-generateSeries/
+* https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/operators/postgres_operator_howto_guide.html
+* https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/connections/postgres.html
+
+
