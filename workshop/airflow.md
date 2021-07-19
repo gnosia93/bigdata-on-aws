@@ -14,6 +14,7 @@
 두 소프트웨어의 설치는 terraform 에서 자동으로 실행된다. 
 ```
 
+[스쿱 실행 명령어]
 ```
 $ sqoop import \
    --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
