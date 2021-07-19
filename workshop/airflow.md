@@ -1,6 +1,6 @@
 ## airflow jobs ##
 
-### 1. airflow EC2 인스턴스 접속 ###
+### 1. airflow 실행하기 ###
 
 ```
 $ terraform output | grep airflow
@@ -90,8 +90,13 @@ tutorial_etl_dag                        | /usr/local/lib/python3.8/dist-packages
 tutorial_taskflow_api_etl               | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/tutorial_taskflow_api_etl.py          | airflow | True
 tutorial_taskflow_api_etl_virtualenv    | /usr/local/lib/python3.8/dist-packages/airflow/example_dags/tutorial_taskflow_api_etl_virtualenv. | airflow | True
                                         | py                                                                                                |         |
-
 ```
+
+### 2. airflow 웹 화면 접속 ###
+
+브라우저를 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
+
+* http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
 
 ### 1. postgres job ###
