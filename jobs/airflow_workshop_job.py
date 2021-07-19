@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
+import os
 
 args = {
     'owner': 'airflow',
