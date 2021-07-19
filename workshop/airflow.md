@@ -1,6 +1,6 @@
 ## airflow jobs ##
 
-### 1. airflow 실행하기 ###
+### 1. 잡 등록하기 ###
 
 ```
 $ terraform output | grep airflow
@@ -27,7 +27,7 @@ ubuntu     10094  0.0  0.0   8160   740 pts/0    S+   10:24   0:00 grep airflow
 
 ```
 
-### 2. airflow 웹 화면 접속 ###
+### 2. airflow 접속 ###
 
 브라우저를 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
 
