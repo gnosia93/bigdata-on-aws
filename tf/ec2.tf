@@ -199,7 +199,7 @@ sudo -u ubuntu echo 'alias python=python3' >> /home/ubuntu/.bash_profile
 sudo -u ubuntu mkdir -p /home/ubuntu/airflow/dags
 sudo -u ubuntu airflow db init
 sudo -u ubuntu echo "AUTH_ROLE_PUBLIC = 'Admin'" >> /home/ubuntu/airflow/webserver_config.py
-sudo -u ubuntu sed -i s/'load_examples = True'/'load_example = False'/g /home/ubuntu/airflow/airflow.cfg    
+sudo -u ubuntu sed -i s/'load_examples = True'/'load_examples = False'/g /home/ubuntu/airflow/airflow.cfg    
 sudo -u ubuntu airflow webserver -D
 sudo -u ubuntu airflow scheduler -D    
 touch /home/ubuntu/done    
