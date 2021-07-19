@@ -1,12 +1,17 @@
 ```
-$ wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
-$ sh Anaconda3-2020.02-Linux-x86_64.sh
+[ec2-user@ip-10-1-1-31 ~]$ wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+[ec2-user@ip-10-1-1-31 ~]$ sh Anaconda3-2020.02-Linux-x86_64.sh
+[ec2-user@ip-10-1-1-31 ~]$ source ~/.bashrc
+(base) [ec2-user@ip-10-1-1-31 ~]$ conda env list
+(base) [ec2-user@ip-10-1-1-31 ~]$ conda search python
+(base) [ec2-user@ip-10-1-1-31 ~]$ conda create -n py37 python-3.7.10 anaconda
 
 
-$ airflow db init
-$ airflow version
+
+(base) [ec2-user@ip-10-1-1-31 ~]$ airflow db init
+(base) [ec2-user@ip-10-1-1-31 ~]$ airflow version
 2.1.2
-$ airflow info
+(base) [ec2-user@ip-10-1-1-31 ~]$ airflow info
 
 ```
 
