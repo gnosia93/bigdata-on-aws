@@ -121,7 +121,7 @@ args = {
 }
 
 with DAG(
-    dag_id='example_bash_operator',
+    dag_id='workshop_job',
     default_args=args,
     schedule_interval='@daily',
     start_date=days_ago(1),
@@ -150,18 +150,9 @@ with DAG(
             """,
     )
     
-    drop_dummy_table >> ctas_dummy_table
-    
-if __name__ == "__main__":
-    dag.cli()
+    drop_dummy_table >> ctas_dummy_table    
 ```
 
-* conda 인 경우는 conda 로 install 해야 한다. 
-```
-$ cd $AIRFLOW_HOME/dags
-$ sudo pip install apache-airflow-providers-postgres
-$ conda install -c conda-forge apache-airflow-providers-postgres
-```
 
 
 
