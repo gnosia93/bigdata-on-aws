@@ -43,7 +43,7 @@ $ sqoop import \
    --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
    --bindir . \
    --split-by line \
-   -m 10
+   -m 4
 ```
 
 ### 2. airflow 잡 등록하기 ###
