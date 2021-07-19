@@ -17,6 +17,7 @@
 ```
 /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0/lib -> https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
 
+https://jdbc.postgresql.org/download/postgresql-42.2.23.jar
 
 sqoop import \
    --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
