@@ -43,6 +43,10 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 * http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
 
+### 3. connection 설정 ###
+
+
+
 ### 1. postgres job ###
 
 * https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/operators/postgres_operator_howto_guide.html
