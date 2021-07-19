@@ -1,6 +1,6 @@
 ## airflow jobs ##
 
-### 1. 잡 등록하기 ###
+### 1. airflow 잡 등록하기 ###
 
 ```
 $ terraform output | grep airflow
