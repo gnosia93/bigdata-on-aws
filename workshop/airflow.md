@@ -17,11 +17,15 @@
 ### PostgreSQL ###
 
 ```
-airline_db=> create table dummy as 
+airline_db=> create table tbl_dummy as 
 select 'dummy'|| right('0' || line, 2) as line, 
        repeat('Aa', 100) as comment, 
        to_char(generate_series('2021-01-01 00:00'::timestamp,'2021-06-30 12:00', '1 minutes'), 'YYYY-MM-dd hh:mi') as created
 from generate_series(1, 100) as tbl(line);
+
+SELECT 25992100
+
+airline_db=> select pg_total_relation_size('tbl_dummy');
 ```
 
 
