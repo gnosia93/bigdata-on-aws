@@ -121,7 +121,7 @@ args = {
 }
 
 with DAG(
-    dag_id='workshop_job',
+    dag_id='airflow_workshop_job',
     default_args=args,
     schedule_interval='@daily',
     start_date=days_ago(1),
