@@ -8,7 +8,7 @@
 * executed every 10 min.
 
 ------------
-### airflow ###
+
 
 -- connection 
 * https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html
@@ -16,7 +16,7 @@
 
 ### PostgreSQL ###
 
-````
+```
 airline_db=> create table dummy as 
 select 'dummy'|| right('0' || line, 2) as line, 
        repeat('Aa', 100) as comment, 
@@ -24,6 +24,8 @@ select 'dummy'|| right('0' || line, 2) as line,
 from generate_series(1, 100) as tbl(line);
 ```
 
+
+### airflow job - postgres ###
 
 * https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/operators/postgres_operator_howto_guide.html
 ```
