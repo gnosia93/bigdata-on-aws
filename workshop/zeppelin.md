@@ -43,7 +43,7 @@ https://aws.amazon.com/amazon-linux-2/
 
 ### 2. 제플린 인터프리터 설정 ###
 
-제플린를 out of memory 오류 없이 실해하기 위해서는 몇갖지 설정을 해야 합니다. 
+제플린 노트북을 out of memory 오류 없이 실행하기 위해서는 몇가지 설정이 필요합니다.
 
 ![int1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-interpreter-1.png)
 ![int2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-interpreter-2.png)
