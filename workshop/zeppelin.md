@@ -8,6 +8,8 @@ Zeppelin 에 대한 좀더 자세한 내용은 아래 링크를 참조하세요.
 
 ### 1. hdfs에 데이터 로딩하기 ###
 
+테라폼을 이용하여 엔드포인트를 조회한 후, 아래와 같이 ec2 인스턴스에 로그인 합니다. 제플린 노트북에서 사용할 샘플 데이터를 다운로드 받은 후, emr 하둡에 저장합니다. 
+
 * https://github.com/databricks/Spark-The-Definitive-Guide
 ```
 $ terraform output 
