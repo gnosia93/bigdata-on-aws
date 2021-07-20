@@ -51,7 +51,7 @@ https://aws.amazon.com/amazon-linux-2/
 검색창에 spark 를 입력하고 우측에 있는 [edit] 버튼을 클릭합니다. 
 ![int2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-interpreter-2.png)
 
-아래의 내용 각각을 화면에서 보이는 처럼 입력합니다. 
+아래의 내용 각각을 화면에서 보이는 처럼 입력하고, 하단의 [save] 버튼을 클릭하여 설정을 저장합니다. 
 ```
 spark.dynamicAllocation.enabled = true
 spark.shuffle.service.enabled = true
