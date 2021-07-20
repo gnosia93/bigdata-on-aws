@@ -16,7 +16,8 @@
 ### 2. 하둡 및 스파크 클라이언트 설정하기 ###
 
 emr 의 하둡 및 스파크 잡을 remote 인 airflow 노드에서 실행하기 위해서 airflow ec2 인스턴스에 하둡 및 스파크 패키지를 설치해야 합니다. (https://github.com/gnosia93/bigdata-on-aws/blob/main/tf/ec2.tf 의 user_data 참조)   
-잡들은 airflow 에서 bash operator 를 이용하여 호출하게 되는데, remote 로 작업을 실행하기 위해서는 하둡 core-site.xml 파일에 emr 마스토 노드 주소를 설정해야 합니다.
+잡들은 airflow 에서 bash operator 를 이용하여 호출하게 되는데, remote 로 작업을 실행하기 위해서는 하둡 core-site.xml 파일에 emr 마스토 노드 주소를 설정해야 합니다.  
+아파치 스쿱 역시 설치가 필요하며, 스쿱의 경우 map-reduce 작업은 airflow ec2 인스턴스에서 직접 실행됩니다. (vs 스파크 및 하둡 잡은 emr 에서 실행됨, 스쿱은 1.4 버전은 C/S 모드 지원하지 않음)
 
 ```
 $ terraform output | grep airflow
