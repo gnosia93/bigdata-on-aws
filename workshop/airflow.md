@@ -139,3 +139,5 @@ Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigge
 * [emr spark submit rest api](https://www.python2.net/questions-274169.htm)
 
 * [spark submit operator](https://stackoverflow.com/questions/53773678/airflow-sparksubmitoperator-how-to-spark-submit-in-another-server)
+
+* https://louisdev.tistory.com/8
