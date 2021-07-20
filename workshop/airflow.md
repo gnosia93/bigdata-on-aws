@@ -13,9 +13,9 @@
 두 소프트웨어의 설치는 terraform 에서 자동으로 실행된다. 
 ```
 
-### 2. hadoop 및 스파크 설정하기 ###
+### 2. 하둡 및 스파크 클라이언트 설정하기 ###
 
-emr 클러스터의 하둡 및 스파크 잡을 remote 로 실행하기 위해서 airflow ec2 인스턴스에 하둡 및 스파크 패키지를 설치하였습니다. (https://github.com/gnosia93/bigdata-on-aws/blob/main/tf/ec2.tf 의 userdata 참조)
+emr 의 하둡 및 스파크 잡을 remote 로 실행하기 위해서 airflow ec2 인스턴스에 하둡 및 스파크 패키지를 설치하였습니다. (https://github.com/gnosia93/bigdata-on-aws/blob/main/tf/ec2.tf 의 userdata 참조)
 해당 잡들은 airflow 의 bash operator 를 이용 하는데, remote 로 잡들을 실행하기 위해서는 core-site.xml 파일에 emr 주소를 설정해야 합니다.
 
 ```
