@@ -218,11 +218,11 @@ resource "aws_emr_cluster" "bigdata_emr" {
     }
 
     master_instance_group {
-        instance_type = "m5.xlarge"
+        instance_type = "m5.2xlarge"
     }
 
     core_instance_group {
-        instance_type = "c5.xlarge"
+        instance_type = "c5.2xlarge"
         instance_count = 2
 
         ebs_config {
@@ -234,6 +234,10 @@ resource "aws_emr_cluster" "bigdata_emr" {
 
     ebs_root_volume_size = 40
     service_role = aws_iam_role.iam_emr_service_role.arn    
+
+    tags = {
+      "Name" = "bigdata_emr"
+    } 
 }
 
 output "emr_master_public_dns" {
