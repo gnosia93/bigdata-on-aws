@@ -1,9 +1,8 @@
 ### 1. airflow 잡 스팩 (airflow_workshop_job) ###
 
-* database operator - dummmy 레코드 gen (약 2100만건, 생성 소요시간 30초)
-* sqoop operator - import data into hadoop 
-* spark operator - summary spark job with hdfs
-  - spark job 's output destination is hdfs
+* postgres operator - dummmy 레코드 gen (약 2100만건, 생성 소요시간 30초)
+* bash operator - sqoop import 
+* spark submit operator
 * 실행주기 - 매일
  
 ``` 
