@@ -2,7 +2,7 @@
 
 * postgres operator - dummmy 레코드 gen (약 2100만건, 생성 소요시간 30초)
 * bash operator - sqoop import (copy table to hdfs)
-* spark submit operator
+* spark submit operator - 집계처리하여 hdfs 에 
 * 실행주기 - 매일
  
 ``` 
