@@ -47,6 +47,7 @@ with DAG(
     )
     
     cmd = """
+        . ~/.bash_profile &&
         HADOOP_USER_NAME=hdfs sqoop import \
            --connect jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db \
            --username airline \
