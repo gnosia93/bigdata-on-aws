@@ -55,7 +55,7 @@ with DAG(
            --username airline \
            --password airline \
            --table tbl_airflow_dummy \
-           --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
+           --target-dir hdfs://ec2-13-125-199-100.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
            --bindir $SQOOP_HOME/lib \
            -m 1 \
            --append
