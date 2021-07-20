@@ -33,3 +33,5 @@
 
 * [아파치 Tez](https://kr.cloudera.com/products/open-source/apache-hadoop/apache-tez.html)
 * https://sparkbyexamples.com/
+
+* [how to read CSV file from HDFS into spark scala using intellij idea || DataEdge Systems Inc](https://www.youtube.com/watch?v=sf8zwjW0-9U)
