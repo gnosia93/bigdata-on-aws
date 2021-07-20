@@ -5,13 +5,6 @@
 * spark submit operator - 집계처리하여 hdfs 에 
 * 실행주기 - 매일
  
-``` 
-(중요) - 에어플로우 마스터 노드에 spark 및 sqoop 프로그램 설치가 필요하다. spark 의경우 emr 클러스터의 클라이언트로 동작하게 되지만, 
-단순 커맨드 라인 인터페이스인 sqoop 의 경우 어찌 보면 중복 설치의 개념이긴 하다.
-에어 플로우 ssh operator 를 사용하는 경우 이러한 문제를 방지할 순 있으나, ssh public key 를 에어플로우 서버에 올려놔야 해서 보안상 
-문제가 발생할 소지가 있으므로, 에어플로우 마스터 노드에 spark 과 sqoop 을 설치하도록 한다. 
-두 소프트웨어의 설치는 terraform 에서 자동으로 실행된다. 
-```
 
 ### 2. 하둡 및 스파크 클라이언트 설정하기 ###
 
@@ -45,8 +38,13 @@ ubuntu@ip-10-1-1-93:~$ vi core-site.xml
 ubuntu@ip-10-1-1-198:~$ cp $SQOOP_HOME/conf/sqoop-env-template.sh $SQOOP_HOME/conf/sqoop-env.sh
 ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_COMMON_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
 ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
-
 ```
+
+``` 
+에어 플로우 ssh operator 를 사용하는 경우 에어 플오우 노드에 스파크, 하둡등의 패키지들을 설치하지 않아도 되나, emr 로그인을 위해서는 ssh public key 가 필요하게 된다.
+이는 보안상의 이슈를 발생시킬 소지가 있으므로, 에어플로우 마스터 노드에 spark 및 하둡과 sqoop 등의 소프트웨어를 설치해서 emr 클라이언트로 동작하도록 배치하는 것이 좋다. 
+```
+
 
 ### 3. airflow 잡 등록하기 ###
 
