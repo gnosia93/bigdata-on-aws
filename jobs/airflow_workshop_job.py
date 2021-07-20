@@ -46,6 +46,8 @@ with DAG(
             """,
     )
     
+    # 최초 실행시 sqoop 가 컴파일 된 자바 클래스 파일을 읽어오지 못하는 버그가 있어서 첫번째 실행시는 작업이 실패한다. 
+    # 두번째 실행부터는 이미 bindir 에 컴파일된 클래스 파일이 있기 때문에 정상 동작한다. 
     cmd = """
         . ~/.bash_profile &&
         HADOOP_USER_NAME=hdfs sqoop import \
@@ -54,7 +56,7 @@ with DAG(
            --password airline \
            --table tbl_airflow_dummy \
            --target-dir hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow \
-           --bindir . \
+           --bindir $SQOOP_HOME/lib:. \
            --split-by line -m 4 \
            --append
         """
