@@ -43,6 +43,10 @@ ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_
 에어 플로우 ssh operator를 사용하는 경우 스파크 및 하둡과 같은 패키지들을 설치하지 않아도 되나, emr 접근을 위해서는 ssh public key 가 필요하게 된다.
 이는 보안상의 이슈를 발생시킬 소지가 있으므로, 에어플로우 마스터 노드에 spark 및 하둡 등의 소프트웨어를 설치해서 emr 클라이언트로 동작하도록 구성하는 것이 효과적이다.
 
+* yarn 설정(yarn-site.xml). -- 추가필요.
+
+
+
 
 ### 3. airflow 잡 등록하기 ###
 
