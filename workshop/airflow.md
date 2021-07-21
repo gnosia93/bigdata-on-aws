@@ -83,6 +83,9 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 
 ### 4. connections 설정 ###
 
+* postgres
+* spark
+
 airflow 이 connections 은 각종 데이터 소스에 접근할 때 필요한 인증 정보들를 모아 놓은 정보의 집합체 입니다. (job 소스코드에서 인증 관련 정보를 분리하여 별도로 관리하기 위함) 
 [airflow_workshop_job](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py) 파이썬 코드에서는 postgresql 데이터베이스에 접근하기 위해서, postgres_default 라는 connection id를 사용하고 있는데, 해당 id는 에어 플로우가 기본적으로 제공하는 postgresql 용 id 값으로, airflow 의 connections 메뉴에서 인증 관련 정보를 수정할 수 있습니다.
 
