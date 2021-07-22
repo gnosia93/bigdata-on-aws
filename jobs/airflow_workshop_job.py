@@ -82,7 +82,7 @@ with DAG(
         executor_cores= 1,
         executor_memory= "1g",
         num_executors=4,
-        driver-class-path="/home/ubuntu/.ivy2/cache/org.postgresql/postgresql/jars/postgresql-42.2.23.jar",
+        driver_class_path="/home/ubuntu/.ivy2/cache/org.postgresql/postgresql/jars/postgresql-42.2.23.jar",
         jars="/home/ubuntu/.ivy2/cache/org.postgresql/postgresql/jars/postgresql-42.2.23.jar",
         application_args = [
             "hdfs://ec2-13-125-199-100.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow/",
