@@ -90,6 +90,11 @@ wget www.scala-lang.org/files/archive/scala-2.12.12.deb
 sudo dpkg -i scala-2.12.12.deb
 wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.2.8.tgz
 export PATH=$PATH:/home/ubuntu/sbt/bin
+
+cd sparkapp
+sbt clean
+sbt compile
+sbt package
 ```
 
 
