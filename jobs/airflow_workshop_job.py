@@ -81,11 +81,10 @@ with DAG(
         task_id='spark_file_counter', 
         dag=dag, 
         conn_id="spark_default",
-        conf=**spark_config,
+        conf=spark_config,
         driver_memory="1g",
         executor_cores= 1,
         executor_memory= "1g",
-        driver_memory="1g",
         num_executors=4,
         application_args = [ "/home/ubuntu/sparkapp/target/scala-2.12/sparkapp-assembly-0.1.jar", 
                              "hdfs://ec2-13-125-199-100.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow/" ]
