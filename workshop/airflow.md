@@ -1,12 +1,14 @@
 ### 1. airflow_workshop_job 의 이해 ###
 
-이번 챕터에서는 airflow_workshop_job 을 이용하여 에어플로우에 대한 이해를 돕도록 하겠습니다.
+이번 챕터에서는 airflow_workshop_job 을 이용하여 에어플로우에 대한 실습을 진행하도록 하겠습니다.
 해당 잡은 아래와 같이 4개의 오퍼레이터로 구성되며, 각각의 기능은 아래와 같습니다. 
 
 * postgres operator - dummy 테이블 생성
 * postgres operator - dummy 레코드 생성 (약 2100만건, 생성 소요시간 30초)
 * bash operator - sqoop import (copy table to hdfs)
 * spark submit operator - 집계처리하여 총건수를 postgresql 에 저장
+
+[dag 그림]
 
 ```
 [Know Issues]
@@ -52,8 +54,8 @@ ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_
 에어 플로우 ssh operator를 사용하는 경우 스파크 및 하둡과 같은 패키지들을 설치하지 않아도 되나, emr 접근을 위해서는 ssh public key 가 필요하게 된다.
 이는 보안상의 이슈를 발생시킬 소지가 있으므로, 에어플로우 마스터 노드에 spark 및 하둡 등의 소프트웨어를 설치해서 emr 클라이언트로 동작하도록 구성하는 것이 효과적이다.
 
-* yarn 설정(yarn-site.xml). -- 추가필요.
 
+* yarn 설정(yarn-site.xml). -- remote 실행..
 
 
 
@@ -85,10 +87,18 @@ dag_id               | filepath                | owner   | paused
 airflow_workshop_job | airflow_workshop_job.py | airflow | None
 ```
 
-브라우저를 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
+브라우저로 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
 
 * http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
+
+
+(참고) airflow_workshop_job
+```
+
+
+
+```
 
 ### 4. spark 어플리케이션 설치하기 ###
 
