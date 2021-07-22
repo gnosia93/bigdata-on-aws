@@ -84,6 +84,8 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 ### spark ###
 
 ```
+$ https://github.com/gnosia93/sparkapp.git
+$ 
 
 ```
 
