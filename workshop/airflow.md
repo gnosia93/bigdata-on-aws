@@ -132,7 +132,7 @@ libraryDependencies ++= Seq (
 ubuntu@ip-10-1-1-93:sparkapp$ sbt assembly
 
 ubuntu@ip-10-1-1-93:sparkapp$ ls -la target/scala-2.12/sparkapp-assembly-0.1.jar 
-
+-rw-rw-r-- 1 ubuntu ubuntu 6638135 Jul 22 15:35 target/scala-2.12/sparkapp-assembly-0.1.jar
 ```
 
 
