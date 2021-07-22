@@ -90,10 +90,10 @@ ubuntu@ip-10-1-1-93:~$ git clone https://github.com/gnosia93/sparkapp
 
 ubuntu@ip-10-1-1-93:~$ cd sparkapp
 
-ubuntu@ip-10-1-1-93:~$ vi project/assembly.sbt
+ubuntu@ip-10-1-1-93:sparkapp$ vi project/assembly.sbt
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.6")
 
-ubuntu@ip-10-1-1-93:~$ vi build.sbt
+ubuntu@ip-10-1-1-93:sparkapp$ vi build.sbt
 name := "sparkapp"
 
 version := "0.1"
@@ -107,7 +107,10 @@ libraryDependencies ++= Seq (
 
 )
 
-ubuntu@ip-10-1-1-93:~$ sbt assembly
+ubuntu@ip-10-1-1-93:sparkapp$ sbt assembly
+
+ubuntu@ip-10-1-1-93:sparkapp$ ls -la target/scala-2.12/sparkapp-assembly-0.1.jar 
+
 ```
 
 
