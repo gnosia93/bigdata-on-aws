@@ -90,7 +90,10 @@ with DAG(
         'driver_memory': '3g',
     }
 
-    spark_file_counter = SparkSubmitOperator(task_id='spark_file_counter', dag=dag, **spark_config)
+    spark_file_counter = SparkSubmitOperator(
+        task_id='spark_file_counter', 
+        dag=dag, 
+        **spark_config)
     
 
     
