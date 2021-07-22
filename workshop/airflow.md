@@ -24,10 +24,9 @@
 
 ### 2. 에어플로우 마스터 노드 설정하기 ###
 
-emr 의 하둡 및 스파크 잡을 remote 인 airflow 노드에서 실행하기 위해서 airflow ec2 인스턴스에 하둡 및 스파크 패키지를 설치해야 합니다. (https://github.com/gnosia93/bigdata-on-aws/blob/main/tf/ec2.tf 의 user_data 참조)   
-잡들은 airflow 에서 bash operator 를 이용하여 호출하게 되는데, remote 로 작업을 실행하기 위해서는 하둡 core-site.xml 파일에 emr 마스토 노드 주소를 설정해야 합니다.  
-아파치 스쿱 역시 패키지 설치가 필요하며, 스쿱의 경우 map-reduce 작업은 airflow ec2 인스턴스에서 직접 실행됩니다.  
-( 스파크 및 하둡 잡은 emr 에서 실행되지만, 스쿱 작업은 local 에서 실행됨 )  
+에어플로우 마스터 노드에서 emr 클러스터의 하둡 및 스파크 잡을 노드에서 실행하기 위해서 에어플로우 노드에 하둡 및 스파크 패키지를 설치해야 합니다. (https://github.com/gnosia93/bigdata-on-aws/blob/main/tf/ec2.tf 의 user_data 참조)   
+remote 로 작업을 실행하기 위해서는 하둡 core-site.xml 파일에 대한 설정 역시 필요하며, 스파크의 경우 yarn-site.xml 을 편집해야 합니다. 
+아파치 스쿱 역시 설치가 필요한데, 스쿱의 map-reduce 작업은 airflow ec2 인스턴스에서 직접 실행됩니다 (스쿱 1.4 버전을 사용하고 있고, 해당 버전은 Rest API 가 없기 때문.)
 
 ```
 $ terraform output | grep airflow
