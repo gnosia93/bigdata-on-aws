@@ -11,6 +11,12 @@
 
 ![archi](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/aws-architecture.png)
 
+실습에 필요한 리소스는 테라폼을 이용하여 프로비저닝 하며,
+
+- telegraf 가 설치되는 EC2, EMR 및 Airflow 노드는 퍼블릭 서브넷에 배치되고,
+- MSK(카프카) 와 PostgreSQL(RDS) 는 프라이빗 서브넷에 배치됩니다.
+- 빅데이터 데이터의 저장소 EMR 클러스터의 HDFS 를 활용하도록 합니다. 
+
 
 ## 실습 ###
 
