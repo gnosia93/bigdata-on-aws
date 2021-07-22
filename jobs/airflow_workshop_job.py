@@ -72,28 +72,23 @@ with DAG(
     )
 
     spark_config = {
-    #    'conf': {
-    #        "spark.yarn.maxAppAttempts": "1",
-    #        "spark.yarn.executor.memoryOverhead": "5120"
-    #    },
-    #    'conn_id': 'spark_default',
-        'master' : 'yarn',
-    #   'deploy-mode' : 'cluster',
+ 
         'application': '/home/ubuntu/sparkapp/target/scala-2.12/sparkapp-assembly-0.1.jar',
-        'driver_memory': "1g",
-        'executor_cores': 1,
-        'num_executors': 4,
-        'executor_memory': '1g',
-    #   'keytab': '/ketab/path',            
-    #    'principal': '{keytab.principal}',  
-    #    'java_class': '{jar파일 안에 포함된 main class}',
-        'driver_memory': '3g',
     }
 
+    # https://airflow.apache.org/docs/apache-airflow/1.10.12/_api/airflow/contrib/operators/spark_submit_operator/index.html
     spark_file_counter = SparkSubmitOperator(
         task_id='spark_file_counter', 
         dag=dag, 
-        **spark_config)
+        conn_id="spark_default",
+        conf=**spark_config,
+        driver_memory="1g",
+        executor_cores= 1,
+        executor_memory= "1g",
+        driver_memory="1g",
+        num_executors=4,
+        application_args = []
+    )
     
 
     
