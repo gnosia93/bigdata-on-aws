@@ -95,7 +95,7 @@ cd sparkapp
 sbt clean compile package
 ```
 
-
+* https://stackoverflow.com/questions/45412593/java-lang-noclassdeffounderror-org-apache-spark-sql-sparksession
 
 
 ### 4. connections 설정 ###
