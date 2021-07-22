@@ -224,10 +224,10 @@ sudo -u ubuntu echo "export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop" >> /home/ubun
 sudo -u ubuntu echo "export PATH=$PATH:$HADOOP_HOME/bin:$SPARK_HOME/bin:$SQOOP_HOME/bin" >> /home/ubuntu/.bash_profile
 sudo -u ubuntu wget https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar -P /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0/lib
 sudo -u ubuntu wget https://jdbc.postgresql.org/download/postgresql-42.2.23.jar -P /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0/lib   
-sudo -u ubuntu wget www.scala-lang.org/files/archive/scala-2.12.12.deb -P ~
-sudo dpkg -i ~/scala-2.12.12.deb
-sudo -u ubuntu wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.2.8.tgz -P ~
-sudo -u ubuntu tar xvfz sbt-1.2.8.tgz        
+sudo -u ubuntu wget www.scala-lang.org/files/archive/scala-2.12.12.deb -P /home/ubuntu
+sudo dpkg -i /home/ubuntu/scala-2.12.12.deb
+sudo -u ubuntu wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.2.8.tgz -P /home/ubuntu
+sudo -u ubuntu tar xvfz /home/ubuntu/sbt-1.2.8.tgz        
 sudo -u ubuntu echo "export PATH=$PATH:/home/ubuntu/sbt/bin" >> /home/ubuntu/.bash_profile    
 sudo -u ubuntu touch /home/ubuntu/done
 _DATA
