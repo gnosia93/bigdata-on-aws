@@ -158,7 +158,7 @@ export KAFKA_HOME=/home/ec2-user/kafka_2.13-2.6.1
 sudo -u ec2-user echo "export JAVA_HOME=/usr/lib/jvm/java" >> /home/ec2-user/.bash_profile 
 sudo -u ec2-user echo "export HADOOP_HOME=/home/ec2-user/hadoop-3.2.1" >> /home/ec2-user/.bash_profile 
 sudo -u ec2-user echo "export KAFKA_HOME=/home/ec2-user/kafka_2.13-2.6.1" >> /home/ec2-user/.bash_profile 
-sudo -u ec2-user echo "export PATH=$PATH:$HADOOP_HOME/bin:$KAFKA_HOME/bin" >> /home/ec2-user/.bash_profile 
+sudo -u ec2-user echo "export PATH=\$PATH:\$HADOOP_HOME/bin:\$KAFKA_HOME/bin" >> /home/ec2-user/.bash_profile 
 sudo -u ec2-user tar xvfz /home/ec2-user/hadoop-3.2.1.tar.gz -C /home/ec2-user
 sudo -u ec2-user tar xvfz /home/ec2-user/kafka_2.13-2.6.1.tgz -C /home/ec2-user
 sudo -u ec2-user echo "`date` ... done" > /home/ec2-user/done
@@ -219,16 +219,16 @@ sudo -u ubuntu echo "export HADOOP_HOME=/home/ubuntu/hadoop-3.2.1" >> /home/ubun
 sudo -u ubuntu echo "export SPARK_HOME=/home/ubuntu/spark-3.1.2-bin-hadoop3.2" >> /home/ubuntu/.bash_profile
 sudo -u ubuntu echo "export SQOOP_HOME=/home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0" >> /home/ubuntu/.bash_profile
 sudo -u ubuntu echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64" >> /home/ubuntu/.bash_profile
-sudo -u ubuntu echo "export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop" >> /home/ubuntu/.bash_profile
-sudo -u ubuntu echo "export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop" >> /home/ubuntu/.bash_profile
-sudo -u ubuntu echo "export PATH=$PATH:$HADOOP_HOME/bin:$SPARK_HOME/bin:$SQOOP_HOME/bin" >> /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop" >> /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "export YARN_CONF_DIR=\$HADOOP_HOME/etc/hadoop" >> /home/ubuntu/.bash_profile
+sudo -u ubuntu echo "export PATH=\$PATH:\$HADOOP_HOME/bin:\$SPARK_HOME/bin:\$SQOOP_HOME/bin" >> /home/ubuntu/.bash_profile
 sudo -u ubuntu wget https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar -P /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0/lib
 sudo -u ubuntu wget https://jdbc.postgresql.org/download/postgresql-42.2.23.jar -P /home/ubuntu/sqoop-1.4.7.bin__hadoop-2.6.0/lib   
 sudo -u ubuntu wget www.scala-lang.org/files/archive/scala-2.12.12.deb -P /home/ubuntu
 sudo dpkg -i /home/ubuntu/scala-2.12.12.deb
 sudo -u ubuntu wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.2.8.tgz -P /home/ubuntu
 sudo -u ubuntu tar xvfz /home/ubuntu/sbt-1.2.8.tgz        
-sudo -u ubuntu echo "export PATH=$PATH:/home/ubuntu/sbt/bin" >> /home/ubuntu/.bash_profile    
+sudo -u ubuntu echo "export PATH=\$PATH:/home/ubuntu/sbt/bin" >> /home/ubuntu/.bash_profile    
 sudo -u ubuntu touch /home/ubuntu/done
 _DATA
 
