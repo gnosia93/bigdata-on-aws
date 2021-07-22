@@ -81,18 +81,13 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 * http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
 
-### spark ###
-
-* [scala/sbt 설치](https://www.techrepublic.com/article/how-to-install-sbt-on-ubuntu-for-scala-and-java-projects/)
+### 4. spark 어플리케이션 설치하기 ###
 
 ```
-wget www.scala-lang.org/files/archive/scala-2.12.12.deb
-sudo dpkg -i scala-2.12.12.deb
-wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.2.8.tgz
-export PATH=$PATH:/home/ubuntu/sbt/bin
-
-cd sparkapp
-sbt clean compile package
+ubuntu@ip-10-1-1-93:~$ git clone https://github.com/gnosia93/sparkapp
+ubuntu@ip-10-1-1-93:~$ cd sparkapp
+ubuntu@ip-10-1-1-93:~$ sbt clean compile package
+ubuntu@ip-10-1-1-93:~$ 
 ```
 
 * https://stackoverflow.com/questions/45412593/java-lang-noclassdeffounderror-org-apache-spark-sql-sparksession
