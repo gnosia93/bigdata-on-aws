@@ -85,6 +85,12 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 
 * [scala/sbt 설치](https://www.techrepublic.com/article/how-to-install-sbt-on-ubuntu-for-scala-and-java-projects/)
 
+```
+wget www.scala-lang.org/files/archive/scala-2.12.12.deb
+sudo dpkg -i scala-2.12.12.deb
+wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.5.5.tgz
+export PATH=$PATH:/home/ubuntu/sbt/bin
+```
 
 
 
