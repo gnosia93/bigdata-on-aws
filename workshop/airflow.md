@@ -17,9 +17,11 @@
 
 ```
 [Know Issues]
+
   1. spark job은 airflow local 에서 수행 됩니다. --> emr cluster 수행으로 수정필요.
     --> https://aws.amazon.com/ko/premiumsupport/knowledge-center/emr-submit-spark-job-remote-cluster/
     --> https://medium.com/@tamizhgeek/remote-spark-submit-toyarn-running-on-emr-9804b89d82d2
+    --> http://dekarlab.de/wp/?p=613
     
   2. sqoop 작업 역시 airflow local 에서 수행됩니다. 
 ```
