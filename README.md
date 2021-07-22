@@ -14,7 +14,7 @@
 
 실습에 필요한 리소스는 테라폼을 이용하여 프로비저닝 하며,
 
-- telegraf 가 설치되는 EC2, EMR 및 Airflow 노드는 퍼블릭 서브넷에 배치되고,
+- telegraf 가 설치되는 EC2, EMR 및 Airflow 노드는 실습의 편의를 위해 퍼블릭 서브넷에 배치되고,
 - MSK(카프카) 와 PostgreSQL(RDS) 는 프라이빗 서브넷에 배치됩니다.
 - 데이터는 주로 EMR 클러스터의 HDFS 에 저장되며, 일부 데이터는 PostgreSQL 에도 저장됩니다. 
 
