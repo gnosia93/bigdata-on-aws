@@ -142,7 +142,7 @@ Port : 5432
 ![conn3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-3.png)
 
 
-spark_default 항목을 찾아 [Edit record] 버튼을 클릭한 후, Host 값으로 yarn 을 입력합니다. 
+동일하게 connection 리스트 화면에서 spark_default 항목을 찾아 [Edit record] 버튼을 클릭한 후, Host 값으로 yarn 을 입력합니다. 
 ```
 Host : yarn
 ```
