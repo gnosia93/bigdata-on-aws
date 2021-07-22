@@ -1,8 +1,15 @@
-### 1. airflow 잡 스팩 (airflow_workshop_job) ###
+### 1. airflow_workshop_job 의 이해 ###
 
-* postgres operator - dummmy 레코드 gen (약 2100만건, 생성 소요시간 30초)
+이번 챕터에서는 airflow_workshop_job 을 이용하여 에어플로우에 대한 이해를 돕도록 하겠습니다.
+해당 잡은 아래와 같이 4개의 오퍼레이터로 구성되며, 각각의 기능은 아래와 같습니다. 
+
+* postgres operator - dummay 테이블 생성
+* postgres operator - dummmy 테이블 레코드 생성 (약 2100만건, 생성 소요시간 30초)
 * bash operator - sqoop import (copy table to hdfs)
 * spark submit operator - 집계처리하여 총건수를 postgresql 에 저장
+
+
+
 
 ### 2. 하둡 및 스파크 클라이언트 설정하기 ###
 
