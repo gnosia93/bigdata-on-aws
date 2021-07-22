@@ -43,6 +43,10 @@ ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_
 에어 플로우 ssh operator를 사용하는 경우 스파크 및 하둡과 같은 패키지들을 설치하지 않아도 되나, emr 접근을 위해서는 ssh public key 가 필요하게 된다.
 이는 보안상의 이슈를 발생시킬 소지가 있으므로, 에어플로우 마스터 노드에 spark 및 하둡 등의 소프트웨어를 설치해서 emr 클라이언트로 동작하도록 구성하는 것이 효과적이다.
 
+* yarn 설정(yarn-site.xml). -- 추가필요.
+
+
+
 
 ### 3. airflow 잡 등록하기 ###
 
@@ -77,7 +81,27 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 * http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
 
+### spark ###
+
+* [scala/sbt 설치](https://www.techrepublic.com/article/how-to-install-sbt-on-ubuntu-for-scala-and-java-projects/)
+
+```
+wget www.scala-lang.org/files/archive/scala-2.12.12.deb
+sudo dpkg -i scala-2.12.12.deb
+wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.2.8.tgz
+export PATH=$PATH:/home/ubuntu/sbt/bin
+
+cd sparkapp
+sbt clean compile package
+```
+
+* https://stackoverflow.com/questions/45412593/java-lang-noclassdeffounderror-org-apache-spark-sql-sparksession
+
+
 ### 4. connections 설정 ###
+
+* postgres
+* spark
 
 airflow 이 connections 은 각종 데이터 소스에 접근할 때 필요한 인증 정보들를 모아 놓은 정보의 집합체 입니다. (job 소스코드에서 인증 관련 정보를 분리하여 별도로 관리하기 위함) 
 [airflow_workshop_job](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py) 파이썬 코드에서는 postgresql 데이터베이스에 접근하기 위해서, postgres_default 라는 connection id를 사용하고 있는데, 해당 id는 에어 플로우가 기본적으로 제공하는 postgresql 용 id 값으로, airflow 의 connections 메뉴에서 인증 관련 정보를 수정할 수 있습니다.
