@@ -8,7 +8,11 @@
 * bash operator - sqoop import (copy table to hdfs)
 * spark submit operator - 집계처리하여 총건수를 postgresql 에 저장
 
-
+```
+[Know Issues]
+  1. spark job은 airflow local 에서 수행 됩니다. --> emr cluster 수행으로 수정필요.
+  2. sqoop 작업 역시 airflow local 에서 수행됩니다. 
+```
 
 
 ### 2. 하둡 및 스파크 클라이언트 설정하기 ###
