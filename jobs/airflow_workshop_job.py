@@ -76,7 +76,9 @@ with DAG(
     #        "spark.yarn.maxAppAttempts": "1",
     #        "spark.yarn.executor.memoryOverhead": "5120"
     #    },
-        'conn_id': 'spark_default',
+    #    'conn_id': 'spark_default',
+        'master' : 'yarn',
+    #   'deploy-mode' : 'cluster',
         'application': '/home/ubuntu/sparkapp/target/scala-2.12/sparkapp-assembly-0.1.jar',
         'driver_memory': "1g",
         'executor_cores': 1,
