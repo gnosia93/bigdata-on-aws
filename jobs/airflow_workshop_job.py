@@ -1,3 +1,7 @@
+# airflow pipeline sample 
+# author: gnosia93@naver.com
+# history: 2021.07.22 first released
+#
 from airflow import DAG
 from airflow.utils.dates import days_ago
 from datetime import datetime, timedelta
