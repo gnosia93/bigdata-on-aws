@@ -1,4 +1,4 @@
-![terraform](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/terraform.png)
+![terraform](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/terraform-1.png)
 
 
 
