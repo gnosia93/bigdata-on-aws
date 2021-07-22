@@ -5,7 +5,7 @@
 
 ### 1. airflow_workshop_job 의 이해 ###
 
-이번 챕터에서는 airflow_workshop_job 을 이용하여 에어플로우에 대한 실습을 진행하도록 하겠습니다.
+이번 챕터에서는 [airflow_workshop_job](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py) 을 이용하여 에어플로우에 대한 실습을 진행하도록 하겠습니다.
 해당 잡은 아래와 같이 4개의 오퍼레이터로 구성되며, 각각의 기능은 아래와 같습니다. 
 
 * postgres operator - dummy 테이블 생성
@@ -66,9 +66,6 @@ ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_
 
 
 ### 3. airflow 잡 등록하기 ###
-
-* [airflow_workshop_job 소스코드](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py)
-
 
 에어플로우에서 잡을 등록하는 방법은 의외로 간단합니다. 잡 로직을 구현한 파이썬 파일을 $AIRFLOW_HOME/dags/ 디렉토리에 복사 하면 됩니다. 
 아래와 같이 airflow ec2 인스턴스 로그인 하여, ps 명령어를 이용하여 airflow 가 정상적으로 동작중인지 확인힙니다.
