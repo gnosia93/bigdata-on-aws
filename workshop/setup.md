@@ -1,5 +1,17 @@
 #### 1. 테라폼 설치 ####
 
+* homebrew 는 mac 용 소프트웨어 패키지 매니저로 테라폼을 설치하기 위해 필요합니다.
+```
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+* 테라폼을 brew 를 이용하여 설치합니다. 
+```
+$ brew install terraform
+$ terraform -version
+Terraform v0.14.5
+```
+
 
 #### 2. AWS CLI 설정 ####
 
