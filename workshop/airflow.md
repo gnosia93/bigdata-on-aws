@@ -1,5 +1,8 @@
 ![airflow](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-logo.png)
 
+아파치 에어플로우는 작업 흐름을 관리 및 실행하는 오픈소스 엔진으로 에어비앤비에 의해 개발되었습니다. 에어플로우는 파이썬을 이용하여 동적으로 작업의 흐름을 정의할 수 있고,
+각종 Operator를 이용하여 쉽게 작업 흐름을 구현할 수 있습니다. 또한 여러개의 워커노드를 이용하여 대규모의 작업 관리가 가능합니다.
+
 ### 1. airflow_workshop_job 의 이해 ###
 
 이번 챕터에서는 airflow_workshop_job 을 이용하여 에어플로우에 대한 실습을 진행하도록 하겠습니다.
