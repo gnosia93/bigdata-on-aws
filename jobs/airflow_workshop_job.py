@@ -71,7 +71,7 @@ with DAG(
         }
     )
 
- 
+    # https://airflow.apache.org/docs/apache-airflow-providers-apache-spark/stable/connections/spark.html
     # https://airflow.apache.org/docs/apache-airflow/1.10.12/_api/airflow/contrib/operators/spark_submit_operator/index.html
     spark_file_counter = SparkSubmitOperator(
         task_id='spark_file_counter', 
