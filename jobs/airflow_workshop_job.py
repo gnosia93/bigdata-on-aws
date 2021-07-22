@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 import os
 
 args = {
@@ -67,5 +68,26 @@ with DAG(
             **os.environ
         }
     )
+
+    spark_config = {
+    #    'conf': {
+    #        "spark.yarn.maxAppAttempts": "1",
+    #        "spark.yarn.executor.memoryOverhead": "5120"
+    #    },
+        'conn_id': 'spark_option',
+        'application': '/home/ubuntu/sparkapp/target/scala-2.12/sparkapp-assembly-0.1.jar',
+        'driver_memory': "1g",
+        'executor_cores': 1,
+        'num_executors': 4,
+        'executor_memory': '1g',
+    #   'keytab': '/ketab/path',            
+    #    'principal': '{keytab.principal}',  
+    #    'java_class': '{jar파일 안에 포함된 main class}',
+        'driver_memory': '3g',
+    }
+
+    spark_file_counter = SparkSubmitOperator(task_id='spark_file_counter', dag=dag, **spark_config)
     
-    drop_dummy_table >> ctas_dummy_table >> sqoop_import_dummy_table
+
+    
+    drop_dummy_table >> ctas_dummy_table >> sqoop_import_dummy_table >> spark_file_counter

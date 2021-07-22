@@ -43,7 +43,7 @@ resource "aws_security_group" "bigdata_ec2_sg" {
             to_port = 22
             protocol = "tcp"
             ipv6_cidr_blocks = [ ]
-            prefix_list_ids = [ ]
+            prefix_list_ids = [ "pl-e1a54088" ]
             security_groups = [ ]
             self = false
         },
@@ -54,7 +54,7 @@ resource "aws_security_group" "bigdata_ec2_sg" {
             to_port = 8080
             protocol = "tcp"
             ipv6_cidr_blocks = [ ]
-            prefix_list_ids = [ ]
+            prefix_list_ids = [ "pl-e1a54088" ]
             security_groups = [ ]
             self = false
         }
