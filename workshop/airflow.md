@@ -83,9 +83,8 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 
 ### spark ###
 
-```
-$ https://github.com/gnosia93/sparkapp.git
-$ 
+* [scala/sbt 설치](https://www.techrepublic.com/article/how-to-install-sbt-on-ubuntu-for-scala-and-java-projects/)
+
 
 ```
 
