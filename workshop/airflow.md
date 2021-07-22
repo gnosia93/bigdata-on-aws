@@ -24,6 +24,7 @@
     --> http://dekarlab.de/wp/?p=613
     
   2. sqoop 작업 역시 airflow local 에서 수행됩니다. 
+    --> sqoop 1.4 버전을 사용중이며, 1.4 는 rest api 를 지원하지 않음.
 ```
 
 
