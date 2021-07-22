@@ -1,4 +1,8 @@
-#### 1. 테라폼 설치 ####
+![terraform](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/terraform.png)
+
+
+
+### 1. 테라폼 설치 ###
 
 * homebrew 는 mac 용 소프트웨어 패키지 매니저로 테라폼을 설치하기 위해 필요합니다.
 ```
@@ -13,7 +17,7 @@ Terraform v0.14.5
 ```
 
 
-#### 2. AWS CLI 설정 ####
+### 2. AWS CLI 설정 ###
 
 본 워크샵에서는 테라폼을 이용하여 AWS 클라우드에 인프라 스트럭처를 배포합니다.   
 테라폼은 HCL 기반으로 리소스를 선언 및 관리하는 오픈소스 IaC 도구로서, AWS 클라우드에 인프라를 배포하기 위해서는 AWS 계정이 반드시 필요합니다.  
@@ -37,7 +41,7 @@ export aws_region = "ap-northeast-2"                                <--- 리전 
 ```
 
 
-#### 3. 키페어 생성 ####
+### 3. 키페어 생성 ###
 
 AWS EC2 콘솔의 keypair 화면으로 이동 한후, ssh 로그인용 키페어를 아래와 같이 생성합니다. 생성된 키페어 파일은 로컬 PC의 [다운로드] 라는 디렉토리에서 확인하실 수 있습니다.(파일명-tf_key_bigdata.pem)
 
@@ -49,7 +53,7 @@ AWS EC2 콘솔의 keypair 화면으로 이동 한후, ssh 로그인용 키페어
 $ mv ~/Downloads/tf_key_bigdata.pem ~
 ```
 
-#### 4. 워크샵 리소스 생성 ####
+### 4. 워크샵 리소스 생성 ###
 
 리소스를 생성하기 위해 아래와 같이 git 레포지토리 부터 소스 코드를 로컬 PC 로 다운로드 받은 후, var.tf 파일의 your_ip_addr 와 key_pair 의 값을
 여러분들의 환경에 맞게 수정합니다. 이때 your_ip_addr 값은 아래와 같이 네이버 검색창을 이용하여 조회하도록 합니다. 
@@ -96,7 +100,7 @@ rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:54
 $ 
 ```
 
-#### 5. 생성 리소스 확인 ####
+### 5. 생성 리소스 확인 ###
 
 AWS 콘솔로 로그인해서 아래 그림과 같이 ec2, emr, msk 및 rds 가 제대로 생성되어 있는지 확인합니다.  
 
