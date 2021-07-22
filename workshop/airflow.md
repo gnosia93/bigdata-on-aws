@@ -92,9 +92,7 @@ wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.2.8.tgz
 export PATH=$PATH:/home/ubuntu/sbt/bin
 
 cd sparkapp
-sbt clean
-sbt compile
-sbt package
+sbt clean compile package
 ```
 
 
