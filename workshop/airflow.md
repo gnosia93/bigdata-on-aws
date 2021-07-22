@@ -100,17 +100,15 @@ sbt clean compile package
 
 ### 4. connections 설정 ###
 
-* postgres
-* spark
+connections 은 타켓 리소스를 억세스할 때 필요한 각종 정보를 모아 놓은 정보의 집합체 입니다. 타켓 리소스가 데이터베이스인 경우 연결관련 정보를 저장하고 있고, 스파크인 경우에는 리소스 매니저로  yarn 사용 여부를 결정하게 됩니다. 
 
-airflow 이 connections 은 각종 데이터 소스에 접근할 때 필요한 인증 정보들를 모아 놓은 정보의 집합체 입니다. (job 소스코드에서 인증 관련 정보를 분리하여 별도로 관리하기 위함) 
-[airflow_workshop_job](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py) 파이썬 코드에서는 postgresql 데이터베이스에 접근하기 위해서, postgres_default 라는 connection id를 사용하고 있는데, 해당 id는 에어 플로우가 기본적으로 제공하는 postgresql 용 id 값으로, airflow 의 connections 메뉴에서 인증 관련 정보를 수정할 수 있습니다.
+이러한 connection 정보는 에어플로우 job 소스 코드에서 각종 오퍼레이터에 의해 참조 됩니다(아래 코드 참조)
 
-[airflow workshop job 코드 발췌]
+[airflow workshop job 에서 발췌]
 ```
  ctas_dummy_table = PostgresOperator(
-        task_id="ctas_dummy_table",
-        postgres_conn_id="postgres_default",
+        task_id="ctas_dummy_table", 
+        postgres_conn_id="postgres_default",      <----- connections
         sql="""
             create table tbl_airflow_dummy as 
             select 'dummy'|| right('0' || line, 2) as line, 
@@ -121,7 +119,12 @@ airflow 이 connections 은 각종 데이터 소스에 접근할 때 필요한 �
     )   
 ```
 
-상단 Admin 메뉴의 Connections 팝업창 메뉴로 이동한 다음, 
+이번 실습에서는 두가지의 connection 정보 설정이 필요합니다. 
+
+* postgres
+* spark
+
+connection 정보 설정을 위해 에어플로우 상단 Admin 메뉴의 Connections 팝업창 메뉴로 이동한 다음, 
 ![conn1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-1.png)
 
 postgres_default 항목을 찾아 [Edit record] 버튼을 클릭합니다. 
