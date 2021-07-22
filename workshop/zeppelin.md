@@ -47,6 +47,10 @@ https://aws.amazon.com/amazon-linux-2/
 
 ### 2. 제플린 인터프리터 설정 ###
 
+AWS emr 콘솔에서 제플린 주소 확인 후, 브라우저로 제플린 노트북에 접속합니다. 
+
+![emr-app-url](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/emr-app-url.png)
+
 제플린 노트북을 out of memory 오류 없이 실행하기 위해서는 몇가지 인터프리터 설정을 변경해야 합니다.   
 제플린 화면에서 우측 상단의 anonymous 버튼을 클릭한 후, Interpreter 메뉴를 선택하도록 합니다.
 
@@ -69,12 +73,7 @@ spark.executor.memory = 1g
 
 ### 3. 제플린 노트북 생성 ###
 
-AWS emr 콘솔에서 제플린 주소 확인 후, 브라우저로 제플린 노트북에 접속합니다. 
-
-![emr-app-url](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/emr-app-url.png)
-
-
-제플린 화면에 뜨면, 아래 그림 처럼 새로운 노트북을 생성합니다. 
+제플린 콘솔에서 아래 그림 처럼 새로운 노트북을 생성합니다. 
 
 ![note1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-create-note1.png)
 
