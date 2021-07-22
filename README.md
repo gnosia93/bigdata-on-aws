@@ -7,9 +7,8 @@
 워크샵을 원할하게 진행하기 위해 파이썬, 스칼라 그리고 SQL 문법에 대한 기초적인 이해가 필요한, 그 수준은 높지 않습니다.
 로컬 PC는 맥(mac)으로 가정하고 작성되었습니다. 
 
-* AWS Infra Architecture
+<< 실습 아키텍처 >>
 
-<< 아키텍처 >>
 ![archi](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/aws-architecture.png)
 
 
