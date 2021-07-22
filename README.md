@@ -3,7 +3,11 @@
 이미지 출처 - gritmind.blog
 ![bigdata](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/bigdat-on-aws.png)
 
-본 워크샵은 로컬 PC를 맥(mac) 로 가정하고 작성되었습니다. 
+본 워크샵은 빅데이터 솔루션에 대한 전반적인 이해를 돕고자, AWS 클라우드의 EMR 서비스를 이용하여, 코드 샘플 기반으로 작성되었습니다.
+Spark 어플리켕ㅅ
+로컬 PC를 맥(mac)으로 가정하고 작성되었습니다. 
+본 워크샵은 빅데이터 솔루션에 대한 전반적인 이해를 돕고자, AWS 클라우드의 EMR 서비스를 이용하여, 코드 샘플 기반으로 작성되었습니다케로컬 PC를 맥(mac)으로 가정하고 작성되었습니다. 
+본 워크샵은 빅데이터 솔루션에 대한 전반적인 이해를 돕고자, AWS 클라우드의 EMR 서비스를 이용하여, 코드 샘플 기반으로 작성되었습니다. 로컬 PC를 맥(mac)으로 가정하고 작성되었습니다. 
 
 * AWS Infra Architecture
 
