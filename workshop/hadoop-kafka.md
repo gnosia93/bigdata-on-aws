@@ -1,3 +1,5 @@
+![hadoop](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/hadoop.jpg)
+
 테라폼에 의해 생성된 ec2 인스턴스는 하둡 및 카프카용 클라이언트로 사용됩니다. 각각의 클러스터가 정상적으로 동작하는지 아래의 명령어를 이용하여 테스트 합니다.  
 
 ### 1. 하둡 테스트 ###
