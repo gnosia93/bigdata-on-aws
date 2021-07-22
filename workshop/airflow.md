@@ -58,11 +58,14 @@ ubuntu@ip-10-1-1-93:~$ vi core-site.xml
 ubuntu@ip-10-1-1-198:~$ cp $SQOOP_HOME/conf/sqoop-env-template.sh $SQOOP_HOME/conf/sqoop-env.sh
 ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_COMMON_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
 ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_HOME/conf/sqoop-env.sh
+
+ubuntu@ip-10-1-1-198:~$ hadoop fs -ls /
+Found 4 items
+drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-20 12:17 /apps
+drwxrwxrwt   - hdfs hdfsadmingroup          0 2021-07-20 16:54 /tmp
+drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-20 15:14 /user
+drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-20 12:17 /var
 ```
-
-에어 플로우 ssh operator를 사용하는 경우 스파크 및 하둡과 같은 패키지들을 설치하지 않아도 되나, emr 접근을 위해서는 ssh public key 가 필요하게 된다.
-이는 보안상의 이슈를 발생시킬 소지가 있으므로, 에어플로우 마스터 노드에 spark 및 하둡 등의 소프트웨어를 설치해서 emr 클라이언트로 동작하도록 구성하는 것이 효과적이다.
-
 
 
 
