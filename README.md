@@ -10,7 +10,7 @@
 * AWS Infra Architecture
 
 << 아키텍처 >>
-
+![archi](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/aws-architecture.png)
 
 
 ## 실습 ###
