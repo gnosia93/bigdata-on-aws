@@ -1,7 +1,8 @@
 # bigdata-on-aws #
 
-이미지 출처 - gritmind.blog
 ![bigdata](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/bigdat-on-aws.png)
+이미지 출처 - gritmind.blog
+
 
 본 워크샵은 빅데이터 솔루션에 대한 전반적인 이해를 돕고자, AWS 클라우드의 EMR 서비스를 이용하여, 코드 샘플 기반으로 작성되었습니다.
 워크샵을 원할하게 진행하기 위해 파이썬, 스칼라 그리고 SQL 문법에 대한 기초적인 이해가 필요한, 그 수준은 높지 않습니다.
