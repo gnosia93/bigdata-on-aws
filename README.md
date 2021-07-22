@@ -19,7 +19,7 @@
 - 데이터는 주로 EMR 클러스터의 HDFS 에 저장되며, 일부 데이터는 PostgreSQL 에도 저장됩니다. 
 
 
-## 실습 ###
+## 실습 ##
 
 * [1. 리소스 생성](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/setup.md)
 
@@ -37,7 +37,10 @@
 
 * [8. 에어플로우 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/airflow.md)
 
-* Intelij로 스파크 어플리케이션 개발하기 (Planned)
+
+## 부록 ##
+
+* 인텔리J로 스파크 어플리케이션 개발하기 (Planned)
 
 
 ## Revison History ##
