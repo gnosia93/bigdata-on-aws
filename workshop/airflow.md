@@ -83,17 +83,35 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 
 ### 4. spark 어플리케이션 설치하기 ###
 
+스파크 어플리케이션을 아래의 순서 대로 설치합니다. sbt 는 scala 에서 주로 사용하는 패키지 메니저로 mvn 과 같은 기능을 수행합니다. 
+sbt 명령어 실행시 시간이 다소 오래 소요될 수 있습니다. 
 ```
 ubuntu@ip-10-1-1-93:~$ git clone https://github.com/gnosia93/sparkapp
+
 ubuntu@ip-10-1-1-93:~$ cd sparkapp
-ubuntu@ip-10-1-1-93:~$ sbt clean compile package
-ubuntu@ip-10-1-1-93:~$ 
+
+ubuntu@ip-10-1-1-93:~$ vi project/assembly.sbt
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.6")
+
+ubuntu@ip-10-1-1-93:~$ vi build.sbt
+name := "sparkapp"
+
+version := "0.1"
+
+scalaVersion := "2.12.12"
+
+libraryDependencies ++= Seq (
+  "org.apache.spark" %% "spark-core" % "3.1.1" % "provided",         <--- % "provided 추가 
+  "org.apache.spark" %% "spark-sql" % "3.1.1" % "provided" ,         <--- % "provided 추가 
+  "org.postgresql" % "postgresql" % "42.2.23"
+
+)
+
+ubuntu@ip-10-1-1-93:~$ sbt assembly
 ```
 
-* https://stackoverflow.com/questions/45412593/java-lang-noclassdeffounderror-org-apache-spark-sql-sparksession
 
-
-### 4. connections 설정 ###
+### 5. connections 설정 ###
 
 connections 은 타켓 리소스를 억세스할 때 필요한 각종 정보를 모아 놓은 정보의 집합체 입니다. 타켓 리소스가 데이터베이스인 경우 연결관련 정보를 저장하고 있고, 스파크인 경우에는 리소스 매니저로  yarn 사용 여부를 결정하게 됩니다. 
 
@@ -143,7 +161,7 @@ Host : yarn
 ```
 ![conn4](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-4.png)
 
-### 5. job 실행하기 ###
+### 6. job 실행하기 ###
 
 airflow_workshop_job 의 좌측에 있는 회식 버튼을 토글하여 파란색으로 바꾼 다음,  
 
@@ -163,8 +181,3 @@ Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigge
 
 * [airflow 이해하기](https://graspthegist.com/2018/11/26/airflow-part-1-2-bash/)
 
-* [emr spark submit rest api](https://www.python2.net/questions-274169.htm)
-
-* [spark submit operator](https://stackoverflow.com/questions/53773678/airflow-sparksubmitoperator-how-to-spark-submit-in-another-server)
-
-* https://louisdev.tistory.com/8
