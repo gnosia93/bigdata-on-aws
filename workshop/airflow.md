@@ -106,7 +106,7 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 ### 4. spark 어플리케이션 설치하기 ###
 
 스파크 어플리케이션을 아래의 순서 대로 설치합니다. sbt 는 scala 에서 주로 사용하는 패키지 메니저로 mvn 과 같은 기능을 수행합니다. 
-sbt 명령어 실행시 시간이 다소 오래 소요될 수 있습니다. 
+sbt assembly 실행시 시간이 다소 오래 소요될 수 있습니다. 
 ```
 ubuntu@ip-10-1-1-93:~$ git clone https://github.com/gnosia93/sparkapp
 
