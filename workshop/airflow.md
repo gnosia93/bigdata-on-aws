@@ -62,6 +62,9 @@ ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_
 
 ### 3. airflow 잡 등록하기 ###
 
+* [airflow_workshop_job 소스코드](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py)
+
+
 에어플로우에서 잡을 등록하는 방법은 의외로 간단합니다. 잡 로직을 구현한 파이썬 파일을 $AIRFLOW_HOME/dags/ 디렉토리에 복사 하면 됩니다. 
 아래와 같이 airflow ec2 인스턴스 로그인 하여, ps 명령어를 이용하여 airflow 가 정상적으로 동작중인지 확인힙니다.
 파이썬으로 구현된 job 파일을 받아오기 위해 아래 예제에서 처럼 github repo 를 clone 한 후, ~/airflow/dags 디렉토리로 job 파일을 복사합니다. 
@@ -92,7 +95,6 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 
 * http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
 
-[[참고]airflow_workshop_job 소스코드](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py)
 
 
 ### 4. spark 어플리케이션 설치하기 ###
