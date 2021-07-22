@@ -1,3 +1,5 @@
+![airflow](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-logo.png)
+
 ### 1. airflow_workshop_job 의 이해 ###
 
 이번 챕터에서는 airflow_workshop_job 을 이용하여 에어플로우에 대한 실습을 진행하도록 하겠습니다.
