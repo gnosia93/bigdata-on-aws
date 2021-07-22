@@ -16,7 +16,7 @@
 ![dags](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-dags.png)
 
 ```
-[Know Issues]
+[Known Issues]
 
   1. spark job은 airflow local 에서 수행 됩니다. --> emr cluster 수행으로 수정필요.
     --> https://aws.amazon.com/ko/premiumsupport/knowledge-center/emr-submit-spark-job-remote-cluster/
