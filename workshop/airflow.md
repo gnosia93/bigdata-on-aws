@@ -64,9 +64,6 @@ ubuntu@ip-10-1-1-198:~$ echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> $SQOOP_
 이는 보안상의 이슈를 발생시킬 소지가 있으므로, 에어플로우 마스터 노드에 spark 및 하둡 등의 소프트웨어를 설치해서 emr 클라이언트로 동작하도록 구성하는 것이 효과적이다.
 
 
-```
-* yarn 설정(yarn-site.xml). -- emr 실행을 위해.. 내용을 추가해야 한다. (Planned)
-```
 
 
 ### 3. airflow 잡 등록하기 ###
