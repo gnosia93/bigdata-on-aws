@@ -87,7 +87,7 @@ with DAG(
         executor_memory= "1g",
         driver_memory="1g",
         num_executors=4,
-        application_args = []
+        application_args = ["target/scala-2.12/sparkapp-assembly-0.1.jar", "hdfs://ec2-13-125-199-100.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow/" ]
     )
     
 
