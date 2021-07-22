@@ -13,7 +13,7 @@
 * bash operator - sqoop import (copy table to hdfs)
 * spark submit operator - 집계처리하여 총건수를 postgresql 에 저장
 
-[dag 그림]
+![dags](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-dags.png)
 
 ```
 [Know Issues]
