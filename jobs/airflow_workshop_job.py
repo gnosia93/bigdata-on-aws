@@ -79,7 +79,6 @@ with DAG(
     # https://airflow.apache.org/docs/apache-airflow/1.10.12/_api/airflow/contrib/operators/spark_submit_operator/index.html
     spark_file_counter = SparkSubmitOperator(
         task_id='spark_file_counter', 
-        dag=dag, 
         conn_id="spark_default",
         application="/home/ubuntu/sparkapp/target/scala-2.12/sparkapp-assembly-0.1.jar",
         driver_memory="1g",
@@ -92,9 +91,7 @@ with DAG(
             "hdfs://ec2-13-125-199-100.ap-northeast-2.compute.amazonaws.com:8020/tmp/airflow/",
             "jdbc:postgresql://bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432/airline_db" 
         ],
-
+        dag=dag,     
     )
-    
-
-    
+        
     drop_dummy_table >> ctas_dummy_table >> sqoop_import_dummy_table >> spark_file_counter
