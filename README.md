@@ -32,10 +32,6 @@
 * [8. 에어플로우 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/airflow.md)
 
 
-## 부록 ##
-
-* 인텔리J로 스파크 어플리케이션 개발하기 (Planned)
-
 
 ## Revison History ##
 
