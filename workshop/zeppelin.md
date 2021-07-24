@@ -67,7 +67,7 @@ spark.executor.memory = 1g
 ```
 ![int3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-interpreter-3.png)
 
-%spark, %pyspark, %sql 인터프리터를 테스트 합니다. %spark 스칼러 코드를 해석 및 실행하는 기본 인터프리터로 명시적으로 선언하지 않으면 %spark 인터프리터가 실행됩니다. %pyspark 은 제플린 노트북에서 파이썬을 사용하고자 할때 사용하는 인터프리터 이며, %sql 은 SQL 인터프리터 입니다. SQL 만을 이용하여 데이터에 대한 조회 및 오퍼레이션을 수행할 수 있습니다.
+%spark, %pyspark, %sql 인터프리터를 테스트 합니다. %spark은 스칼러 코드를 해석 및 실행하는 기본 인터프리터로 명시적으로 선언하지 않으면 %spark 인터프리터가 실행됩니다. %pyspark 은 제플린 노트북에서 파이썬을 사용하고자 할때 사용하는 인터프리터 이며, %sql 은 SQL 인터프리터 입니다. SQL 만을 이용하여 데이터에 대한 조회 및 오퍼레이션을 수행할 수 있습니다.
 
 ![int4](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-interpreter-4.png)
 
@@ -81,8 +81,10 @@ spark.executor.memory = 1g
 ![note2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-create-note2.png)
 
 
-### 4. 데이터 프레임의 이해 ###
 
+### 4. 데이터 프레임 샘플 테스트 하기 ###
+
+제플린 노트북은 다양항 형태의 인터프러터를 지원하나 이번 챕터에서는 %spark 인터프리터를 이용하여 스파크 데이터 프레임을 테스트해 보겟습니다. 
 데이터 프레임은 스파크가 제공하는 구조적인 API 로서, 로우와 칼럼 형태의 DB 테이블 처럼 데이터를 쉽고 빠르게 조작하는 것을 가능하게 하는 스파크 객체입니다. 데이터 프레임은 데이터에 대한 조회, 필터링 및 집계 기능을 제공합니다. 
 
 아래 그림은 제플린 노트북 실행 화면을 캡처한 것으로 spark-shell 과는 달리 웹UI 형태의 인터페이스를 제공하고 있어, 손쉬운 데이터 조회와 분석이 가능합니다.
@@ -90,7 +92,7 @@ spark.executor.memory = 1g
 
 ![note3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-notebook.png)
 
-hdfs URL 을 localhost 에서 여러분들의 주소로 바꾼 후, 아래 샘플 코드를 제플린 노트북에서 실행하고, 그 결과를 확인 하도록 합니다. 
+아래 hdfs URL은 에서 여러분들의 EMR 마스터 주소로 바꾼 후, 아래 샘플 코드를 제플린 노트북에서 실행하고, 그 결과를 확인 하도록 합니다. 
 
 [샘플 코드]
 ```
