@@ -139,3 +139,7 @@ cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_user=0
 
 cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_system=0,usage_idle=99.75020815963434,usage_nice=0,usage_guest=0,usage_steal=0,usage_guest_nice=0,usage_user=0.24979184013280142,usage_iowait=0,usage_irq=0,usage_softirq=0 1626509505000000000
 ```
+
+## 참고자료 ##
+
+* [아파치 카프카 소개](https://pearlluck.tistory.com/288)
