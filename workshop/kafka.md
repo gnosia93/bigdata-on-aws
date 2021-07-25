@@ -143,3 +143,5 @@ cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_system
 ## 참고자료 ##
 
 * [아파치 카프카 소개](https://pearlluck.tistory.com/288)
+
+* [카프라카 무엇인가?](https://velog.io/@jaehyeong/Apache-Kafka%EC%95%84%ED%8C%8C%EC%B9%98-%EC%B9%B4%ED%94%84%EC%B9%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80)
