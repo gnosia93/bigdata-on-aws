@@ -68,6 +68,8 @@ readParquet("output.parquet")
 
 ```
 
+* https://stackoverflow.com/questions/63247330/python-sql-parser-to-get-the-column-name-and-data-type
+
 ## 참고자료 ##
 
 * [아파치 arrow 사용법](https://yahwang.github.io/posts/83)
