@@ -1,3 +1,7 @@
+```
+$ pip install pyarrow
+```
+
 ## 참고자료 ##
 
 * [아파치 arrow 사용법](https://yahwang.github.io/posts/83)
