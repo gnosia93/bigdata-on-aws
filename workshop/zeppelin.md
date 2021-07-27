@@ -92,7 +92,7 @@ spark.executor.memory = 1g
 
 ![note3](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-notebook.png)
 
-아래 hdfs URL은 에서 여러분들의 EMR 마스터 주소로 바꾼 후, 아래 샘플 코드를 제플린 노트북에서 실행하고, 그 결과를 확인 하도록 합니다. 
+아래 hdfs URL은 여러분들의 EMR 마스터 주소로 바꾼 후, 아래 샘플 코드를 제플린 노트북에서 실행하고, 그 결과를 확인 하도록 합니다. 
 
 [샘플 코드]
 ```
