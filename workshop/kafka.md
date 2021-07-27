@@ -142,7 +142,7 @@ cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_system
 
 ## 참고자료 ##
 
-* [아파치 카프카?](https://twofootdog.tistory.com/86)
+* [아파치 카프카(Apache Kafka) 정의 및 특징](https://twofootdog.tistory.com/86)
 
 * [아파치 카프카 소개](https://pearlluck.tistory.com/288)
 
