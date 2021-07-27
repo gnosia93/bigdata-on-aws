@@ -191,9 +191,10 @@ Host : yarn
 ```
 ![conn4](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_conn-4.png)
 
+
 ### 6. job 실행하기 ###
 
-airflow_workshop_job 의 좌측에 있는 회식 버튼을 토글하여 파란색으로 바꾼 다음,  
+airflow_workshop_job 의 좌측에 있는 회색 버튼을 토글하여 파란색으로 바꾼 다음,  
 
 ![job-start1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-1.png) 
 
