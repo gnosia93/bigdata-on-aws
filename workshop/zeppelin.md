@@ -1,7 +1,7 @@
 ![logo](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin_logo.png)
 
 Apache Zeppelin은 Spark 쉘을 통한 데이터 분석의 불편함을 Web기반의 Notebook 환경을 통해 해결해보고자 만들어진 어플리케이션으로, 
-코드를 작성, 실행, 결과확인, 코드수정 과정을 반복하면서 원하는 결과를 만들어 낼수있는 작업환경을 지칭합니다.
+코드를 작성, 실행, 결과확인, 코드수정 과정을 반복하면서 원하는 결과를 만들어 낼수있는 작업 환경을 제공합니다.
 
 Zeppelin 에 대한 좀더 자세한 내용은 아래 링크를 참조하세요.
 
