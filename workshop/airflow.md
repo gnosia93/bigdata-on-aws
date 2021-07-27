@@ -8,8 +8,8 @@
 이번 챕터에서는 [airflow_workshop_job](https://github.com/gnosia93/bigdata-on-aws/blob/main/jobs/airflow_workshop_job.py) 을 이용하여 에어플로우에 대한 실습을 진행하도록 하겠습니다.
 해당 잡은 아래와 같이 4개의 오퍼레이터로 구성되며, 각각의 기능은 아래와 같습니다. 
 
-* postgres operator - dummy 테이블 생성
-* postgres operator - dummy 레코드 생성 (약 2100만건, 생성 소요시간 30초)
+* postgres operator - dummy 테이블 삭제(존재시)
+* postgres operator - dummy 테이블 및 레코드 생성 (약 2100만건, 생성 소요시간 30초)
 * bash operator - sqoop import (copy table to hdfs)
 * spark submit operator - 집계처리하여 총건수를 postgresql 에 저장
 
