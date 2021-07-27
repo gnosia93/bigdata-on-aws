@@ -29,19 +29,4 @@ $ aws iam delete-instance-profile --instance-profile-name bigdata_ec2_profile
 $ aws iam get-instance-profile --instance-profile-name bigdata_ec2_profile
 
 An error occurred (NoSuchEntity) when calling the GetInstanceProfile operation: Instance Profile bigdata_ec2_profile cannot be found.
-
-$ aws iam get-instance-profile --instance-profile-name bigdata_emr_profile
-{
-    "InstanceProfile": {
-        "Path": "/",
-        "InstanceProfileName": "bigdata_emr_profile",
-        "InstanceProfileId": "AIPAXNB2LVDE5DMVIZZMZ",
-        "CreateDate": "2021-07-12T00:03:43Z",
-        "Roles": []
-    }
-}
-$ aws iam delete-instance-profile --instance-profile-name bigdata_emr_profile
-$ aws iam get-instance-profile --instance-profile-name bigdata_emr_profile
-
-An error occurred (NoSuchEntity) when calling the GetInstanceProfile operation: Instance Profile bigdata_emr_profile cannot be found.
 ```
