@@ -11,7 +11,7 @@
 * postgres operator - dummy 테이블 삭제(존재시)
 * postgres operator - dummy 테이블 및 레코드 생성 (약 2100만건, 생성 소요시간 30초)
 * bash operator - sqoop import (copy table to hdfs)
-* spark submit operator - 스파크 잡으로 hdfs 파일의 레코드 건수를 집계 처리하여, 총 건수를 postgresql 에 저장
+* spark submit operator - hdfs 파일의 레코드 건수를 스파크로 집계 처리하여, 그 건수를 postgresql 에 저장
 
 ![dags](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-dags.png)
 
