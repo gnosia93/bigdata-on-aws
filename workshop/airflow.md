@@ -196,6 +196,16 @@ Host : yarn
 
 ### 6. job 실행하기 ###
 
+```
+ubuntu@ip-10-1-1-93:~$ cd ~/airflow/dags/
+
+ubuntu@ip-10-1-1-93:~$ vi airflow_workshop_job.py
+
+
+
+```
+
+
 airflow_workshop_job 의 좌측에 있는 회색 버튼을 토글하여 파란색으로 바꾼 다음,  
 
 ![job-start1](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow-job-start-1.png) 
