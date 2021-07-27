@@ -196,7 +196,8 @@ Host : yarn
 
 ### 6. job 실행하기 ###
 
-airflow 마스터 노드의 airflow_workshop_job.py 잡의 jdbc 및 hdfs URL 의 호스트 정보를 여러분들의 환경에 맞게 수정합니다. (소스코드 59, 63, 91, 92 라인)
+airflow 마스터 노드의 airflow_workshop_job.py 파일의 jdbc 및 hdfs URL 의 호스트 정보를 여러분들의 환경에 맞게 수정합니다.   
+(소스코드 59, 63, 91, 92 라인)
 
 (주의) 포트번호 및 디렉토경로는 유지해야 함.
 
