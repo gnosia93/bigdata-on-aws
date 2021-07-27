@@ -196,14 +196,13 @@ Host : yarn
 
 ### 6. job 실행하기 ###
 
+airflow 마스터 노드의 airflow_workshop_job.py 잡의 jdbc 및 hdfs URL 정보를 여러분들의 환경에 맞게 수정합니다. 
 ```
 ubuntu@ip-10-1-1-93:~$ cd ~/airflow/dags/
 
 ubuntu@ip-10-1-1-93:~$ vi airflow_workshop_job.py
-
-
-
 ```
+![airflow_job_mod](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/airflow_job_modify.png)
 
 
 airflow_workshop_job 의 좌측에 있는 회색 버튼을 토글하여 파란색으로 바꾼 다음,  
