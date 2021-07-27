@@ -1,3 +1,5 @@
+![arrow](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/apache-arrow.png)
+
 대용량의 CSV 파일을 직접 S3 로 로딩하기 전 로컬에서 CSV 파일을 파케이로 변환 하는 방법에 대한 샘플 코드 입니다. 파케이로 변환하기 위해 로컬 PC 에 판다스와 아파치 Arrow 파이썬 패키지를 아래와 같이 설치한 후, 샘플 코드를 실행하면 됩니다. 
 
 ### 패키지 설치 ###
