@@ -199,7 +199,7 @@ Host : yarn
 airflow 마스터 노드의 airflow_workshop_job.py 파일의 jdbc 및 hdfs URL 의 호스트 정보를 여러분들의 환경에 맞게 수정합니다.   
 (소스코드 59, 63, 91, 92 라인)
 
-(주의) 포트번호 및 디렉토경로는 유지해야 함.
+*(주의) 포트번호 및 디렉토리 경로는 유지해야 함.
 
 ```
 ubuntu@ip-10-1-1-93:~$ cd ~/airflow/dags/
