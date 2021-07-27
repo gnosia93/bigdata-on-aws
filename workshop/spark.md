@@ -302,4 +302,5 @@ val windowedCounts = kdf.groupBy(
 
 * [트리거, 윈도우, 슬라이딩 ](https://eyeballs.tistory.com/83)
 
+* [아파치 스파크란?](https://mangkyu.tistory.com/128)
 
