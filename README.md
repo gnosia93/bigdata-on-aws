@@ -25,7 +25,7 @@
 
 * [4. 카프카 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/kafka.md)
 
-* [5. 스파크 스트리밍 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/spark.md) 
+* [5. 스파크 배치/스트리밍 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/spark.md) 
 
 * [6. 스쿱 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/sqoop.md)
 
