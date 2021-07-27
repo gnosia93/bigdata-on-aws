@@ -73,7 +73,7 @@ drwxrwxrwt   - hdfs hdfsadmingroup          0 2021-07-20 16:54 /tmp
 drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-20 15:14 /user
 drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-20 12:17 /var
 ```
-(중요) 스파크 설정은 현 버전의 워크샵에서는 생략합니다 [Known Issues 참조]
+(중요) 리모트 실행을 위한 스파크 설정은 현 버전의 워크샵에서는 생략합니다 [Known Issues 참조]
 
 
 ### 3. airflow 잡 등록하기 ###
