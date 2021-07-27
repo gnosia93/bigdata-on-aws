@@ -32,6 +32,7 @@
 
 * [8. 에어플로우 실습](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/airflow.md)
 
+* [9. Pyarrow 패키지를 이용한 파케이 변환](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/parquet.md)
 
 
 ## Revison History ##
