@@ -34,9 +34,11 @@
 
 ### 2. 에어 플로우 마스터 노드 설정하기 ###
 
-에어플로우 노드에서 EMR 작업을 리모트로 실행하기 위해, 하둡 및 스파크 패키지를 설치합니다.(에어 플로우 노드 생성시 자동 설치됨, https://github.com/gnosia93/bigdata-on-aws/blob/main/tf/ec2.tf 의 user_data 참조)   
-리모트로 작업을 실행하기 위해서는 하둡 core-site.xml 파일에 대한 설정 역시 필요하며, 스파크의 경우 yarn-site.xml  편집해야 합니다. 
-아파치 스쿱 역시 설치가 필요한데, 스쿱의 map-reduce 작업은 airflow ec2 인스턴스에서 직접 실행됩니다 (스쿱 1.4 버전을 사용하고 있고, 해당 버전은 Rest API 가 없기 때문.)
+에어 플로우 노드에서 EMR 작업을 리모트로 실행하기 위해서는 하둡 및 스파크 패키지를 에어 플로우 노드에 설치해야 합니다.(테라폼에 의해 자동 설치됨, https://github.com/gnosia93/bigdata-on-aws/blob/main/tf/ec2.tf 의 "bigdata_airflow" 리소스의 user_data 참조)   
+또한 하둡 core-site.xml 파일에 대한 설정 역시 필요하며, 스파크의 경우 yarn-site.xml 파일을 편집해야 합니다. 
+아파치 스쿱 패키지 역시 설치가 필요한데, 이 또한 테라폼에 의해 자동으로 설치됩니다. 
+
+(주의) 현 버전의 워크샵은 [Known Issues] 에 나와 있는 것처럼 스쿱 및 스파크 작업은 에어 플로우 노드에서 실행됩니다 (차기 버전에서 리모트로 실행될 예정임)
 
 ```
 $ terraform output | grep airflow
