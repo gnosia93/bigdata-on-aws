@@ -3,11 +3,11 @@
 ```
 $ terraform init
 
-$ terraform apply --auto-approve
+$ terraform apply -auto-approve
 
 $ terraform output
 
-$ terraform destroy --auto-approve
+$ terraform destroy -auto-approve
 ```
 
 ### instance profile 중복 오류 발생시 해결 방법 ###
