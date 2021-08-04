@@ -258,3 +258,5 @@ Time taken: 6.669 seconds, Fetched: 1 row(s)
 * [스쿱 튜토리얼](https://data-flair.training/blogs/apache-sqoop-tutorial/)
 
 * https://stackoverflow.com/questions/26684643/error-must-be-member-of-role-when-creating-schema-in-postgresql
+
+* [스쿱 + 카이트 + S3](https://www.thetopsites.net/article/58483546.shtml)
