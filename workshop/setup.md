@@ -122,3 +122,14 @@ EC2 인스턴스 2대와 EMR 용 인스턴스 3대가 생성된 것을 확인하
 * RDS
 
 ![rds](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/rds.png)
+
+
+### 참고. 리소스 삭제하기 ###
+
+테라폼으로 빌드한 리소스는 아래의 명령어를 이용하여 삭제할 수 있다.
+```
+$ terraform destroy -auto-approve
+```
+
+
+
