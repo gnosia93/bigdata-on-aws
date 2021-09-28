@@ -204,6 +204,11 @@ EOF
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/emr_cluster
 # https://stackoverflow.com/questions/65943872/how-to-deploy-emr-terraform-using-terraform-a-simple-out-of-the-box-working-
 resource "aws_emr_cluster" "bigdata_emr" {
+    
+    # explict dependency check.
+    # due to routing table issue - before emr is lauching, internet gw must be attached to VPC.
+    depends_on = [aws_internet_gateway.bigdata_igw]                             
+
     name = "bigdata-emr"
     release_label = "emr-6.3.0"
     applications = ["hadoop", "hive", "zookeeper", "sqoop", "zeppelin", "hbase", "presto", "hue", "spark"]
