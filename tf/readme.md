@@ -1,12 +1,14 @@
 ### 실행방법 ###
 
+[인프라 생성하기]
 ```
 $ terraform init
-
 $ terraform apply -auto-approve
-
 $ terraform output
+```
 
+[인프라 삭제하기]
+```
 $ terraform destroy -auto-approve
 ```
 
