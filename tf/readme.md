@@ -35,3 +35,4 @@ An error occurred (NoSuchEntity) when calling the GetInstanceProfile operation: 
 
 ### EMR 프로비저닝 오류 ###
 
+* 코어 노드의 어플리케이션 프로비저닝 단계에서 오류가 발생하는 경우, 인스턴스 타입을 바꿔본다. 
