@@ -111,7 +111,7 @@ AWS 콘솔로 로그인해서 아래 그림과 같이 ec2, emr, msk 및 rds 가 
  
 EC2 인스턴스 2대와 EMR 용 인스턴스 3대가 생성된 것을 확인하실 수 있습니다.   
 
-![ec2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/ec2.png)
+![ec2](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/ec2-1.png)
 
 * EMR
 
