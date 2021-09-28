@@ -63,6 +63,7 @@ $ mv ~/Downloads/tf_key_bigdata.pem ~
 ```
 $ cd 
 $ git clone https://github.com/gnosia93/bigdata-on-aws.git
+$ cd bigdata-on-aws/tf
 
 $ vi var.tf
 variable "your_ip_addr" {
