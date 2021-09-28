@@ -223,11 +223,11 @@ resource "aws_emr_cluster" "bigdata_emr" {
     }
 
     master_instance_group {
-        instance_type = "c5.2xlarge"
+        instance_type = "c5.4xlarge"
     }
 
     core_instance_group {
-        instance_type = "c5.2xlarge"
+        instance_type = "c5.4xlarge"
         instance_count = 2
 
         ebs_config {
