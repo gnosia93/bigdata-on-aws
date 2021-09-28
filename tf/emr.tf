@@ -207,7 +207,7 @@ resource "aws_emr_cluster" "bigdata_emr" {
     
     # explict dependency check.
     # due to routing table issue - before emr is lauching, internet gw must be attached to VPC.
-    depends_on = [aws_internet_gateway.bigdata_igw]                             
+    depends_on = [aws_route_table_association.bigdata_rt_association1, aws_route_table_association.bigdata_rt_association2]                             
 
     name = "bigdata-emr"
     release_label = "emr-6.3.0"
