@@ -1,3 +1,4 @@
+/*
 data "aws_iam_policy" "pvre_policy" {
     arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
@@ -14,5 +15,5 @@ resource "aws_iam_role_policy_attachment" "pvre-attach-emr" {
   policy_arn = data.aws_iam_policy.pvre_policy.arn
 }
 
-
+*/
 
