@@ -223,7 +223,7 @@ resource "aws_emr_cluster" "bigdata_emr" {
     }
 
     master_instance_group {
-        instance_type = "m5.2xlarge"
+        instance_type = "c5.2xlarge"
     }
 
     core_instance_group {
