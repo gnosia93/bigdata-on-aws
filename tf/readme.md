@@ -30,3 +30,7 @@ $ aws iam get-instance-profile --instance-profile-name bigdata_ec2_profile
 
 An error occurred (NoSuchEntity) when calling the GetInstanceProfile operation: Instance Profile bigdata_ec2_profile cannot be found.
 ```
+
+### EMR 프로비저닝 오류 ###
+
+* https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-ranger-troubleshooting-cluster-failed.html
