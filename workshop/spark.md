@@ -252,7 +252,7 @@ Batch: 3
 
 ```
 [hadoop@ip-10-1-1-125 ~]$ spark-shell --master yarn --executor-memory 1G --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
-
+scala> 
 
 scala> import org.apache.spark.sql.functions.udf
 
