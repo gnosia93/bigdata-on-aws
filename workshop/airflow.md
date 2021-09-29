@@ -108,12 +108,6 @@ dag_id               | filepath                | owner   | paused
 airflow_workshop_job | airflow_workshop_job.py | airflow | None
 ```
 
-브라우저로 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
-
-* http://ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com:8080
-
-
-
 ### 4. spark 어플리케이션 설치하기 ###
 
 스파크 어플리케이션을 아래의 순서 대로 설치합니다. sbt 는 scala 에서 주로 사용하는 패키지 메니저로 mvn 과 같은 기능을 수행합니다. 
@@ -148,6 +142,10 @@ ubuntu@ip-10-1-1-93:sparkapp$ ls -la target/scala-2.12/sparkapp-assembly-0.1.jar
 
 
 ### 5. connections 설정 ###
+
+브라우저로 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
+
+* http://ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com:8080
 
 connections 은 타켓 리소스를 억세스할 때 필요한 각종 정보를 모아 놓은 정보의 집합체 입니다. 타켓 리소스가 데이터베이스인 경우 연결관련 정보를 저장하고 있고, 스파크인 경우에는 리소스 매니저로  yarn 사용 여부를 결정하게 됩니다. 
 
