@@ -49,7 +49,9 @@ EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
 
 [hadoop@ip-10-1-1-99 ~]$ 
 
-[hadoop@ip-10-1-1-99 ~]$ spark-shell --master yarn --executor-memory 1G --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
+[hadoop@ip-10-1-1-99 ~]$ spark-shell --master yarn --executor-memory 1G \
+--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
+
 :: loading settings :: url = jar:file:/usr/lib/spark/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
 Ivy Default Cache set to: /home/hadoop/.ivy2/cache
 The jars for the packages stored in: /home/hadoop/.ivy2/jars
