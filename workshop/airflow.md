@@ -44,6 +44,10 @@
 $ terraform output | grep airflow
 airflow_public_ip = "ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com"
 
+$ terraform output | grep emr
+emr_master_public_dns = "ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com"
+
+
 $ ssh -i ~/tf_key_bigdata.pem ubuntu@ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com
 The authenticity of host 'ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com (13.125.226.210)' can't be established.
 ECDSA key fingerprint is SHA256:APd2pTzZPa7aurbP4kUvYF72GREBsDca6kOxw3EjQJA.
@@ -57,7 +61,7 @@ ubuntu@ip-10-1-1-93:~$ vi core-site.xml
 <configuration>
         <property>
                 <name>fs.defaultFS</name>
-                <value>hdfs://ec2-13-125-218-93.ap-northeast-2.compute.amazonaws.com:8020</value>       # 여러분들의 emr 마스터 노드 주소로 변경하세요.
+                <value>hdfs://ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com:8020</value>       # 여러분들의 emr 마스터 노드 주소로 변경하세요.
         </property>
 </configuration>
 
