@@ -96,10 +96,11 @@ Apply complete! Resources: 28 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
-emr_master_public_dns = ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com
-msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
-rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
+airflow_public_ip = "ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com"
+ec2_public_ip = "ec2-3-35-132-185.ap-northeast-2.compute.amazonaws.com"
+emr_master_public_dns = "ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com"
+msk_brokers = "b-1.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092"
+rds_endpoint = "bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432"
 
 $ 
 ```
