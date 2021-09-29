@@ -410,7 +410,7 @@ OK
 3	ccc2
 Time taken: 0.101 seconds, Fetched: 3 row(s)
 
-hive> !hadoop fs -ls -R /user/hive/warehouse/student;
+hive> !hadoop fs -ls -R /user/hive/warehouse;
 drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000
 -rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000/_orc_acid_version
 -rw-r--r--   1 hadoop hdfsadmingroup        694 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000/bucket_00000
@@ -453,7 +453,7 @@ OK
 3	ccc2
 Time taken: 0.092 seconds, Fetched: 2 row(s)
 
-hive> !hadoop fs -ls -R /user/hive/warehouse/student;
+hive> !hadoop fs -ls -R /user/hive/warehouse;
 drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000
 -rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000/_orc_acid_version
 -rw-r--r--   1 hadoop hdfsadmingroup        694 2021-07-17 03:33 /user/hive/warehouse/student/delete_delta_0000004_0000004_0000/bucket_00000
