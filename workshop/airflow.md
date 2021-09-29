@@ -232,3 +232,4 @@ Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigge
 
 * [airflow 이해하기](https://graspthegist.com/2018/11/26/airflow-part-1-2-bash/)
 
+* [DAG 리프레쉬 간격 설정](https://stackoverflow.com/questions/43606311/refreshing-dags-without-web-server-restart-apache-airflow)
