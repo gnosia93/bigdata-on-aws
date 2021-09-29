@@ -39,7 +39,7 @@ export aws_access_key_id = AAaaaaaaaaaaaaa                          <--- 억세�
 export aws_secret_access_key = SSssssssssssssss                     <--- 시크리트 억세스키 추가 
 export aws_region = "ap-northeast-2"                                <--- 리전 설정
 
-$ . .bash_profile                                                   <--- 환경 변수 적용을 위해 .bash_profile 
+$ . .bash_profile                                                   <--- 환경 변수 적용을 위해 .bash_profile 실행
 ```
 
 
