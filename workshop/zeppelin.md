@@ -38,8 +38,8 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-1-1-31 zeppelin]$ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/flight-data/json/2015-summary.json
 [ec2-user@ip-10-1-1-31 zeppelin]$ wget https://raw.githubusercontent.com/databricks/Spark-The-Definitive-Guide/master/data/retail-data/all/online-retail-dataset.csv
 
-[ec2-user@ip-10-1-1-31 zeppelin]$ hadoop fs -put 2015-summary.json /tmp/spark
-[ec2-user@ip-10-1-1-31 zeppelin$ hadoop fs -put online-retail-dataset.csv /tmp/spark
+[ec2-user@ip-10-1-1-31 zeppelin]$ hadoop fs -put 2015-summary.json /tmp/spark/2015-summary.json
+[ec2-user@ip-10-1-1-31 zeppelin$ hadoop fs -put online-retail-dataset.csv /tmp/spark/online-retail-dataset.csv
 
 [ec2-user@ip-10-1-1-31 zeppelin]$ hadoop fs -ls -R /tmp/spark
 -rw-r--r--   1 soonbeom supergroup      21368 2021-07-18 17:00 /tmp/spark/2015-summary.json
