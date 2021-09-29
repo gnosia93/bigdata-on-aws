@@ -71,7 +71,8 @@ spark.executor.memory = 1g
 
 상단 메뉴의 [Notebook] 을 클릭한 후 나타나는 팝업 메뉴에서 [+Create new note]를 선택한 후, Create New Note 팝업창이 나오면, Note Name 필드값으로 spark-job 으로 입력하고 [Create] 버튼을 클릭합니다.
 
-%spark, %pyspark, %sql 인터프리터를 테스트 합니다. %spark은 스칼러 코드를 해석 및 실행하는 기본 인터프리터로 명시적으로 선언하지 않으면 %spark 인터프리터가 실행됩니다. %pyspark 은 제플린 노트북에서 파이썬을 사용하고자 할때 사용하는 인터프리터 이며, %sql 은 SQL 인터프리터 입니다. SQL 만을 이용하여 데이터에 대한 조회 및 오퍼레이션을 수행할 수 있습니다.
+아래 그림에서 처럼 %spark, %pyspark, %sql 인터프리터를 각각 테스트 합니다. 프로그램을 테스트 위해서는 해당 셀의 화살표 버튼을 클릭하면 됩니다. 
+%spark은 스칼러 코드를 해석 및 실행하는 기본 인터프리터로 명시적으로 선언하지 않으면 %spark 인터프리터가 실행됩니다. %pyspark 은 제플린 노트북에서 파이썬을 사용하고자 할때 사용하는 인터프리터 이며, %sql 은 SQL 인터프리터 입니다. SQL 만을 이용하여 데이터에 대한 조회 및 오퍼레이션을 수행할 수 있습니다.
 
 ![int4](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/zeppelin-interpreter-4.png)
 
