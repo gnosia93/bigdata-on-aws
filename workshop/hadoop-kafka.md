@@ -33,7 +33,7 @@ https://aws.amazon.com/amazon-linux-2/
 <configuration>
         <property>
                 <name>fs.defaultFS</name>
-                <value>hdfs://ec2-3-36-108-41.ap-northeast-2.compute.amazonaws.com:8020</value>
+                <value>hdfs://ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com:8020</value>
         </property>
 </configuration>
 ```
