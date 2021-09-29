@@ -49,7 +49,7 @@ https://aws.amazon.com/amazon-linux-2/
 
 ### 2. 제플린 인터프리터 설정 ###
 
-AWS emr 콘솔에서 제플린 주소 확인 후, 브라우저로 제플린 노트북에 접속합니다. 
+AWS emr 콘솔에서 제플린 주소 확인 후(클러스터 목록 > 애플리케이션 이력), 브라우저로 제플린 노트북에 접속합니다. 
 
 ![emr-app-url](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/emr-app-url.png)
 
