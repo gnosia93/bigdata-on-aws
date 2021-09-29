@@ -99,7 +99,7 @@ cpu-metric
 telegraf 를 아래와 같이 실행하고, status 옵션을 이용하여 정상 동작여부를 관찰합니다. 
 
 ```
-[ec2-user@ip-10-1-1-31 ~]$ suso systemctl start telegraf
+[ec2-user@ip-10-1-1-31 ~]$ sudo systemctl start telegraf
 
 [ec2-user@ip-10-1-1-31 ~]$ sudo systemctl status telegraf
 ● telegraf.service - The plugin-driven server agent for reporting metrics into InfluxDB
