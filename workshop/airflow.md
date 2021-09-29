@@ -107,6 +107,9 @@ dag_id               | filepath                | owner   | paused
 =====================+=========================+=========+=======
 airflow_workshop_job | airflow_workshop_job.py | airflow | None
 ```
+(참고) 에어플로우가 ~/airflow/dags/ 디렉토리의 신규 dag 파일을 탐지하기 까지 최대 5분이 소요됩니다. 해당 작업이 완료되기 전까지는 에어플로우 웹화면에서 신규로 추가된 dag를 확인할 수 없습니다. 신규 dag 파일 탐지 간격을 줄이고자 하는 경우 [DAG 리프레쉬 간격 설정](https://stackoverflow.com/questions/43606311/refreshing-dags-without-web-server-restart-apache-airflow) 를 참고하세요.
+
+
 
 ### 4. spark 어플리케이션 설치하기 ###
 
@@ -229,8 +232,6 @@ Actions 밑에 있는 [화살표 버튼]을 클릭하여 팝업창에서 [Trigge
 * [우분투에 airflow 설치하기](https://jungwoon.github.io/airflow/2019/02/26/Airflow.html)
 
 * [airflow 이해하기](https://graspthegist.com/2018/11/26/airflow-part-1-2-bash/)
-
-* [DAG 리프레쉬 간격 설정](https://stackoverflow.com/questions/43606311/refreshing-dags-without-web-server-restart-apache-airflow)
 
 * [에어플로우 튜토리얼](https://github.com/hgrif/airflow-tutorial)
 
