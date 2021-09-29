@@ -110,7 +110,7 @@ airflow_workshop_job | airflow_workshop_job.py | airflow | None
 
 브라우저로 airflow 가 설치된 ec2 인스턴스의 8080 포트로 접속합니다. 
 
-* http://ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com:8080
+* http://ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com:8080
 
 
 
