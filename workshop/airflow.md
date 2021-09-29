@@ -42,7 +42,7 @@
 
 ```
 $ terraform output | grep airflow
-airflow_public_ip = ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com
+airflow_public_ip = "ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com"
 
 $ ssh -i ~/.ssh/tf_key ubuntu@ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com
 The authenticity of host 'ec2-13-125-226-210.ap-northeast-2.compute.amazonaws.com (13.125.226.210)' can't be established.
