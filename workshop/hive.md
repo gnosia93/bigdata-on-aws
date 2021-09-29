@@ -200,6 +200,17 @@ stored as textfile
 location '/tmp/workshop/airport';   
 ```
 
+방금 생성한 테이블을 확인합니다.
+```
+hive> use workshop;
+OK
+Time taken: 0.023 seconds
+hive> show tables;
+OK
+airline_delay
+airports
+```
+
 ### 6. 데이터 조회하기 ###
 
 하이브는 ANSI SQL 과 거의 흡사한 하이브 QL 이라고 하는 쿼리 언어를 지원합니다. 아래의 예제를 통해서 테이블 카운트, CASE-WHEN GROUP BY 조회 및 테이블을 조인하는 방법을 학습하실 수 있습니다. 
