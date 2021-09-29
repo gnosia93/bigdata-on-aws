@@ -45,7 +45,7 @@ drwxr-xr-x 87 root root 8192  7월 12 01:59 ..
 카프카 브로커 주소를 AWS 콘솔 또는 테라폼 명령어를 이용하여 조회한 후, 
 ```
 $ terraform output | grep msk
-msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+msk_brokers = "b-1.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092"
 ```
 
 ec2 인스턴스에 아래의 스크립트를 이용하여 telegraf 설정 파일을 생성합니다. 이때 [[outputs.kafka]] 부분의 brokers 의 주소는 여러분들의 브로커 주소로 대체해야 합니다. 
@@ -58,9 +58,9 @@ ec2 인스턴스에 아래의 스크립트를 이용하여 telegraf 설정 파�
   flush_interval = "3s"
   
 [[outputs.kafka]]
-   brokers = [ "b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092", 
-               "b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092", 
-               "b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092" ]   ## 브로커 주소를 수정해야 합니다. 
+   brokers = [ "b-1.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092", 
+               "b-2.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092", 
+               "b-3.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092" ]   ## 브로커 주소를 수정해야 합니다. 
    topic = "cpu-metric"
 
 [[inputs.cpu]]
