@@ -371,7 +371,7 @@ OK
 3	ccc
 Time taken: 0.106 seconds, Fetched: 3 row(s)
 
-hive> !hadoop fs -ls -R /user/hive/warehouse/student;
+hive> !hadoop fs -ls -R /user/hive/warehouse;
 drwxr-xr-x   - hadoop hdfsadmingroup          0 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000
 -rw-r--r--   1 hadoop hdfsadmingroup          1 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000/_orc_acid_version
 -rw-r--r--   1 hadoop hdfsadmingroup        694 2021-07-17 03:29 /user/hive/warehouse/student/delta_0000001_0000001_0000/bucket_00000
