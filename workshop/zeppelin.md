@@ -15,14 +15,15 @@ Zeppelin 에 대한 좀더 자세한 내용은 아래 링크를 참조하세요.
 * https://github.com/databricks/Spark-The-Definitive-Guide
 ```
 $ terraform output 
-Outputs:
 
-ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
-emr_master_public_dns = ec2-3-34-196-21.ap-northeast-2.compute.amazonaws.com
-msk_brokers = b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
-rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
+airflow_public_ip = "ec2-52-79-178-219.ap-northeast-2.compute.amazonaws.com"
+ec2_public_ip = "ec2-3-35-132-185.ap-northeast-2.compute.amazonaws.com"
+emr_master_public_dns = "ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com"
+msk_brokers = "b-1.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092"
+rds_endpoint = "bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432"
 
-$ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+
+$ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-3-35-132-185.ap-northeast-2.compute.amazonaws.com
 Last login: Mon Jul 12 02:47:04 2021 from 218.238.107.63
 
        __|  __|_  )
