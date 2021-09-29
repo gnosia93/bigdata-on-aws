@@ -53,6 +53,7 @@ AWS EC2 콘솔의 keypair 화면으로 이동 한후, ssh 로그인용 키페어
 
 ```
 $ mv ~/Downloads/tf_key_bigdata.pem ~
+$ chmod 0400 ~/tf_key_bigdata.pem
 ```
 
 ### 4. 워크샵 리소스 생성 ###
