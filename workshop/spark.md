@@ -302,7 +302,7 @@ val stream = kdf.writeStream
 only showing top 5 rows
 ```
 
-#### 3-2. 윈도우 함수 실행하기 ####
+#### 참고 - 데이터 윈도우 처리 ####
 
 ```
 val windowedCounts = kdf.groupBy(
