@@ -50,8 +50,9 @@ drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /var
 
 ### 2. 카프카 테스트 ###
 
+아래 스크립트에서 bootstrap-server 의 주소는 terraform output 결과값 중 msk_brokers 에 해당 합니다. 
+
 * 토픽생성 (test 토픽)
-kafka-tops.sh 을 이용하여 test 토픽을 생성합니다. 이때 bootstrap-server 의 주소는 terraform output 결과값 중 msk_brokers 에 해당 합니다. 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --create --replication-factor 3 --partitions 3 --topic test \
 --bootstrap-server b-1.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,\
