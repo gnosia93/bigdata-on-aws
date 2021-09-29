@@ -32,7 +32,7 @@ https://aws.amazon.com/amazon-linux-2/
 테라폼 또는 AWS RDS 콘솔에서 PostgreSQL RDS 의 엔드포인트를 확인한다. 
 ```
 $ terraform output | grep rds
-rds_endpoint = bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432
+rds_endpoint = "bigdata-postgres.cwhptybasok6.ap-northeast-2.rds.amazonaws.com:5432"
 ```
 
 psql 을 이용하여 RDS 로 로그인 한 후, 사용자 및 데이터베이스를 생성한다. DB 로그인 시 postgres 유저의 패스워드는 postgres 이다. 
