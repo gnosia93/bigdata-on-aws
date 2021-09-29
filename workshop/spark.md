@@ -251,7 +251,9 @@ Batch: 3
 이번에는 value 칼럼의 값에서 idle, iowait, user, sys 값만 출력해 보자.
 
 ```
-[hadoop@ip-10-1-1-125 ~]$ spark-shell --master yarn --executor-memory 1G --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
+[hadoop@ip-10-1-1-125 ~]$ spark-shell --master yarn --executor-memory 1G \
+--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
+
 scala> 
 
 scala> import org.apache.spark.sql.functions.udf
