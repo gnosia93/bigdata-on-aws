@@ -113,7 +113,7 @@ emr 마스터 노드로 가서 hive 클라이언트를 이용하여 workshop 데
 $ terraform output | grep emr
 emr_master_public_dns = "ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com"
 
-$ ssh -i ~/.ssh/tf_key_bigdata.pem hadoop@ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com
+$ ssh -i ~/tf_key_bigdata.pem hadoop@ec2-3-36-96-133.ap-northeast-2.compute.amazonaws.com
 The authenticity of host 'ec2-52-79-231-111.ap-northeast-2.compute.amazonaws.com (52.79.231.111)' can't be established.
 ECDSA key fingerprint is SHA256:Q0WmbNlE+Jomh5FAPgmuaKw2ci2efDQXF4o0XeMyRrM.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
