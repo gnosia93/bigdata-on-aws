@@ -50,6 +50,12 @@ drwxr-xr-x   - hdfs hdfsadmingroup          0 2021-07-12 02:05 /var
 
 ### 2. 카프카 테스트 ###
 
+카프카 테스트를 위해 테라폼 
+```
+$ terraform output | grep msk
+msk_brokers = "b-1.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-2.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092,b-3.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092"
+```
+
 * 토픽생성 (test 토픽)
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-topics.sh --create --replication-factor 3 --partitions 3 --topic test \
