@@ -131,9 +131,10 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 ```
 [ec2-user@ip-10-1-1-31 ~]$ kafka-console-consumer.sh --topic cpu-metric --bootstrap-server \
-b-1.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
-b-2.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
-b-3.bigdata-msk.w8k9q9.c2.kafka.ap-northeast-2.amazonaws.com:9092
+b-1.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-2.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092, \
+b-3.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092
+
 cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_guest=0,usage_system=0,usage_nice=0,usage_softirq=0,usage_irq=0,usage_steal=0,usage_guest_nice=0,usage_user=0.7506255212831479,usage_idle=99.24937447995991,usage_iowait=0 1626509499000000000
 
 cpu,cpu=cpu-total,host=ip-10-1-1-31.ap-northeast-2.compute.internal usage_user=0.24999999999977263,usage_iowait=0,usage_irq=0,usage_guest=0,usage_guest_nice=0,usage_system=0.08333333333337596,usage_idle=99.66666666635622,usage_nice=0,usage_softirq=0,usage_steal=0 1626509502000000000
