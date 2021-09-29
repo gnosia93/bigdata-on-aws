@@ -190,6 +190,7 @@ sqoop import 명령어를 이용하여 RDS 테이블 데이터를 hdfs 로 impor
    --table carriers \
    --target-dir /tmp/workshop/carriers -m 1 
 
+
 [hadoop@ip-10-1-1-99 ~]$ hadoop fs -ls -R /tmp/workshop/carriers
 -rw-r--r--   1 hadoop hdfsadmingroup          0 2021-07-18 04:15 /tmp/workshop/carriers/_SUCCESS
 -rw-r--r--   1 hadoop hdfsadmingroup      36285 2021-07-18 04:15 /tmp/workshop/carriers/carrier-2021-07-18-m-00000
