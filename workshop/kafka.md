@@ -7,9 +7,9 @@
 ec2 인스턴스로 로그인하여 telegraf 를 설치합니다. 
 ```
 $ terraform output | grep ec2_pub
-ec2_public_ip = ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+ec2_public_ip = "ec2-3-35-132-185.ap-northeast-2.compute.amazonaws.com"
 
-$ ssh -i ~/.ssh/tf_key ec2-user@ec2-13-209-13-30.ap-northeast-2.compute.amazonaws.com
+$ ssh -i ~/tf_key_bigdata.pem ec2-user@ec2-3-35-132-185.ap-northeast-2.compute.amazonaws.com
 Last login: Sat Jul 17 00:45:23 2021 from 218.238.107.63
 
        __|  __|_  )
