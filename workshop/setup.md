@@ -35,9 +35,11 @@ on darwin_amd64
 $ cd
 $ vi .bash_profile
 
-export aws_access_key_id = AAaaaaaaaaaaaaa                          <--- 억세스키 추가
-export aws_secret_access_key = SSssssssssssssss                     <--- 시크리트 억세스키 추가 
-export aws_region = "ap-northeast-2"                                <--- 리전 설정
+export AWS_DEFAULT_REGION=ap-northeast-2
+export AWS_ACCESS_KEY_ID=AAaaaaaaaaaaaaa
+export AWS_SECRET_ACCESS_KEY=SSssssssssssssss
+export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEA8aCXV....
+
 
 $ . .bash_profile                                                   <--- 환경 변수 적용을 위해 .bash_profile 실행
 ```
