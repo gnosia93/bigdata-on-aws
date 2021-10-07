@@ -44,7 +44,8 @@ export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEA8aCXV....
 
 $ . .bash_profile                                                   <--- 환경 변수 적용을 위해 .bash_profile 실행
 ```
-
+* 이벤트 엔진
+![이벤트엔진](https://github.com/gnosia93/bigdata-on-aws/blob/main/workshop/images/event-engine.png)
 
 ### 3. 키페어 생성 ###
 
