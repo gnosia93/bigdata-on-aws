@@ -227,8 +227,8 @@ sudo -u ubuntu wget https://jdbc.postgresql.org/download/postgresql-42.2.23.jar 
 sudo -u ubuntu wget www.scala-lang.org/files/archive/scala-2.12.12.deb -P /home/ubuntu
 sudo dpkg -i /home/ubuntu/scala-2.12.12.deb
 sudo -u ubuntu wget https://github.com/sbt/sbt/releases/download/v1.2.8/sbt-1.2.8.tgz -P /home/ubuntu
-sudo -u ubuntu tar xvfz /home/ubuntu/sbt-1.2.8.tgz -C /home/ubuntu       
-sudo -u ubuntu echo "export PATH=\$PATH:/home/ubuntu/sbt/bin" >> /home/ubuntu/.bash_profile    
+sudo -u ubuntu tar xvfz /home/ubuntu/sbt-1.2.8.tgz -C /home/ubuntu
+sudo -u ubuntu echo "export PATH=\$PATH:/home/ubuntu/sbt/bin" >> /home/ubuntu/.bash_profile
 sudo -u ubuntu airflow webserver -D
 sudo -u ubuntu airflow scheduler -D
 sudo -u ubuntu touch /home/ubuntu/done

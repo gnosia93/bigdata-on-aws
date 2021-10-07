@@ -129,3 +129,5 @@ b-3.bigdata-msk.4hz3qf.c2.kafka.ap-northeast-2.amazonaws.com:9092
 ## 참고자료 ##
 
 * [카프카 파티션/replication](https://engkimbs.tistory.com/691)
+
+* [hadoop essential](https://books.google.co.kr/books?id=WF_CCAAAQBAJ&pg=PA44&lpg=PA44&dq=hdfs+fs+put+owner&source=bl&ots=r3hkVADqBD&sig=ACfU3U1jIuDifkWJV2k_KxhmKgDQuWGqSg&hl=ko&sa=X&ved=2ahUKEwiF-e3NiKTzAhUQgp4KHVc9B6gQ6AF6BAglEAM#v=onepage&q=hdfs%20fs%20put%20owner&f=false)

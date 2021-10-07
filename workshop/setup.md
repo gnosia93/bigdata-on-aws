@@ -26,7 +26,8 @@ on darwin_amd64
 
 * 환경변수를 통한 전달 
 
-아래와 같이 bash profile 에 억세스 키 정보를 추가하도록 합니다. 엑세스 키 정보는 AWS IAM 콘솔의 Users 메뉴의 유저별 Security Credentials 탭에서 확인 가능합니다.
+아래와 같이 bash profile 에 억세스 키 정보를 추가하도록 합니다. 엑세스 키 정보는 AWS IAM 콘솔의 Users 메뉴의 유저별 Security Credentials 탭에서 확인 가능합니다. 
+(이벤트 엔진을 활용하는 경우 이벤트 엔진 로그인 페이지에서 확인 가능합니다.)
 만약 해당 유저의 억세스키 값이 발급되어 있지 않다면 아래의 URL 을 참고하여 억세스키를 먼저 발급 하십시오
 
 [억세스 키 생성하기](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
@@ -35,9 +36,11 @@ on darwin_amd64
 $ cd
 $ vi .bash_profile
 
-export aws_access_key_id = AAaaaaaaaaaaaaa                          <--- 억세스키 추가
-export aws_secret_access_key = SSssssssssssssss                     <--- 시크리트 억세스키 추가 
-export aws_region = "ap-northeast-2"                                <--- 리전 설정
+export AWS_DEFAULT_REGION=ap-northeast-2
+export AWS_ACCESS_KEY_ID=AAaaaaaaaaaaaaa
+export AWS_SECRET_ACCESS_KEY=SSssssssssssssss
+export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEA8aCXV....
+
 
 $ . .bash_profile                                                   <--- 환경 변수 적용을 위해 .bash_profile 실행
 ```
@@ -76,7 +79,7 @@ variable "your_ip_addr" {
 
 variable "key_pair" {
     type = string
-    default = "tf_key_bigdata"         ## 콘솔에서 생성한 키페어 명칭으로 변경.
+    default = "tf_key_bigdata"          ## 콘솔에서 생성한 키페어 명칭으로 변경 (기본값은 tf_key_bigdata )
 }
 ```
 
