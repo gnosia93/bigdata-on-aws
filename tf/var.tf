@@ -11,7 +11,7 @@ variable "your_ip_addr" {
 
 variable "key_pair" {
     type = string
-    default = "tf_key"                ## 콘솔에서 생성한 키페어 명칭으로 변경.
+    default = "tf_key_bigdata"                ## 콘솔에서 생성한 키페어 명칭으로 변경.
 }
 
 
