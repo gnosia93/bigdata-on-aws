@@ -39,7 +39,7 @@ $ vi .bash_profile
 export AWS_DEFAULT_REGION=ap-northeast-2
 export AWS_ACCESS_KEY_ID=AAaaaaaaaaaaaaa
 export AWS_SECRET_ACCESS_KEY=SSssssssssssssss
-export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEA8aCXV....                <--- 이벤트 엔진을 
+export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEA8aCXV....                <--- 이벤트 엔진을 사용하는 경우 설정 
 
 
 $ . .bash_profile                                                   <--- 환경 변수 적용을 위해 .bash_profile 실행
